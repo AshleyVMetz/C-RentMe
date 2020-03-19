@@ -78,9 +78,9 @@
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Location = new System.Drawing.Point(47, 63);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(61, 13);
+            this.LastNameLabel.Size = new System.Drawing.Size(68, 13);
             this.LastNameLabel.TabIndex = 2;
-            this.LastNameLabel.Text = "Last Name:";
+            this.LastNameLabel.Text = "Last Name: *";
             // 
             // PhoneTextBox
             // 
@@ -94,9 +94,9 @@
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Location = new System.Drawing.Point(47, 98);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(41, 13);
+            this.PhoneLabel.Size = new System.Drawing.Size(48, 13);
             this.PhoneLabel.TabIndex = 4;
-            this.PhoneLabel.Text = "Phone:";
+            this.PhoneLabel.Text = "Phone: *";
             // 
             // Address1TextBox
             // 
@@ -195,7 +195,7 @@
             this.AddCustomerButton.Name = "AddCustomerButton";
             this.AddCustomerButton.Size = new System.Drawing.Size(121, 23);
             this.AddCustomerButton.TabIndex = 10;
-            this.AddCustomerButton.Text = "Add Customer";
+            this.AddCustomerButton.Text = "Add Store Member";
             this.AddCustomerButton.UseVisualStyleBackColor = true;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
@@ -207,6 +207,7 @@
             this.ClearButton.TabIndex = 11;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // DateOfBirthPicker
             // 
@@ -215,7 +216,7 @@
             this.DateOfBirthPicker.Size = new System.Drawing.Size(187, 20);
             this.DateOfBirthPicker.TabIndex = 17;
             // 
-            // AddCustomer
+            // AddStoreMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,7 +240,7 @@
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.FirstNameLabel);
-            this.Name = "AddCustomer";
+            this.Name = "AddStoreMember";
             this.Size = new System.Drawing.Size(437, 449);
             this.ResumeLayout(false);
             this.PerformLayout();

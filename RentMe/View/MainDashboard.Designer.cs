@@ -29,43 +29,33 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.AddCustomer = new System.Windows.Forms.TabPage();
-            this.EditCustomer = new System.Windows.Forms.TabPage();
+            this.AddStoreMember = new System.Windows.Forms.TabPage();
             this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
+            this.EditStoreMember = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.AddCustomer.SuspendLayout();
+            this.AddStoreMember.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.AddCustomer);
-            this.tabControl1.Controls.Add(this.EditCustomer);
+            this.tabControl1.Controls.Add(this.AddStoreMember);
+            this.tabControl1.Controls.Add(this.EditStoreMember);
             this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(649, 517);
             this.tabControl1.TabIndex = 0;
             // 
-            // AddCustomer
+            // AddStoreMember
             // 
-            this.AddCustomer.Controls.Add(this.addCustomer1);
-            this.AddCustomer.Location = new System.Drawing.Point(4, 22);
-            this.AddCustomer.Name = "AddCustomer";
-            this.AddCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.AddCustomer.Size = new System.Drawing.Size(641, 491);
-            this.AddCustomer.TabIndex = 0;
-            this.AddCustomer.Text = "Add Customer";
-            this.AddCustomer.UseVisualStyleBackColor = true;
-            // 
-            // EditCustomer
-            // 
-            this.EditCustomer.Location = new System.Drawing.Point(4, 22);
-            this.EditCustomer.Name = "EditCustomer";
-            this.EditCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.EditCustomer.Size = new System.Drawing.Size(641, 491);
-            this.EditCustomer.TabIndex = 1;
-            this.EditCustomer.Text = "Edit Customer";
-            this.EditCustomer.UseVisualStyleBackColor = true;
+            this.AddStoreMember.Controls.Add(this.addCustomer1);
+            this.AddStoreMember.Location = new System.Drawing.Point(4, 22);
+            this.AddStoreMember.Name = "AddStoreMember";
+            this.AddStoreMember.Padding = new System.Windows.Forms.Padding(3);
+            this.AddStoreMember.Size = new System.Drawing.Size(641, 491);
+            this.AddStoreMember.TabIndex = 0;
+            this.AddStoreMember.Text = "Add Store Member";
+            this.AddStoreMember.UseVisualStyleBackColor = true;
             // 
             // addCustomer1
             // 
@@ -73,6 +63,16 @@
             this.addCustomer1.Name = "addCustomer1";
             this.addCustomer1.Size = new System.Drawing.Size(437, 449);
             this.addCustomer1.TabIndex = 0;
+            // 
+            // EditStoreMember
+            // 
+            this.EditStoreMember.Location = new System.Drawing.Point(4, 22);
+            this.EditStoreMember.Name = "EditStoreMember";
+            this.EditStoreMember.Padding = new System.Windows.Forms.Padding(3);
+            this.EditStoreMember.Size = new System.Drawing.Size(641, 491);
+            this.EditStoreMember.TabIndex = 1;
+            this.EditStoreMember.Text = "Edit Store Member";
+            this.EditStoreMember.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -83,7 +83,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
-            this.AddCustomer.ResumeLayout(false);
+            this.AddStoreMember.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -91,8 +91,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage AddCustomer;
-        private System.Windows.Forms.TabPage EditCustomer;
+        private System.Windows.Forms.TabPage AddStoreMember;
+        private System.Windows.Forms.TabPage EditStoreMember;
         private UserControls.AddStoreMember addCustomer1;
     }
 }
