@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace RentMe.Model
 {
@@ -52,6 +53,15 @@ namespace RentMe.Model
                 string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 throw new ArgumentException("Employee parameters cannot be null or empty.");
+            }
+            if (!Regex.IsMatch(phone, @"\d\d\d-\d\d\d-\d\d\d\d"))
+            {
+                throw new ArgumentException("Ensure you have entered a phone in XXX-XXX-XXXX format.");
+            }
+            int zip = 0;
+            if (!int.TryParse(zipCode, out zip) || zip < 0 || (zipCode.Length != 5 && zipCode.Length != 9))
+            {
+                throw new ArgumentException("Ensure you have entered a 5 or 9 digit zip code.");
             }
             this.EmployeeID = employeeID;
             this.FName = fName;

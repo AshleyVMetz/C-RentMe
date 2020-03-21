@@ -65,6 +65,12 @@
     <Compile Include="UserControls\AddStoreMember.Designer.cs">
       <DependentUpon>AddStoreMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UpdateEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UpdateEmployee.Designer.cs">
+      <DependentUpon>UpdateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddStoreMember.resx">
       <DependentUpon>AddStoreMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UpdateEmployee.resx">
+      <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
