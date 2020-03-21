@@ -46,15 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\StoreMemberController.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\RentMeDBConnection.cs" />
     <Compile Include="DAL\StoreMemberDAL.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\StoreMember.cs" />
+    <Compile Include="UserControls\AddEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AddStoreMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\AddStoreMember.Designer.cs">
       <DependentUpon>AddStoreMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainDashboard.cs">
       <SubType>Form</SubType>
@@ -73,8 +88,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddStoreMember.resx">
       <DependentUpon>AddStoreMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainDashboard.resx">
       <DependentUpon>MainDashboard.cs</DependentUpon>
