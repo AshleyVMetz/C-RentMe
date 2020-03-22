@@ -112,6 +112,9 @@
     <EmbeddedResource Include="View\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeLogin.resx">
+      <DependentUpon>EmployeeLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainDashboard.resx">
       <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>

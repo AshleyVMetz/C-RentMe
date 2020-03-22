@@ -16,5 +16,10 @@ namespace RentMe.View
         {
             InitializeComponent();
         }
+
+        private void EmployeeLoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
