@@ -30,16 +30,20 @@
         {
             this.adminTabControl = new System.Windows.Forms.TabControl();
             this.addEmployeeTabPage = new System.Windows.Forms.TabPage();
-            this.addEmployee1 = new RentMe.UserControls.AddEmployee();
+            this.addEmployeeUserControl = new RentMe.UserControls.AddEmployee();
             this.label1 = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
+            this.updateEmployeeTabPage = new System.Windows.Forms.TabPage();
+            this.updateEmployeeUserControl = new RentMe.UserControls.UpdateEmployee();
             this.adminTabControl.SuspendLayout();
             this.addEmployeeTabPage.SuspendLayout();
+            this.updateEmployeeTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // adminTabControl
             // 
             this.adminTabControl.Controls.Add(this.addEmployeeTabPage);
+            this.adminTabControl.Controls.Add(this.updateEmployeeTabPage);
             this.adminTabControl.Location = new System.Drawing.Point(12, 40);
             this.adminTabControl.Name = "adminTabControl";
             this.adminTabControl.SelectedIndex = 0;
@@ -48,7 +52,7 @@
             // 
             // addEmployeeTabPage
             // 
-            this.addEmployeeTabPage.Controls.Add(this.addEmployee1);
+            this.addEmployeeTabPage.Controls.Add(this.addEmployeeUserControl);
             this.addEmployeeTabPage.Location = new System.Drawing.Point(4, 22);
             this.addEmployeeTabPage.Name = "addEmployeeTabPage";
             this.addEmployeeTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -57,12 +61,12 @@
             this.addEmployeeTabPage.Text = "Add Employee";
             this.addEmployeeTabPage.UseVisualStyleBackColor = true;
             // 
-            // addEmployee1
+            // addEmployeeUserControl
             // 
-            this.addEmployee1.Location = new System.Drawing.Point(0, 0);
-            this.addEmployee1.Name = "addEmployee1";
-            this.addEmployee1.Size = new System.Drawing.Size(443, 634);
-            this.addEmployee1.TabIndex = 2;
+            this.addEmployeeUserControl.Location = new System.Drawing.Point(0, 0);
+            this.addEmployeeUserControl.Name = "addEmployeeUserControl";
+            this.addEmployeeUserControl.Size = new System.Drawing.Size(443, 634);
+            this.addEmployeeUserControl.TabIndex = 2;
             // 
             // label1
             // 
@@ -82,6 +86,24 @@
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
             // 
+            // updateEmployeeTabPage
+            // 
+            this.updateEmployeeTabPage.Controls.Add(this.updateEmployeeUserControl);
+            this.updateEmployeeTabPage.Location = new System.Drawing.Point(4, 22);
+            this.updateEmployeeTabPage.Name = "updateEmployeeTabPage";
+            this.updateEmployeeTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.updateEmployeeTabPage.Size = new System.Drawing.Size(443, 634);
+            this.updateEmployeeTabPage.TabIndex = 1;
+            this.updateEmployeeTabPage.Text = "Update Employee";
+            this.updateEmployeeTabPage.UseVisualStyleBackColor = true;
+            // 
+            // updateEmployeeUserControl
+            // 
+            this.updateEmployeeUserControl.Location = new System.Drawing.Point(0, 0);
+            this.updateEmployeeUserControl.Name = "updateEmployeeUserControl";
+            this.updateEmployeeUserControl.Size = new System.Drawing.Size(443, 634);
+            this.updateEmployeeUserControl.TabIndex = 0;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +120,7 @@
             this.Text = "Admin Dashboard";
             this.adminTabControl.ResumeLayout(false);
             this.addEmployeeTabPage.ResumeLayout(false);
+            this.updateEmployeeTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -106,8 +129,10 @@
 
         private System.Windows.Forms.TabControl adminTabControl;
         private System.Windows.Forms.TabPage addEmployeeTabPage;
-        private UserControls.AddEmployee addEmployee1;
+        private UserControls.AddEmployee addEmployeeUserControl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.TabPage updateEmployeeTabPage;
+        private UserControls.UpdateEmployee updateEmployeeUserControl;
     }
 }

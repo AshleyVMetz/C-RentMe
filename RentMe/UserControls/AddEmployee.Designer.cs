@@ -72,6 +72,7 @@
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(179, 47);
+            this.firstNameTextBox.MaxLength = 50;
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(187, 20);
             this.firstNameTextBox.TabIndex = 1;
@@ -79,6 +80,7 @@
             // lastNameTextBox
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(179, 83);
+            this.lastNameTextBox.MaxLength = 50;
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(187, 20);
             this.lastNameTextBox.TabIndex = 2;
@@ -129,6 +131,7 @@
             // address1TextBox
             // 
             this.address1TextBox.Location = new System.Drawing.Point(179, 224);
+            this.address1TextBox.MaxLength = 50;
             this.address1TextBox.Name = "address1TextBox";
             this.address1TextBox.Size = new System.Drawing.Size(187, 20);
             this.address1TextBox.TabIndex = 6;
@@ -145,6 +148,7 @@
             // address2TextBox
             // 
             this.address2TextBox.Location = new System.Drawing.Point(179, 259);
+            this.address2TextBox.MaxLength = 50;
             this.address2TextBox.Name = "address2TextBox";
             this.address2TextBox.Size = new System.Drawing.Size(187, 20);
             this.address2TextBox.TabIndex = 7;
@@ -179,6 +183,7 @@
             // zipCodeTextBox
             // 
             this.zipCodeTextBox.Location = new System.Drawing.Point(179, 365);
+            this.zipCodeTextBox.MaxLength = 9;
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(187, 20);
             this.zipCodeTextBox.TabIndex = 10;
@@ -195,6 +200,7 @@
             // usernameTextBox
             // 
             this.usernameTextBox.Location = new System.Drawing.Point(179, 400);
+            this.usernameTextBox.MaxLength = 50;
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(187, 20);
             this.usernameTextBox.TabIndex = 11;
@@ -211,6 +217,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(179, 435);
+            this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(187, 20);
             this.passwordTextBox.TabIndex = 12;
@@ -265,6 +272,7 @@
             // cityTextBox
             // 
             this.cityTextBox.Location = new System.Drawing.Point(179, 294);
+            this.cityTextBox.MaxLength = 50;
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(187, 20);
             this.cityTextBox.TabIndex = 8;

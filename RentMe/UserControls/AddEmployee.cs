@@ -58,12 +58,12 @@ namespace RentMe.UserControls
                                                                  zipCode, username, password, isActive, isAdmin));
                 this.ClearForm();
                 MessageBox.Show("The employee was successfully added.",
-                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Check that all required values are entered. " + Environment.NewLine + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Check that all required values are entered. " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
