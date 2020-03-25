@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
+using RentMe.Util;
 
 namespace RentMe.UserControls
 {
@@ -24,6 +25,10 @@ namespace RentMe.UserControls
 
         private void CustomerIDSearchButton_Click(object sender, EventArgs e)
         {
+            PhoneNumberSearchTextBox.Text = "";
+            FirstNameSearchTextBox.Text = "";
+            LastNameSearchTextBox.Text = "";
+
             if (CustomerIDSearchTextBox.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Customer Id cannot be empty!!!!",
@@ -45,10 +50,11 @@ namespace RentMe.UserControls
                 return;
             }
 
+            StoreMember storeMember = null;
+
             try
             {
-                StoreMember storeMember = this.storeMemberController.GetStoreMemberByCustomerId(customerId);
-                Console.WriteLine(storeMember.ToString());
+                storeMember = this.storeMemberController.GetStoreMemberByCustomerId(customerId);
             }
             catch(Exception ex)
             {
@@ -56,10 +62,23 @@ namespace RentMe.UserControls
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-         }
+            if (storeMember != null)
+            {
+                this.DisplayResults(storeMember);
+            } else
+            {
+                MessageBox.Show("No Customer found!!!! - ",
+                  "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
 
         private void PhoneNumberSearchButton_Click(object sender, EventArgs e)
         {
+            CustomerIDSearchTextBox.Text = "";
+            FirstNameSearchTextBox.Text = "";
+            LastNameSearchTextBox.Text = "";
+
             if (PhoneNumberSearchTextBox.Text.Trim().Length < 10)
             {
                 MessageBox.Show("Phone Number at least has to be 10 characters!!!!",
@@ -68,21 +87,34 @@ namespace RentMe.UserControls
             }
 
             string phoneNumber = PhoneNumberSearchTextBox.Text;
-
+            StoreMember storeMember = null;
             try
             {
-                StoreMember storeMember = this.storeMemberController.GetStoreMemberByPhoneNumber(phoneNumber);
-                Console.WriteLine(storeMember.ToString());
+                storeMember = this.storeMemberController.GetStoreMemberByPhoneNumber(phoneNumber);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error while searching for Store Member!!!! - " + ex.Message,
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            if (storeMember != null)
+            {
+                this.DisplayResults(storeMember);
+            }
+            else
+            {
+                MessageBox.Show("No Customer found!!!! - ",
+                  "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void NameSearchButton_Click(object sender, EventArgs e)
         {
+
+            CustomerIDSearchTextBox.Text = "";
+            PhoneNumberSearchTextBox.Text = "";
+
             if (FirstNameSearchTextBox.Text.Trim().Length < 1 || LastNameSearchTextBox.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Both First Name and Last Name has to be typed!!!!",
@@ -93,21 +125,53 @@ namespace RentMe.UserControls
             string firstName = FirstNameSearchTextBox.Text;
             string lastName = LastNameSearchTextBox.Text;
 
+            StoreMember storeMember = null;
+
             try
             {
-                StoreMember storeMember = this.storeMemberController.GetStoreMemberByName(firstName, lastName);
-                Console.WriteLine(storeMember.ToString());
+                storeMember = this.storeMemberController.GetStoreMemberByName(firstName, lastName);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error while searching for Store Member!!!! - " + ex.Message,
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            if (storeMember != null)
+            {
+                this.DisplayResults(storeMember);
+            }
+            else
+            {
+                MessageBox.Show("No Customer found!!!! - ",
+                  "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        private void displayResults()
+        private void DisplayResults(StoreMember storeMember)
         {
+            this.CustomerIDLabel.Text = Convert.ToString(storeMember.MemberID);
+            this.FirstNameTextBox.Text = storeMember.FirstName;
+            this.LastNameTextBox.Text = storeMember.LastName;
+            this.PhoneNumberTextBox.Text = storeMember.Phone;
+            this.Address1TextBox.Text = storeMember.Address1;
+            this.Address2TextBox.Text = storeMember.Address2;
+            this.CityTextBox.Text = storeMember.City;
+            ComboBoxUtil.UpdateStateComboBox(this.StateComboBox);
+            this.StateComboBox.SelectedItem = storeMember.State;
+            this.ZipCodeTextBox.Text = storeMember.Zip;
+            this.DateOfBirthPicker.Value = storeMember.Dob;
+        }
 
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            if (this.CustomerIDLabel.Text.Length < 1)
+            {
+                MessageBox.Show("Search for a Customer before Saving!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+             
         }
     }
 }

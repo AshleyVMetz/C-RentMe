@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentMe.Model;
 using RentMe.Controller;
+using RentMe.Util;
 
 namespace RentMe.UserControls
 {
@@ -94,56 +95,7 @@ namespace RentMe.UserControls
 
         private void AddStateData()
         {
-            this.StateComboBox.Items.Add("AL");
-            this.StateComboBox.Items.Add("AK");
-            this.StateComboBox.Items.Add("AZ");
-            this.StateComboBox.Items.Add("AR");
-            this.StateComboBox.Items.Add("CA");
-            this.StateComboBox.Items.Add("CO");
-            this.StateComboBox.Items.Add("CT");
-            this.StateComboBox.Items.Add("DE");
-            this.StateComboBox.Items.Add("FL");
-            this.StateComboBox.Items.Add("GA");
-            this.StateComboBox.Items.Add("HI");
-            this.StateComboBox.Items.Add("ID");
-            this.StateComboBox.Items.Add("IL");
-            this.StateComboBox.Items.Add("IN");
-            this.StateComboBox.Items.Add("IA");
-            this.StateComboBox.Items.Add("KS");
-            this.StateComboBox.Items.Add("KY");
-            this.StateComboBox.Items.Add("LA");
-            this.StateComboBox.Items.Add("ME");
-            this.StateComboBox.Items.Add("MD");
-            this.StateComboBox.Items.Add("MA");
-            this.StateComboBox.Items.Add("MI");
-            this.StateComboBox.Items.Add("MN");
-            this.StateComboBox.Items.Add("MS");
-            this.StateComboBox.Items.Add("MO");
-            this.StateComboBox.Items.Add("MT");
-            this.StateComboBox.Items.Add("NE");
-            this.StateComboBox.Items.Add("NV");
-            this.StateComboBox.Items.Add("NH");
-            this.StateComboBox.Items.Add("NJ");
-            this.StateComboBox.Items.Add("NY");
-            this.StateComboBox.Items.Add("NM");
-            this.StateComboBox.Items.Add("NC");
-            this.StateComboBox.Items.Add("ND");
-            this.StateComboBox.Items.Add("OH");
-            this.StateComboBox.Items.Add("OK");
-            this.StateComboBox.Items.Add("OR");
-            this.StateComboBox.Items.Add("PA");
-            this.StateComboBox.Items.Add("RI");
-            this.StateComboBox.Items.Add("SD");
-            this.StateComboBox.Items.Add("ST");
-            this.StateComboBox.Items.Add("TN");
-            this.StateComboBox.Items.Add("TX");
-            this.StateComboBox.Items.Add("UT");
-            this.StateComboBox.Items.Add("VT");
-            this.StateComboBox.Items.Add("VA");
-            this.StateComboBox.Items.Add("WA");
-            this.StateComboBox.Items.Add("WV");
-            this.StateComboBox.Items.Add("WI");
-            this.StateComboBox.Items.Add("WY");
+            ComboBoxUtil.UpdateStateComboBox(this.StateComboBox);
 
             this.StateComboBox.SelectedIndex = 0;
         }

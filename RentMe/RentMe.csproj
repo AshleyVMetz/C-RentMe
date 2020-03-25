@@ -77,6 +77,7 @@
     <Compile Include="UserControls\UpdateEmployee.Designer.cs">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\ComboBoxUtil.cs" />
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -142,7 +142,7 @@ namespace RentMe.DAL
             StoreMember storeMember = null;
 
             string selectStatement =
-                "select * from dbo.StoreMembers WHERE FName = @FirstName and LName = @LastName ";
+                "select * from dbo.StoreMembers WHERE lower(FName) = lower(@FirstName) and lower(LName) = lower(@LastName) ";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
