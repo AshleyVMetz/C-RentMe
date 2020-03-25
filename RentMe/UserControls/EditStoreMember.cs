@@ -171,7 +171,51 @@ namespace RentMe.UserControls
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-             
+
+            var storeMember = new StoreMember
+            {
+                MemberID = Convert.ToInt32(this.CustomerIDLabel.Text),
+                FirstName = this.FirstNameTextBox.Text,
+                LastName = this.LastNameTextBox.Text,
+                Phone = this.PhoneNumberTextBox.Text,
+                Dob = this.DateOfBirthPicker.Value,
+                Address1 = this.Address1TextBox.Text,
+                Address2 = this.Address2TextBox.Text,
+                City = this.CityTextBox.Text,
+                State = this.StateComboBox.Text,
+                Zip = this.ZipCodeTextBox.Text
+            };
+
+            if (Validator.ValidateStoreMember(storeMember))
+            {
+                return;
+            }
+
+            this.storeMemberController.UpdateStoreMember(storeMember);
+
+            MessageBox.Show("Store Member has been Updated",
+                "Store Member Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.ClearAll();
+
+        }
+
+        private void ClearAll()
+        {
+            this.CustomerIDLabel.Text = "";
+            this.FirstNameTextBox.Text = "";
+            this.LastNameTextBox.Text = "";
+            this.PhoneNumberTextBox.Text = "";
+            this.DateOfBirthPicker.Value = DateTime.Today;
+            this.Address1TextBox.Text = "";
+            this.Address2TextBox.Text = "";
+            this.CityTextBox.Text = "";
+            this.ZipCodeTextBox.Text = "";
+            this.StateComboBox.SelectedIndex = 0;
+            CustomerIDSearchTextBox.Text = "";
+            PhoneNumberSearchTextBox.Text = "";
+            FirstNameSearchTextBox.Text = "";
+            LastNameSearchTextBox.Text = "";
         }
     }
 }

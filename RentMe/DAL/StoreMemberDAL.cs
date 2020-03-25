@@ -175,5 +175,43 @@ namespace RentMe.DAL
 
             return storeMember;
         }
+
+        /// <summary>
+        /// Update Store Member Information
+        /// </summary>
+        /// <param name="storeMember">Store Member Object</param>
+        /// <returns>true if storeMember got successfully updated else false</returns>
+        public Boolean UpdateStoreMember(StoreMember storeMember)
+        {
+            string sqlStatement = "UPDATE dbo.StoreMembers set FName = @FName, LName = @LName, Phone = @Phone, Address1 = @Address1, Address2 = @Address2, City=@City, State=@State, ZipCode=@ZipCode, DOB=@DOB WHERE MemberID=@MemberId ";
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand(sqlStatement, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@FName", storeMember.FirstName);
+                    sqlCommand.Parameters.AddWithValue("@LName", storeMember.LastName);
+                    sqlCommand.Parameters.AddWithValue("@Phone", storeMember.Phone);
+                    sqlCommand.Parameters.AddWithValue("@Address1", storeMember.Address1);
+                    sqlCommand.Parameters.AddWithValue("@Address2", storeMember.Address2);
+                    sqlCommand.Parameters.AddWithValue("@City", storeMember.City);
+                    sqlCommand.Parameters.AddWithValue("@State", storeMember.State);
+                    sqlCommand.Parameters.AddWithValue("@ZipCode", storeMember.Zip);
+                    sqlCommand.Parameters.AddWithValue("@DOB", storeMember.Dob);
+                    sqlCommand.Parameters.AddWithValue("@MemberId", storeMember.MemberID);
+
+                    int execution = sqlCommand.ExecuteNonQuery();
+
+                    if (execution > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }  

@@ -65,5 +65,15 @@ namespace RentMe.Controller
             return this.storeMemberDAL.GetStoreMemberByName(firstName, lastName);
         }
 
-     }
+        /// <summary>
+        /// Update Store Member Information
+        /// </summary>
+        /// <param name="storeMember">Store Member Object</param>
+        /// <returns>true if storeMember got successfully updated else false</returns>
+        public Boolean UpdateStoreMember(StoreMember storeMember)
+        {
+            return this.storeMemberDAL.UpdateStoreMember(storeMember);
+        }
+
+    }
 }

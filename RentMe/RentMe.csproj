@@ -78,6 +78,7 @@
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\ComboBoxUtil.cs" />
+    <Compile Include="Util\Validator.cs" />
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
