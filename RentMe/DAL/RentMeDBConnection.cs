@@ -19,7 +19,7 @@ namespace RentMe.DAL
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=localhost;Initial Catalog=RentMe;" +
+                "Data Source=localhost;Initial Catalog=CS6232-g2;" +
                 "Integrated Security=True";
 
 

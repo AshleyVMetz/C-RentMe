@@ -47,5 +47,133 @@ namespace RentMe.DAL
 
             return false;
         }
+
+        /// <summary>
+        /// Get Store Member details using Customer Id
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns>StoreMember Object</returns>
+        public StoreMember GetStoreMemberByCustomerId(int customerId)
+        {
+            StoreMember storeMember = null;
+
+            string selectStatement =
+                "select * from dbo.StoreMembers WHERE MemberID = @MemberID ";
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@MemberID", customerId);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            storeMember = new StoreMember();
+                            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
+                            storeMember.FirstName = reader["FName"].ToString();
+                            storeMember.LastName = reader["LName"].ToString();
+                            storeMember.Phone = reader["Phone"].ToString();
+                            storeMember.Address1 = reader["Address1"].ToString();
+                            storeMember.Address2 = reader["Address2"].ToString();
+                            storeMember.City = reader["City"].ToString();
+                            storeMember.State = reader["State"].ToString();
+                            storeMember.Zip = reader["ZipCode"].ToString();
+                            storeMember.Dob = (DateTime)reader["DOB"];
+                        }
+                    }
+                }
+            }
+
+            return storeMember;
+        }
+
+        /// <summary>
+        /// Get Store Member details using Phone Number
+        /// </summary>
+        /// <param name="phoneNumber"></param>
+        /// <returns>StoreMember Object</returns>
+        public StoreMember GetStoreMemberByPhoneNumber(string phoneNumber)
+        {
+            StoreMember storeMember = null;
+
+            string selectStatement =
+                "select * from dbo.StoreMembers WHERE Phone = @Phone ";
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@Phone", phoneNumber);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            storeMember = new StoreMember();
+                            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
+                            storeMember.FirstName = reader["FName"].ToString();
+                            storeMember.LastName = reader["LName"].ToString();
+                            storeMember.Phone = reader["Phone"].ToString();
+                            storeMember.Address1 = reader["Address1"].ToString();
+                            storeMember.Address2 = reader["Address2"].ToString();
+                            storeMember.City = reader["City"].ToString();
+                            storeMember.State = reader["State"].ToString();
+                            storeMember.Zip = reader["ZipCode"].ToString();
+                            storeMember.Dob = (DateTime)reader["DOB"];
+                        }
+                    }
+                }
+            }
+
+            return storeMember;
+        }
+
+        /// <summary>
+        /// Get Store Member details using Name
+        /// </summary>
+        /// <param name="phoneNumber"></param>
+        /// <returns>StoreMember Object</returns>
+        public StoreMember GetStoreMemberByName(string firstName, string lastName)
+        {
+            StoreMember storeMember = null;
+
+            string selectStatement =
+                "select * from dbo.StoreMembers WHERE FName = @FirstName and LName = @LastName ";
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@FirstName", firstName);
+                    selectCommand.Parameters.AddWithValue("@LastName", lastName);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            storeMember = new StoreMember();
+                            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
+                            storeMember.FirstName = reader["FName"].ToString();
+                            storeMember.LastName = reader["LName"].ToString();
+                            storeMember.Phone = reader["Phone"].ToString();
+                            storeMember.Address1 = reader["Address1"].ToString();
+                            storeMember.Address2 = reader["Address2"].ToString();
+                            storeMember.City = reader["City"].ToString();
+                            storeMember.State = reader["State"].ToString();
+                            storeMember.Zip = reader["ZipCode"].ToString();
+                            storeMember.Dob = (DateTime)reader["DOB"];
+                        }
+                    }
+                }
+            }
+
+            return storeMember;
+        }
     }
-}
+}  

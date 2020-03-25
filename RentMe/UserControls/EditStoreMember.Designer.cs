@@ -87,6 +87,7 @@
             this.CustomerIDSearchButton.TabIndex = 2;
             this.CustomerIDSearchButton.Text = "Search";
             this.CustomerIDSearchButton.UseVisualStyleBackColor = true;
+            this.CustomerIDSearchButton.Click += new System.EventHandler(this.CustomerIDSearchButton_Click);
             // 
             // PhoneNumberSearchTextBox
             // 
@@ -112,6 +113,7 @@
             this.PhoneNumberSearchButton.TabIndex = 5;
             this.PhoneNumberSearchButton.Text = "Search";
             this.PhoneNumberSearchButton.UseVisualStyleBackColor = true;
+            this.PhoneNumberSearchButton.Click += new System.EventHandler(this.PhoneNumberSearchButton_Click);
             // 
             // FirstNameSearchTextBox
             // 
@@ -153,6 +155,7 @@
             this.NameSearchButton.TabIndex = 10;
             this.NameSearchButton.Text = "Search";
             this.NameSearchButton.UseVisualStyleBackColor = true;
+            this.NameSearchButton.Click += new System.EventHandler(this.NameSearchButton_Click);
             // 
             // label4
             // 
@@ -374,7 +377,6 @@
             this.Controls.Add(this.Label7);
             this.Name = "EditStoreMember";
             this.Size = new System.Drawing.Size(473, 608);
-            this.Load += new System.EventHandler(this.EditStoreMember_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

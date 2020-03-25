@@ -34,5 +34,36 @@ namespace RentMe.Controller
             }
 
         }
-    }
+
+        /// <summary>
+        /// Get Store Member details using Customer Id
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns>StoreMember Object</returns>
+        public StoreMember GetStoreMemberByCustomerId(int customerId)
+        {
+            return this.storeMemberDAL.GetStoreMemberByCustomerId(customerId);
+        }
+
+        /// <summary>
+        /// Get Store Member details using Phone Number
+        /// </summary>
+        /// <param name="phoneNumber"></param>
+        /// <returns>StoreMember Object</returns>
+        public StoreMember GetStoreMemberByPhoneNumber(string phoneNumber)
+        {
+            return this.storeMemberDAL.GetStoreMemberByPhoneNumber(phoneNumber);
+        }
+
+        /// <summary>
+        /// Get Store Member details using Name
+        /// </summary>
+        /// <param name="phoneNumber"></param>
+        /// <returns>StoreMember Object</returns>
+        public StoreMember GetStoreMemberByName(string firstName, string lastName)
+        {
+            return this.storeMemberDAL.GetStoreMemberByName(firstName, lastName);
+        }
+
+     }
 }
