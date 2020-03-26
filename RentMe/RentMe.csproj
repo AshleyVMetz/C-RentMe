@@ -74,6 +74,12 @@
     <Compile Include="UserControls\EditStoreMember.Designer.cs">
       <DependentUpon>EditStoreMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UpdateEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EditStoreMember.resx">
       <DependentUpon>EditStoreMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateEmployee.resx">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>

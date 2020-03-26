@@ -30,17 +30,21 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.AddStoreMember = new System.Windows.Forms.TabPage();
-            this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
             this.EditStoreMember = new System.Windows.Forms.TabPage();
             this.labelUser = new System.Windows.Forms.Label();
+            this.Home = new System.Windows.Forms.TabPage();
+            this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
             this.editStoreMember2 = new RentMe.UserControls.EditStoreMember();
+            this.home1 = new RentMe.UserControls.Home();
             this.tabControl1.SuspendLayout();
             this.AddStoreMember.SuspendLayout();
             this.EditStoreMember.SuspendLayout();
+            this.Home.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.Home);
             this.tabControl1.Controls.Add(this.AddStoreMember);
             this.tabControl1.Controls.Add(this.EditStoreMember);
             this.tabControl1.Location = new System.Drawing.Point(0, 31);
@@ -59,14 +63,6 @@
             this.AddStoreMember.TabIndex = 0;
             this.AddStoreMember.Text = "Add Store Member";
             this.AddStoreMember.UseVisualStyleBackColor = true;
-            // 
-            // addCustomer1
-            // 
-            this.addCustomer1.Location = new System.Drawing.Point(0, 6);
-            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.addCustomer1.Name = "addCustomer1";
-            this.addCustomer1.Size = new System.Drawing.Size(437, 449);
-            this.addCustomer1.TabIndex = 0;
             // 
             // EditStoreMember
             // 
@@ -88,12 +84,38 @@
             this.labelUser.Size = new System.Drawing.Size(0, 13);
             this.labelUser.TabIndex = 1;
             // 
+            // Home
+            // 
+            this.Home.Controls.Add(this.home1);
+            this.Home.Location = new System.Drawing.Point(4, 22);
+            this.Home.Name = "Home";
+            this.Home.Padding = new System.Windows.Forms.Padding(3);
+            this.Home.Size = new System.Drawing.Size(636, 638);
+            this.Home.TabIndex = 2;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            // 
+            // addCustomer1
+            // 
+            this.addCustomer1.Location = new System.Drawing.Point(0, 6);
+            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4);
+            this.addCustomer1.Name = "addCustomer1";
+            this.addCustomer1.Size = new System.Drawing.Size(437, 449);
+            this.addCustomer1.TabIndex = 0;
+            // 
             // editStoreMember2
             // 
             this.editStoreMember2.Location = new System.Drawing.Point(58, 3);
             this.editStoreMember2.Name = "editStoreMember2";
             this.editStoreMember2.Size = new System.Drawing.Size(473, 608);
             this.editStoreMember2.TabIndex = 0;
+            // 
+            // home1
+            // 
+            this.home1.Location = new System.Drawing.Point(22, 0);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(504, 542);
+            this.home1.TabIndex = 0;
             // 
             // EmployeeDashboard
             // 
@@ -107,6 +129,7 @@
             this.tabControl1.ResumeLayout(false);
             this.AddStoreMember.ResumeLayout(false);
             this.EditStoreMember.ResumeLayout(false);
+            this.Home.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +144,8 @@
         private UserControls.EditStoreMember editStoreMember1;
         private System.Windows.Forms.Label labelUser;
         private UserControls.EditStoreMember editStoreMember2;
+        private System.Windows.Forms.TabPage Home;
+        private UserControls.Home home1;
     }
 }
 
