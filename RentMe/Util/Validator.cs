@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using RentMe.Model;
 
@@ -26,7 +27,9 @@ namespace RentMe.Util
                 return true;
             }
 
-            if (storeMember.Phone.Trim().Length < 10)
+            string phoneNumber = Regex.Replace(storeMember.Phone, @"[^0-9]+", "");
+
+            if (phoneNumber.Length != 10)
             {
                 MessageBox.Show("Phone should contain 10 digits!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);

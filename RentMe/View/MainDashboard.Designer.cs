@@ -33,48 +33,48 @@
             this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
             this.EditStoreMember = new System.Windows.Forms.TabPage();
             this.labelUser = new System.Windows.Forms.Label();
+            this.editStoreMember2 = new RentMe.UserControls.EditStoreMember();
             this.tabControl1.SuspendLayout();
             this.AddStoreMember.SuspendLayout();
+            this.EditStoreMember.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.AddStoreMember);
             this.tabControl1.Controls.Add(this.EditStoreMember);
-            this.tabControl1.Location = new System.Drawing.Point(0, 38);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(859, 817);
+            this.tabControl1.Size = new System.Drawing.Size(644, 664);
             this.tabControl1.TabIndex = 0;
             // 
             // AddStoreMember
             // 
             this.AddStoreMember.Controls.Add(this.addCustomer1);
-            this.AddStoreMember.Location = new System.Drawing.Point(4, 25);
-            this.AddStoreMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddStoreMember.Location = new System.Drawing.Point(4, 22);
             this.AddStoreMember.Name = "AddStoreMember";
-            this.AddStoreMember.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AddStoreMember.Size = new System.Drawing.Size(851, 788);
+            this.AddStoreMember.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.AddStoreMember.Size = new System.Drawing.Size(636, 638);
             this.AddStoreMember.TabIndex = 0;
             this.AddStoreMember.Text = "Add Store Member";
             this.AddStoreMember.UseVisualStyleBackColor = true;
             // 
             // addCustomer1
             // 
-            this.addCustomer1.Location = new System.Drawing.Point(0, 7);
-            this.addCustomer1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.addCustomer1.Location = new System.Drawing.Point(0, 6);
+            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addCustomer1.Name = "addCustomer1";
-            this.addCustomer1.Size = new System.Drawing.Size(583, 553);
+            this.addCustomer1.Size = new System.Drawing.Size(437, 449);
             this.addCustomer1.TabIndex = 0;
             // 
             // EditStoreMember
             // 
-            this.EditStoreMember.Location = new System.Drawing.Point(4, 25);
-            this.EditStoreMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditStoreMember.Controls.Add(this.editStoreMember2);
+            this.EditStoreMember.Location = new System.Drawing.Point(4, 22);
             this.EditStoreMember.Name = "EditStoreMember";
-            this.EditStoreMember.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditStoreMember.Size = new System.Drawing.Size(851, 788);
+            this.EditStoreMember.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.EditStoreMember.Size = new System.Drawing.Size(636, 638);
             this.EditStoreMember.TabIndex = 1;
             this.EditStoreMember.Text = "Edit Store Member";
             this.EditStoreMember.UseVisualStyleBackColor = true;
@@ -82,23 +82,31 @@
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(654, 17);
+            this.labelUser.Location = new System.Drawing.Point(490, 14);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 17);
+            this.labelUser.Size = new System.Drawing.Size(0, 13);
             this.labelUser.TabIndex = 1;
+            // 
+            // editStoreMember2
+            // 
+            this.editStoreMember2.Location = new System.Drawing.Point(58, 3);
+            this.editStoreMember2.Name = "editStoreMember2";
+            this.editStoreMember2.Size = new System.Drawing.Size(473, 608);
+            this.editStoreMember2.TabIndex = 0;
             // 
             // EmployeeDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 852);
+            this.ClientSize = new System.Drawing.Size(645, 666);
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeDashboard";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.AddStoreMember.ResumeLayout(false);
+            this.EditStoreMember.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +120,7 @@
         private UserControls.AddStoreMember addCustomer1;
         private UserControls.EditStoreMember editStoreMember1;
         private System.Windows.Forms.Label labelUser;
+        private UserControls.EditStoreMember editStoreMember2;
     }
 }
 

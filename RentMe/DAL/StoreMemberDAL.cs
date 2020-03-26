@@ -1,10 +1,6 @@
 ﻿using RentMe.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RentMe.DAL
 {
@@ -18,7 +14,7 @@ namespace RentMe.DAL
         /// <returns>true if record got inserted, else false</returns>
         public Boolean AddStoreMember(StoreMember StoreMember)
         {
-            string sqlStatement = "INSERT INTO RentMe.dbo.StoreMember (fName, lName, dob, phone, address1, address2, city, state, zip) " +
+            string sqlStatement = "INSERT INTO dbo.StoreMember (fName, lName, dob, phone, address1, address2, city, state, zip) " +
                 "VALUES (@FirstName, @LastName, @Dob, @Phone, @Address1, @Address2, @City, @State, @Zip)";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
