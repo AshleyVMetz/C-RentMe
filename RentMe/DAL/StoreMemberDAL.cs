@@ -213,5 +213,34 @@ namespace RentMe.DAL
 
             return false;
         }
+
+        /// <summary>
+        /// Delete Store Member Information
+        /// </summary>
+        /// <param name="storeMemberId">Store Member Id</param>
+        /// <returns>true if storeMember got successfully deleted else false</returns>
+        public Boolean DeleteStoreMember(int storeMemberId)
+        {
+            string sqlStatement = "DELETE FROM dbo.StoreMembers WHERE MemberID=@MemberId ";
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand(sqlStatement, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@MemberId", storeMemberId);
+
+                    int execution = sqlCommand.ExecuteNonQuery();
+
+                    if (execution > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }  
