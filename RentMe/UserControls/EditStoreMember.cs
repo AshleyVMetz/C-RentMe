@@ -219,7 +219,7 @@ namespace RentMe.UserControls
             this.Address2TextBox.Text = "";
             this.CityTextBox.Text = "";
             this.ZipCodeTextBox.Text = "";
-            this.StateComboBox.SelectedIndex = 0;
+            this.StateComboBox.Items.Clear();
             CustomerIDSearchTextBox.Text = "";
             PhoneNumberSearchTextBox.Text = "";
             FirstNameSearchTextBox.Text = "";
@@ -254,6 +254,11 @@ namespace RentMe.UserControls
             MessageBox.Show("Store Member has been Deleted",
                 "Store Member Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            this.ClearAll();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
             this.ClearAll();
         }
     }
