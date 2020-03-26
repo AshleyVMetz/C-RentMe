@@ -191,8 +191,16 @@ namespace RentMe.UserControls
                 return;
             }
 
-            this.storeMemberController.UpdateStoreMember(storeMember);
-
+            try
+            {
+                this.storeMemberController.UpdateStoreMember(storeMember);
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Error while updating Store Member!!!! - " + ex.Message,
+                   "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             MessageBox.Show("Store Member has been Updated",
                 "Store Member Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
