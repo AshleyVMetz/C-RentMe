@@ -10,9 +10,10 @@ namespace RentMe.View
         /// <summary>
         /// Constructor method.
         /// </summary>
-        public AdminDashboard()
+        public AdminDashboard(string username)
         {
             InitializeComponent();
+            labeluser.Text = username;
         }
     }
 }

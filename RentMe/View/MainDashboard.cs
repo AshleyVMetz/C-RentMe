@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace RentMe
 {
-    public partial class Form1 : Form
+    public partial class EmployeeDashboard : Form
     {
-        public Form1()
+        public EmployeeDashboard(string username)
         {
             InitializeComponent();
+            labelUser.Text = username;
         }
     }
 }
