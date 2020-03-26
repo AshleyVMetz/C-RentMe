@@ -68,12 +68,20 @@
     <Compile Include="UserControls\AddStoreMember.Designer.cs">
       <DependentUpon>AddStoreMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EditStoreMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditStoreMember.Designer.cs">
+      <DependentUpon>EditStoreMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UpdateEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UpdateEmployee.Designer.cs">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\ComboBoxUtil.cs" />
+    <Compile Include="Util\Validator.cs" />
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddStoreMember.resx">
       <DependentUpon>AddStoreMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditStoreMember.resx">
+      <DependentUpon>EditStoreMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateEmployee.resx">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
