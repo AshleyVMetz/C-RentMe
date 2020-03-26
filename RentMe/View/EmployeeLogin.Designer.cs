@@ -32,8 +32,8 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.EmployeeLoginButton = new System.Windows.Forms.Button();
+            this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // employeeLabel
@@ -73,13 +73,6 @@
             this.usernameTextBox.Size = new System.Drawing.Size(283, 22);
             this.usernameTextBox.TabIndex = 3;
             // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(239, 151);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(283, 22);
-            this.passwordTextBox.TabIndex = 4;
-            // 
             // EmployeeLoginButton
             // 
             this.EmployeeLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,13 +84,22 @@
             this.EmployeeLoginButton.UseVisualStyleBackColor = true;
             this.EmployeeLoginButton.Click += new System.EventHandler(this.EmployeeLoginButton_Click);
             // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.HidePromptOnLeave = true;
+            this.passwordTextBox.Location = new System.Drawing.Point(239, 152);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(283, 22);
+            this.passwordTextBox.TabIndex = 6;
+            // 
             // EmployeeLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 261);
-            this.Controls.Add(this.EmployeeLoginButton);
             this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.EmployeeLoginButton);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
@@ -115,7 +117,7 @@
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button EmployeeLoginButton;
+        private System.Windows.Forms.MaskedTextBox passwordTextBox;
     }
 }
