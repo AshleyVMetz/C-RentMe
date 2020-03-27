@@ -34,5 +34,36 @@ namespace RentMe.Controller
             return this.furnitureDAL.GetCategories();
         }
 
+        /// <summary>
+        /// Get Furnitures using Serial Number
+        /// </summary>
+        /// <param name="serialNumber"></param>
+        /// <returns>Furniture List</returns>
+        public List<Furniture> GetFurnituresBySerialNumber(string serialNumber)
+        {
+            return this.furnitureDAL.GetFurnituresBySerialNumber(serialNumber);
+        }
+
+        /// <summary>
+        /// Get Furnitures using Style
+        /// </summary>
+        /// <param name="styleId"></param>
+        /// <returns>Furniture List</returns>
+        public List<Furniture> GetFurnituresByStyle(string styleId)
+        {
+            return this.furnitureDAL.GetFurnituresByStyle(styleId);
+        }
+
+        /// <summary>
+        /// Get Furnitures using Category
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns>Furniture List</returns>
+        public List<Furniture> GetFurnituresByCategory(string categoryId)
+        {
+            return this.furnitureDAL.GetFurnituresByCategory(categoryId);
+        }
+
+
     }
 }

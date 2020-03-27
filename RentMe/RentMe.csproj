@@ -55,6 +55,7 @@
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\RentMeDBConnection.cs" />
     <Compile Include="DAL\StoreMemberDAL.cs" />
+    <Compile Include="Model\Furniture.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\StoreMember.cs" />
