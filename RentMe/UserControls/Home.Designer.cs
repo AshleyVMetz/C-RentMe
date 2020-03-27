@@ -84,21 +84,25 @@
             // 
             // StyleComboBox
             // 
+            this.StyleComboBox.DisplayMember = "Text";
             this.StyleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StyleComboBox.FormattingEnabled = true;
             this.StyleComboBox.Location = new System.Drawing.Point(125, 71);
             this.StyleComboBox.Name = "StyleComboBox";
             this.StyleComboBox.Size = new System.Drawing.Size(187, 21);
             this.StyleComboBox.TabIndex = 25;
+            this.StyleComboBox.ValueMember = "Value";
             // 
             // CategoryComboBox
             // 
+            this.CategoryComboBox.DisplayMember = "Text";
             this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryComboBox.FormattingEnabled = true;
             this.CategoryComboBox.Location = new System.Drawing.Point(125, 108);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(187, 21);
             this.CategoryComboBox.TabIndex = 28;
+            this.CategoryComboBox.ValueMember = "Value";
             // 
             // CategorySearchButton
             // 
