@@ -112,9 +112,9 @@
             // 
             // home1
             // 
-            this.home1.Location = new System.Drawing.Point(22, 0);
+            this.home1.Location = new System.Drawing.Point(22, 3);
             this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(504, 542);
+            this.home1.Size = new System.Drawing.Size(590, 486);
             this.home1.TabIndex = 0;
             // 
             // EmployeeDashboard
@@ -141,7 +141,6 @@
         private System.Windows.Forms.TabPage AddStoreMember;
         private System.Windows.Forms.TabPage EditStoreMember;
         private UserControls.AddStoreMember addCustomer1;
-        private UserControls.EditStoreMember editStoreMember1;
         private System.Windows.Forms.Label labelUser;
         private UserControls.EditStoreMember editStoreMember2;
         private System.Windows.Forms.TabPage Home;

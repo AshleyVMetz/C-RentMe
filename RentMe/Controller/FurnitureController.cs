@@ -49,7 +49,7 @@ namespace RentMe.Controller
         /// </summary>
         /// <param name="styleId"></param>
         /// <returns>Furniture List</returns>
-        public List<Furniture> GetFurnituresByStyle(string styleId)
+        public List<Furniture> GetFurnituresByStyle(int styleId)
         {
             return this.furnitureDAL.GetFurnituresByStyle(styleId);
         }
@@ -59,7 +59,7 @@ namespace RentMe.Controller
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns>Furniture List</returns>
-        public List<Furniture> GetFurnituresByCategory(string categoryId)
+        public List<Furniture> GetFurnituresByCategory(int categoryId)
         {
             return this.furnitureDAL.GetFurnituresByCategory(categoryId);
         }

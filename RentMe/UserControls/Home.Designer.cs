@@ -37,20 +37,30 @@
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.CategorySearchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.FurnitureListView = new System.Windows.Forms.ListView();
+            this.SerialNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Style = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DialyRentalRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FineRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SerialNumberSearchButton
             // 
-            this.SerialNumberSearchButton.Location = new System.Drawing.Point(340, 30);
+            this.SerialNumberSearchButton.Location = new System.Drawing.Point(374, 30);
             this.SerialNumberSearchButton.Name = "SerialNumberSearchButton";
             this.SerialNumberSearchButton.Size = new System.Drawing.Size(96, 23);
             this.SerialNumberSearchButton.TabIndex = 5;
             this.SerialNumberSearchButton.Text = "Search";
             this.SerialNumberSearchButton.UseVisualStyleBackColor = true;
+            this.SerialNumberSearchButton.Click += new System.EventHandler(this.SerialNumberSearchButton_Click);
             // 
             // SerialNumberTextBox
             // 
-            this.SerialNumberTextBox.Location = new System.Drawing.Point(125, 34);
+            this.SerialNumberTextBox.Location = new System.Drawing.Point(159, 34);
             this.SerialNumberTextBox.Name = "SerialNumberTextBox";
             this.SerialNumberTextBox.Size = new System.Drawing.Size(187, 20);
             this.SerialNumberTextBox.TabIndex = 4;
@@ -58,7 +68,7 @@
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(31, 37);
+            this.Label7.Location = new System.Drawing.Point(65, 37);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(76, 13);
             this.Label7.TabIndex = 3;
@@ -66,17 +76,18 @@
             // 
             // StyleSearchButton
             // 
-            this.StyleSearchButton.Location = new System.Drawing.Point(340, 67);
+            this.StyleSearchButton.Location = new System.Drawing.Point(374, 67);
             this.StyleSearchButton.Name = "StyleSearchButton";
             this.StyleSearchButton.Size = new System.Drawing.Size(96, 23);
             this.StyleSearchButton.TabIndex = 8;
             this.StyleSearchButton.Text = "Search";
             this.StyleSearchButton.UseVisualStyleBackColor = true;
+            this.StyleSearchButton.Click += new System.EventHandler(this.StyleSearchButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 74);
+            this.label1.Location = new System.Drawing.Point(65, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 6;
@@ -87,7 +98,7 @@
             this.StyleComboBox.DisplayMember = "Text";
             this.StyleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StyleComboBox.FormattingEnabled = true;
-            this.StyleComboBox.Location = new System.Drawing.Point(125, 71);
+            this.StyleComboBox.Location = new System.Drawing.Point(159, 71);
             this.StyleComboBox.Name = "StyleComboBox";
             this.StyleComboBox.Size = new System.Drawing.Size(187, 21);
             this.StyleComboBox.TabIndex = 25;
@@ -98,7 +109,7 @@
             this.CategoryComboBox.DisplayMember = "Text";
             this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Location = new System.Drawing.Point(125, 108);
+            this.CategoryComboBox.Location = new System.Drawing.Point(159, 108);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(187, 21);
             this.CategoryComboBox.TabIndex = 28;
@@ -106,26 +117,88 @@
             // 
             // CategorySearchButton
             // 
-            this.CategorySearchButton.Location = new System.Drawing.Point(340, 104);
+            this.CategorySearchButton.Location = new System.Drawing.Point(374, 104);
             this.CategorySearchButton.Name = "CategorySearchButton";
             this.CategorySearchButton.Size = new System.Drawing.Size(96, 23);
             this.CategorySearchButton.TabIndex = 27;
             this.CategorySearchButton.Text = "Search";
             this.CategorySearchButton.UseVisualStyleBackColor = true;
+            this.CategorySearchButton.Click += new System.EventHandler(this.CategorySearchButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 111);
+            this.label2.Location = new System.Drawing.Point(65, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Category:";
             // 
+            // FurnitureListView
+            // 
+            this.FurnitureListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.SerialNumber,
+            this.Description,
+            this.Style,
+            this.Category,
+            this.Quantity,
+            this.DialyRentalRate,
+            this.FineRate});
+            this.FurnitureListView.HideSelection = false;
+            this.FurnitureListView.Location = new System.Drawing.Point(3, 194);
+            this.FurnitureListView.Name = "FurnitureListView";
+            this.FurnitureListView.Size = new System.Drawing.Size(584, 270);
+            this.FurnitureListView.TabIndex = 29;
+            this.FurnitureListView.UseCompatibleStateImageBehavior = false;
+            this.FurnitureListView.View = System.Windows.Forms.View.Details;
+            // 
+            // SerialNumber
+            // 
+            this.SerialNumber.Text = "Serial #";
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 120;
+            // 
+            // Style
+            // 
+            this.Style.Text = "Style";
+            this.Style.Width = 100;
+            // 
+            // Category
+            // 
+            this.Category.Text = "Category";
+            this.Category.Width = 100;
+            // 
+            // Quantity
+            // 
+            this.Quantity.Text = "Quantity Available";
+            // 
+            // DialyRentalRate
+            // 
+            this.DialyRentalRate.Text = "Daily Rate";
+            // 
+            // FineRate
+            // 
+            this.FineRate.Text = "Fine Rate";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Results :";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.FurnitureListView);
             this.Controls.Add(this.CategoryComboBox);
             this.Controls.Add(this.CategorySearchButton);
             this.Controls.Add(this.label2);
@@ -136,7 +209,7 @@
             this.Controls.Add(this.SerialNumberTextBox);
             this.Controls.Add(this.Label7);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(487, 482);
+            this.Size = new System.Drawing.Size(590, 486);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +226,14 @@
         private System.Windows.Forms.ComboBox CategoryComboBox;
         private System.Windows.Forms.Button CategorySearchButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView FurnitureListView;
+        private System.Windows.Forms.ColumnHeader SerialNumber;
+        private System.Windows.Forms.ColumnHeader Description;
+        private System.Windows.Forms.ColumnHeader Style;
+        private System.Windows.Forms.ColumnHeader Category;
+        private System.Windows.Forms.ColumnHeader Quantity;
+        private System.Windows.Forms.ColumnHeader DialyRentalRate;
+        private System.Windows.Forms.ColumnHeader FineRate;
+        private System.Windows.Forms.Label label3;
     }
 }

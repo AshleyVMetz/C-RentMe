@@ -15,9 +15,9 @@ namespace RentMe.Model
 
         public string Description { get; set; }
 
-        public float FineRate { get; set; }
+        public Double FineRate { get; set; }
 
-        public float DailyRentalRate { get; set; }
+        public Double DailyRentalRate { get; set; }
 
         public int Quantity { get; set; }
 

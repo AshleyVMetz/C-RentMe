@@ -92,7 +92,7 @@ namespace RentMe.DAL
                 "select Serial#, f.Description, Quantity, FineRate, DailyRentalRate, s.Description as Style, c.Description as Category  from dbo.FurnitureItem f " +
                 "JOIN dbo.Style s on f.StyleID = s.StyleID " +
                 "JOIN dbo.Category c on f.CategoryID = c.CategoryID " +
-                "WHERE f.Serial# = @SerialNumber ";
+                "WHERE lower(f.Serial#) = lower(@SerialNumber) ";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
@@ -108,9 +108,9 @@ namespace RentMe.DAL
                             Furniture furniture = new Furniture();
                             furniture.SerialNumber = reader["Serial#"].ToString();
                             furniture.Description = reader["Description"].ToString();
-                            furniture.Quantity = (int)reader["Quantity"];
-                            furniture.FineRate = (float)reader["FineRate"];
-                            furniture.DailyRentalRate = (float)reader["DailyRentalRate"];
+                            furniture.Quantity = (int)reader["Quantity"]; 
+                            furniture.FineRate = Convert.ToDouble(reader["FineRate"]);
+                            furniture.DailyRentalRate = Convert.ToDouble(reader["DailyRentalRate"]);
                             furniture.Style = reader["Style"].ToString();
                             furniture.Category = reader["Category"].ToString();
 
@@ -128,7 +128,7 @@ namespace RentMe.DAL
         /// </summary>
         /// <param name="styleId"></param>
         /// <returns>Furniture List</returns>
-        public List<Furniture> GetFurnituresByStyle(string styleId)
+        public List<Furniture> GetFurnituresByStyle(int styleId)
         {
             List<Furniture> furnitureList = new List<Furniture>();
 
@@ -153,8 +153,8 @@ namespace RentMe.DAL
                             furniture.SerialNumber = reader["Serial#"].ToString();
                             furniture.Description = reader["Description"].ToString();
                             furniture.Quantity = (int)reader["Quantity"];
-                            furniture.FineRate = (float)reader["FineRate"];
-                            furniture.DailyRentalRate = (float)reader["DailyRentalRate"];
+                            furniture.FineRate = Convert.ToDouble(reader["FineRate"]);
+                            furniture.DailyRentalRate = Convert.ToDouble(reader["DailyRentalRate"]);
                             furniture.Style = reader["Style"].ToString();
                             furniture.Category = reader["Category"].ToString();
 
@@ -172,7 +172,7 @@ namespace RentMe.DAL
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns>Furniture List</returns>
-        public List<Furniture> GetFurnituresByCategory(string categoryId)
+        public List<Furniture> GetFurnituresByCategory(int categoryId)
         {
             List<Furniture> furnitureList = new List<Furniture>();
 
@@ -197,8 +197,8 @@ namespace RentMe.DAL
                             furniture.SerialNumber = reader["Serial#"].ToString();
                             furniture.Description = reader["Description"].ToString();
                             furniture.Quantity = (int)reader["Quantity"];
-                            furniture.FineRate = (float)reader["FineRate"];
-                            furniture.DailyRentalRate = (float)reader["DailyRentalRate"];
+                            furniture.FineRate = Convert.ToDouble(reader["FineRate"]);
+                            furniture.DailyRentalRate = Convert.ToDouble(reader["DailyRentalRate"]);
                             furniture.Style = reader["Style"].ToString();
                             furniture.Category = reader["Category"].ToString();
 
