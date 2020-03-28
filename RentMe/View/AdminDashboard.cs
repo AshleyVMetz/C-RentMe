@@ -7,14 +7,19 @@ namespace RentMe.View
     /// </summary>
     public partial class AdminDashboard : Form
     {
+        Form previousForm = null;
         /// <summary>
         /// Constructor method.
         /// </summary>
         /// <param name="username">The username of the logged in user.</param>
-        public AdminDashboard(string username)
+        public AdminDashboard(string username, string fName, Form form)
+      
         {
             InitializeComponent();
             labeluser.Text = username;
+            userFirstNameLabel.Text = fName;
+            this.previousForm = form;
+
         }
 
         /// <summary>
@@ -24,10 +29,15 @@ namespace RentMe.View
         /// <param name="e"></param>
         private void LogoutButton_Click(object sender, System.EventArgs e)
         {
-            Form loginForm = new EmployeeLogin();
-            this.Hide();
-            loginForm.ShowDialog();
-            this.Close();
+            this.Visible = false;
+            previousForm.Visible = true;
+
+        }
+
+        private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            previousForm.Close();
+          
         }
     }
 }

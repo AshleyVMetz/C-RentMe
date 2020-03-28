@@ -9,6 +9,9 @@ namespace RentMe
 {
     static class Program
     {
+        
+
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,6 +21,8 @@ namespace RentMe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EmployeeLogin());
+
+          
         }
     }
 }

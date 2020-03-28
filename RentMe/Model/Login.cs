@@ -3,10 +3,9 @@
     /// <summary>
     /// This class models a login
     /// </summary>
-    public class Login
+    public class LoginResult
     {
-        public string Username { get; }
-        public string Password { get; }
-        public bool IsAdmin { get; }
+        public string FName { get; set; }
+        public bool? IsAdmin { get; set; }
     }
 }

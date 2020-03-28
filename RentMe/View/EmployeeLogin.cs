@@ -5,15 +5,24 @@ using System.Windows.Forms;
 
 namespace RentMe.View
 {
+    /// <summary>
+    /// This class is for the login form view
+    /// </summary>
     public partial class EmployeeLogin : Form
     {
         private readonly LoginController controller;
+
         public EmployeeLogin()
         {
             InitializeComponent();
             this.controller = new LoginController();
         }
 
+        /// <summary>
+        /// This method checks the user's entered data when the login button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EmployeeLoginButton_Click(object sender, EventArgs e)
         {
             try
@@ -35,16 +44,20 @@ namespace RentMe.View
                     usernameTextBox.Text = "";
                     passwordTextBox.Text = "";
                 }
-                else if (loginResult == true)
+                else if (loginResult.IsAdmin == true)
                 {
                     this.Hide();
-                    AdminDashboard adminDashboard = new AdminDashboard(usernameTextBox.Text);
+                    AdminDashboard adminDashboard = new AdminDashboard(usernameTextBox.Text, loginResult.FName, this);
                     adminDashboard.Show();
+                    usernameTextBox.Text = "";
+                    passwordTextBox.Text = "";
+
                 }
                 else
                 {
-                    this.Hide();
-                    EmployeeDashboard mainDashboard = new EmployeeDashboard(usernameTextBox.Text);
+                    this.Visible = false;
+                    EmployeeDashboard mainDashboard = new EmployeeDashboard(usernameTextBox.Text, loginResult.FName, this);
+
                     mainDashboard.Show();
 
                 }
@@ -54,7 +67,7 @@ namespace RentMe.View
             {
                 MessageBox.Show("Employee Does Not Exist");
             }
-        }
 
+        }
     }
 }

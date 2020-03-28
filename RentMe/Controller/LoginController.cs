@@ -1,4 +1,5 @@
 ﻿using RentMe.DAL;
+using RentMe.Model;
 
 namespace RentMe.Controller
 {
@@ -20,7 +21,7 @@ namespace RentMe.Controller
         /// <param name="username">String of entered username</param>
         /// <param name="password">String of entered password</param>
         /// <returns></returns>
-        public bool? EmployeeLogin(string username, string password)
+        public LoginResult EmployeeLogin(string username, string password)
         {
             return loginDAL.EmployeeLogin(username, password);
         }

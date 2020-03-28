@@ -91,7 +91,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(283, 22);
-            this.passwordTextBox.TabIndex = 6;
+            this.passwordTextBox.TabIndex = 4;
             // 
             // EmployeeLogin
             // 
@@ -104,7 +104,10 @@
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.employeeLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EmployeeLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeLogin";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentMe.Model;
+using System;
 using System.Data.SqlClient;
 
 namespace RentMe.DAL
@@ -14,13 +15,13 @@ namespace RentMe.DAL
         /// <param name="username">String username entered</param>
         /// <param name="password">String password entered</param>
         /// <returns></returns>
-        public Boolean? EmployeeLogin(String username, String password)
+        public LoginResult EmployeeLogin(String username, String password)
         {
 
             string selectStatement =
                 @"SELECT *
                 FROM dbo.Employees
-                WHERE Username = @username and Password = @password";
+                WHERE Username = @username and Password = @password COLLATE Latin1_General_CS_AS and IsActive = 1";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
@@ -31,12 +32,15 @@ namespace RentMe.DAL
                     selectCommand.Parameters.AddWithValue("@username", username);
                     selectCommand.Parameters.AddWithValue("@password", password);
 
+
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            bool admin = reader.GetBoolean(reader.GetOrdinal("IsAdmin"));
-                            return admin;
+                            var loginResult = new LoginResult();
+                            loginResult.IsAdmin = reader.GetBoolean(reader.GetOrdinal("IsAdmin"));
+                            loginResult.FName = reader["FName"].ToString();
+                            return loginResult;
                         }
                     }
                 }

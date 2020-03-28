@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace RentMe
 {
     public partial class EmployeeDashboard : Form
     {
-        public EmployeeDashboard(string username)
+        Form previousForm = null;
+        public EmployeeDashboard(string username, string fname, Form form)
         {
             InitializeComponent();
             labelUser.Text = username;
+            labelFName.Text = fname;
+            this.previousForm = form;
+
+        }
+
+        private void EmployeeDashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            previousForm.Close();
         }
     }
 }
