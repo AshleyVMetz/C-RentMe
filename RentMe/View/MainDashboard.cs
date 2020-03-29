@@ -5,11 +5,12 @@ namespace RentMe
     public partial class EmployeeDashboard : Form
     {
         Form previousForm = null;
-        public EmployeeDashboard(string username, string fname, Form form)
+        public EmployeeDashboard(string username, string fname, string lname, Form form)
         {
             InitializeComponent();
             labelUser.Text = username;
-            labelFName.Text = fname;
+            labelName.Text = fname + " " + lname;
+
             this.previousForm = form;
 
         }

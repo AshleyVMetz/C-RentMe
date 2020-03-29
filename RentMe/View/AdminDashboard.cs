@@ -12,12 +12,13 @@ namespace RentMe.View
         /// Constructor method.
         /// </summary>
         /// <param name="username">The username of the logged in user.</param>
-        public AdminDashboard(string username, string fName, Form form)
+        public AdminDashboard(string username, string fName, string lName, Form form)
       
         {
             InitializeComponent();
             labeluser.Text = username;
-            userFirstNameLabel.Text = fName;
+            NameLabel.Text = fName + " " + lName;
+           
             this.previousForm = form;
 
         }

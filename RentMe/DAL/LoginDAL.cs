@@ -40,6 +40,7 @@ namespace RentMe.DAL
                             var loginResult = new LoginResult();
                             loginResult.IsAdmin = reader.GetBoolean(reader.GetOrdinal("IsAdmin"));
                             loginResult.FName = reader["FName"].ToString();
+                            loginResult.LName = reader["LName"].ToString();
                             return loginResult;
                         }
                     }

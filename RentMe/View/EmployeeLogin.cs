@@ -47,7 +47,7 @@ namespace RentMe.View
                 else if (loginResult.IsAdmin == true)
                 {
                     this.Hide();
-                    AdminDashboard adminDashboard = new AdminDashboard(usernameTextBox.Text, loginResult.FName, this);
+                    AdminDashboard adminDashboard = new AdminDashboard(usernameTextBox.Text, loginResult.FName, loginResult.LName, this);
                     adminDashboard.Show();
                     usernameTextBox.Text = "";
                     passwordTextBox.Text = "";
@@ -56,7 +56,7 @@ namespace RentMe.View
                 else
                 {
                     this.Visible = false;
-                    EmployeeDashboard mainDashboard = new EmployeeDashboard(usernameTextBox.Text, loginResult.FName, this);
+                    EmployeeDashboard mainDashboard = new EmployeeDashboard(usernameTextBox.Text, loginResult.FName, loginResult.LName, this);
 
                     mainDashboard.Show();
 
