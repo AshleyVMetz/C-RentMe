@@ -17,7 +17,7 @@ namespace RentMe.DAL
         /// <returns>true if record got inserted, else false</returns>
         public Boolean AddStoreMember(StoreMember StoreMember)
         {
-            string sqlStatement = "INSERT INTO dbo.StoreMember (fName, lName, dob, phone, address1, address2, city, state, zip) " +
+            string sqlStatement = "INSERT INTO dbo.StoreMembers (fName, lName, dob, phone, address1, address2, city, state, zipcode) " +
                 "VALUES (@FirstName, @LastName, @Dob, @Phone, @Address1, @Address2, @City, @State, @Zip)";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
