@@ -226,37 +226,6 @@ namespace RentMe.UserControls
             LastNameSearchTextBox.Text = "";
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-            if (this.CustomerIDLabel.Text.Length < 1)
-            {
-                MessageBox.Show("Search for a Customer before Saving!!!!",
-                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            DialogResult dr = MessageBox.Show("Are you sure to delete? - " + this.FirstNameTextBox.Text + " " + this.LastNameTextBox.Text, "Delete confirmation", MessageBoxButtons.YesNoCancel,
-                                MessageBoxIcon.Information);
-
-            if (dr == DialogResult.Yes)
-            {
-                try
-                {
-                    this.storeMemberController.DeleteStoreMember(Convert.ToInt32(this.CustomerIDLabel.Text));
-                } catch (Exception ex)
-                {
-                    MessageBox.Show("Error while deleting Store Member!!!! - " + ex.Message,
-                   "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                } 
-            }
-
-            MessageBox.Show("Store Member has been Deleted",
-                "Store Member Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.ClearAll();
-        }
-
         private void ClearButton_Click(object sender, EventArgs e)
         {
             this.ClearAll();

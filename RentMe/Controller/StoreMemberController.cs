@@ -75,15 +75,5 @@ namespace RentMe.Controller
             return this.storeMemberDAL.UpdateStoreMember(storeMember);
         }
 
-        /// <summary>
-        /// Delete Store Member Information
-        /// </summary>
-        /// <param name="storeMemberId">Store Member Id</param>
-        /// <returns>true if storeMember got successfully deleted else false</returns>
-        public Boolean DeleteStoreMember(int storeMemberId)
-        {
-            return this.storeMemberDAL.DeleteStoreMember(storeMemberId);
-        }
-
     }
 }
