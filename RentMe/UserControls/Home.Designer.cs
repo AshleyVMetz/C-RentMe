@@ -145,9 +145,9 @@
             this.DialyRentalRate,
             this.FineRate});
             this.FurnitureListView.HideSelection = false;
-            this.FurnitureListView.Location = new System.Drawing.Point(3, 194);
+            this.FurnitureListView.Location = new System.Drawing.Point(0, 194);
             this.FurnitureListView.Name = "FurnitureListView";
-            this.FurnitureListView.Size = new System.Drawing.Size(584, 270);
+            this.FurnitureListView.Size = new System.Drawing.Size(613, 270);
             this.FurnitureListView.TabIndex = 29;
             this.FurnitureListView.UseCompatibleStateImageBehavior = false;
             this.FurnitureListView.View = System.Windows.Forms.View.Details;
@@ -159,29 +159,32 @@
             // Description
             // 
             this.Description.Text = "Description";
-            this.Description.Width = 120;
+            this.Description.Width = 140;
             // 
             // Style
             // 
             this.Style.Text = "Style";
-            this.Style.Width = 100;
+            this.Style.Width = 105;
             // 
             // Category
             // 
             this.Category.Text = "Category";
-            this.Category.Width = 100;
+            this.Category.Width = 90;
             // 
             // Quantity
             // 
             this.Quantity.Text = "Quantity Available";
+            this.Quantity.Width = 103;
             // 
             // DialyRentalRate
             // 
             this.DialyRentalRate.Text = "Daily Rate";
+            this.DialyRentalRate.Width = 72;
             // 
             // FineRate
             // 
             this.FineRate.Text = "Fine Rate";
+            this.FineRate.Width = 65;
             // 
             // label3
             // 
@@ -209,7 +212,7 @@
             this.Controls.Add(this.SerialNumberTextBox);
             this.Controls.Add(this.Label7);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(590, 486);
+            this.Size = new System.Drawing.Size(616, 486);
             this.ResumeLayout(false);
             this.PerformLayout();
 
