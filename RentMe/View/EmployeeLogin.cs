@@ -57,8 +57,9 @@ namespace RentMe.View
                 {
                     this.Visible = false;
                     EmployeeDashboard mainDashboard = new EmployeeDashboard(usernameTextBox.Text, loginResult.FName, loginResult.LName, this);
-
                     mainDashboard.Show();
+                    usernameTextBox.Text = "";
+                    passwordTextBox.Text = "";
 
                 }
 

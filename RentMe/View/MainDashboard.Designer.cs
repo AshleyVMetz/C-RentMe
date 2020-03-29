@@ -38,6 +38,7 @@
             this.home1 = new RentMe.UserControls.Home();
             this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
             this.editStoreMember2 = new RentMe.UserControls.EditStoreMember();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.AddStoreMember.SuspendLayout();
@@ -142,11 +143,23 @@
             this.editStoreMember2.Size = new System.Drawing.Size(631, 748);
             this.editStoreMember2.TabIndex = 0;
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(747, 9);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(100, 28);
+            this.logoutButton.TabIndex = 4;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // EmployeeDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 858);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.labelWelcomeMain);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelUser);
@@ -177,6 +190,7 @@
         private UserControls.Home home1;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelWelcomeMain;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
 

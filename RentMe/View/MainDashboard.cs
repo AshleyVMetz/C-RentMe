@@ -19,5 +19,11 @@ namespace RentMe
         {
             previousForm.Close();
         }
+
+        private void logoutButton_Click(object sender, System.EventArgs e)
+        {
+            this.Visible = false;
+            previousForm.Visible = true;
+        }
     }
 }
