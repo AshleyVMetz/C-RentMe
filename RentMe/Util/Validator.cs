@@ -43,7 +43,7 @@ namespace RentMe.Util
                 return true;
             }
 
-            if (storeMember.Address1.Trim().Length < 5 ||
+            if (storeMember.Address1.Trim().Length < 1 ||
                 storeMember.City.Trim().Length < 1 ||
                 storeMember.State.Trim().Length < 1 ||
                 storeMember.Zip.Trim().Length < 1)
