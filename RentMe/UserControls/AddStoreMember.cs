@@ -64,7 +64,7 @@ namespace RentMe.UserControls
         {
             ComboBoxUtil.UpdateStateComboBox(this.StateComboBox);
 
-            this.StateComboBox.SelectedIndex = 0;
+            this.StateComboBox.SelectedIndex = -1;
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace RentMe.UserControls
             this.Address2TextBox.Text = "";
             this.CityTextBox.Text = "";
             this.ZipCodeTextBox.Text = "";
-            this.StateComboBox.SelectedIndex = 0;
+            this.StateComboBox.SelectedIndex = -1;
         }
     }
 }

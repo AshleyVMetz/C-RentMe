@@ -111,7 +111,7 @@
             this.Address1Label.Location = new System.Drawing.Point(47, 133);
             this.Address1Label.Name = "Address1Label";
             this.Address1Label.Size = new System.Drawing.Size(64, 13);
-            this.Address1Label.TabIndex = 6;
+            this.Address1Label.TabIndex = 50;
             this.Address1Label.Text = "Address 1: *";
             // 
             // Address2TextBox
@@ -127,7 +127,7 @@
             this.Address2Label.Location = new System.Drawing.Point(47, 170);
             this.Address2Label.Name = "Address2Label";
             this.Address2Label.Size = new System.Drawing.Size(57, 13);
-            this.Address2Label.TabIndex = 8;
+            this.Address2Label.TabIndex = 52;
             this.Address2Label.Text = "Address 2:";
             // 
             // CityTextBox
@@ -143,7 +143,7 @@
             this.CityLabel.Location = new System.Drawing.Point(47, 206);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(34, 13);
-            this.CityLabel.TabIndex = 10;
+            this.CityLabel.TabIndex = 53;
             this.CityLabel.Text = "City: *";
             // 
             // StateLabel
@@ -152,7 +152,7 @@
             this.StateLabel.Location = new System.Drawing.Point(47, 241);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(42, 13);
-            this.StateLabel.TabIndex = 12;
+            this.StateLabel.TabIndex = 54;
             this.StateLabel.Text = "State: *";
             // 
             // StateComboBox
@@ -177,7 +177,7 @@
             this.ZipCodeLabel.Location = new System.Drawing.Point(47, 277);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
             this.ZipCodeLabel.Size = new System.Drawing.Size(60, 13);
-            this.ZipCodeLabel.TabIndex = 14;
+            this.ZipCodeLabel.TabIndex = 55;
             this.ZipCodeLabel.Text = "Zip Code: *";
             // 
             // DateOfBirthLabel
@@ -186,7 +186,7 @@
             this.DateOfBirthLabel.Location = new System.Drawing.Point(47, 313);
             this.DateOfBirthLabel.Name = "DateOfBirthLabel";
             this.DateOfBirthLabel.Size = new System.Drawing.Size(78, 13);
-            this.DateOfBirthLabel.TabIndex = 16;
+            this.DateOfBirthLabel.TabIndex = 56;
             this.DateOfBirthLabel.Text = "Date Of Birth: *";
             // 
             // AddCustomerButton
@@ -214,7 +214,7 @@
             this.DateOfBirthPicker.Location = new System.Drawing.Point(141, 313);
             this.DateOfBirthPicker.Name = "DateOfBirthPicker";
             this.DateOfBirthPicker.Size = new System.Drawing.Size(187, 20);
-            this.DateOfBirthPicker.TabIndex = 17;
+            this.DateOfBirthPicker.TabIndex = 9;
             // 
             // AddStoreMember
             // 

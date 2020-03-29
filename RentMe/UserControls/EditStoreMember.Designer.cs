@@ -214,7 +214,7 @@
             this.DateOfBirthPicker.Location = new System.Drawing.Point(130, 523);
             this.DateOfBirthPicker.Name = "DateOfBirthPicker";
             this.DateOfBirthPicker.Size = new System.Drawing.Size(187, 20);
-            this.DateOfBirthPicker.TabIndex = 30;
+            this.DateOfBirthPicker.TabIndex = 26;
             // 
             // DateOfBirthLabel
             // 
@@ -325,7 +325,7 @@
             this.SaveButton.Location = new System.Drawing.Point(73, 565);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(101, 26);
-            this.SaveButton.TabIndex = 36;
+            this.SaveButton.TabIndex = 27;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -335,7 +335,7 @@
             this.ClearButton.Location = new System.Drawing.Point(237, 565);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(95, 26);
-            this.ClearButton.TabIndex = 38;
+            this.ClearButton.TabIndex = 28;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
