@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using RentMe.Model;
@@ -54,6 +53,6 @@ namespace RentMe.Util
             }
 
             return false;
-        } 
+        }
     }
 }

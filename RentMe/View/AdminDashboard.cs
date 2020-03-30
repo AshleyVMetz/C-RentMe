@@ -13,12 +13,12 @@ namespace RentMe.View
         /// </summary>
         /// <param name="username">The username of the logged in user.</param>
         public AdminDashboard(string username, string fName, string lName, Form form)
-      
+
         {
             InitializeComponent();
             labeluser.Text = username;
             NameLabel.Text = fName + " " + lName;
-           
+
             this.previousForm = form;
 
         }
@@ -38,7 +38,7 @@ namespace RentMe.View
         private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
             previousForm.Close();
-          
+
         }
     }
 }

@@ -89,7 +89,7 @@ namespace RentMe.UserControls
                 if (!this.employee.FName.Equals(fName) || !this.employee.LName.Equals(lName) || !this.employee.Sex.Equals(sex) || this.employee.DOB != dob ||
                     !this.employee.Phone.Equals(phone) || !this.employee.Address1.Equals(address1) || !this.employee.Address2.Equals(address2) ||
                     !this.employee.City.Equals(city) || !this.employee.State.Equals(state) || !this.employee.ZipCode.Equals(zipCode) ||
-                    !this.employee.Username.Equals(username) || !this.employee.Password.Equals(password) || 
+                    !this.employee.Username.Equals(username) || !this.employee.Password.Equals(password) ||
                     this.employee.IsActive != isActive || this.employee.IsAdmin != isAdmin)
                 {
                     MessageBox.Show("The employee was updated by someone else. Please refresh and try again.",
@@ -115,17 +115,17 @@ namespace RentMe.UserControls
         {
             try
             {
-                if(!string.IsNullOrEmpty(this.employeeIDSearchTextBox.Text) && string.IsNullOrEmpty(this.phoneSearchTextBox.Text) &&
+                if (!string.IsNullOrEmpty(this.employeeIDSearchTextBox.Text) && string.IsNullOrEmpty(this.phoneSearchTextBox.Text) &&
                    string.IsNullOrEmpty(this.fullNameSearchTextBox.Text))
                 {
                     this.employee = this.employeeController.GetEmployeeByID(this.employeeIDSearchTextBox.Text);
                 }
-                else if (string.IsNullOrEmpty(this.employeeIDSearchTextBox.Text) && !string.IsNullOrEmpty(this.phoneSearchTextBox.Text) && 
+                else if (string.IsNullOrEmpty(this.employeeIDSearchTextBox.Text) && !string.IsNullOrEmpty(this.phoneSearchTextBox.Text) &&
                          string.IsNullOrEmpty(this.fullNameSearchTextBox.Text))
                 {
                     this.employee = this.employeeController.GetEmployeeByPhone(this.phoneSearchTextBox.Text);
                 }
-                else if (string.IsNullOrEmpty(this.employeeIDSearchTextBox.Text) && string.IsNullOrEmpty(this.phoneSearchTextBox.Text) && 
+                else if (string.IsNullOrEmpty(this.employeeIDSearchTextBox.Text) && string.IsNullOrEmpty(this.phoneSearchTextBox.Text) &&
                          !string.IsNullOrEmpty(this.fullNameSearchTextBox.Text))
                 {
                     this.employee = this.employeeController.GetEmployeeByFullName(this.fullNameSearchTextBox.Text);

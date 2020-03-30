@@ -105,7 +105,7 @@ namespace RentMe.DAL
                             Furniture furniture = new Furniture();
                             furniture.SerialNumber = reader["Serial#"].ToString();
                             furniture.Description = reader["Description"].ToString();
-                            furniture.Quantity = (int)reader["Quantity"]; 
+                            furniture.Quantity = (int)reader["Quantity"];
                             furniture.FineRate = Convert.ToDouble(reader["FineRate"]);
                             furniture.DailyRentalRate = Convert.ToDouble(reader["DailyRentalRate"]);
                             furniture.Style = reader["Style"].ToString();

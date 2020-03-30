@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentMe.Model;
 using RentMe.Controller;
@@ -41,7 +34,7 @@ namespace RentMe.UserControls
                     Zip = this.ZipCodeTextBox.Text
                 };
 
-                if(Validator.ValidateStoreMember(storeMember))
+                if (Validator.ValidateStoreMember(storeMember))
                 {
                     return;
                 }

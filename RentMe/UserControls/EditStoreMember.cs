@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
@@ -40,7 +33,7 @@ namespace RentMe.UserControls
 
             try
             {
-                customerId = Convert.ToInt32(CustomerIDSearchTextBox.Text); 
+                customerId = Convert.ToInt32(CustomerIDSearchTextBox.Text);
             }
 
             catch (Exception ex)
@@ -56,7 +49,7 @@ namespace RentMe.UserControls
             {
                 storeMember = this.storeMemberController.GetStoreMemberByCustomerId(customerId);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error while searching for Store Member!!!! - " + ex.Message,
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,7 +58,8 @@ namespace RentMe.UserControls
             if (storeMember != null)
             {
                 this.DisplayResults(storeMember);
-            } else
+            }
+            else
             {
                 MessageBox.Show("No Customer found!!!! - ",
                   "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -194,13 +188,14 @@ namespace RentMe.UserControls
             try
             {
                 this.storeMemberController.UpdateStoreMember(storeMember);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error while updating Store Member!!!! - " + ex.Message,
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             MessageBox.Show("Store Member has been Updated",
                 "Store Member Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
