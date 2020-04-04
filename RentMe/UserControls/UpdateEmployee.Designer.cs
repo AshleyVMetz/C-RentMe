@@ -67,6 +67,9 @@
             this.secondOrLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.phoneFormatLabel = new System.Windows.Forms.Label();
+            this.employeeIDLabel = new System.Windows.Forms.Label();
+            this.employeeIDTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // stateComboBox
@@ -386,7 +389,7 @@
             // phoneSearchLabel
             // 
             this.phoneSearchLabel.AutoSize = true;
-            this.phoneSearchLabel.Location = new System.Drawing.Point(71, 76);
+            this.phoneSearchLabel.Location = new System.Drawing.Point(71, 73);
             this.phoneSearchLabel.Name = "phoneSearchLabel";
             this.phoneSearchLabel.Size = new System.Drawing.Size(41, 13);
             this.phoneSearchLabel.TabIndex = 57;
@@ -461,10 +464,42 @@
             this.passwordMaskedTextBox.Size = new System.Drawing.Size(187, 20);
             this.passwordMaskedTextBox.TabIndex = 17;
             // 
+            // phoneFormatLabel
+            // 
+            this.phoneFormatLabel.AutoSize = true;
+            this.phoneFormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneFormatLabel.Location = new System.Drawing.Point(72, 86);
+            this.phoneFormatLabel.Name = "phoneFormatLabel";
+            this.phoneFormatLabel.Size = new System.Drawing.Size(58, 7);
+            this.phoneFormatLabel.TabIndex = 65;
+            this.phoneFormatLabel.Text = "XXX-XXX-XXXX";
+            // 
+            // employeeIDLabel
+            // 
+            this.employeeIDLabel.AutoSize = true;
+            this.employeeIDLabel.Location = new System.Drawing.Point(71, 183);
+            this.employeeIDLabel.Name = "employeeIDLabel";
+            this.employeeIDLabel.Size = new System.Drawing.Size(70, 13);
+            this.employeeIDLabel.TabIndex = 66;
+            this.employeeIDLabel.Text = "Employee ID:";
+            // 
+            // employeeIDTextBox
+            // 
+            this.employeeIDTextBox.Enabled = false;
+            this.employeeIDTextBox.Location = new System.Drawing.Point(179, 180);
+            this.employeeIDTextBox.MaxLength = 50;
+            this.employeeIDTextBox.Name = "employeeIDTextBox";
+            this.employeeIDTextBox.Size = new System.Drawing.Size(187, 20);
+            this.employeeIDTextBox.TabIndex = 67;
+            this.employeeIDTextBox.TabStop = false;
+            // 
             // UpdateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.employeeIDTextBox);
+            this.Controls.Add(this.employeeIDLabel);
+            this.Controls.Add(this.phoneFormatLabel);
             this.Controls.Add(this.passwordMaskedTextBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.secondOrLabel);
@@ -552,5 +587,8 @@
         private System.Windows.Forms.Label secondOrLabel;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.MaskedTextBox passwordMaskedTextBox;
+        private System.Windows.Forms.Label phoneFormatLabel;
+        private System.Windows.Forms.Label employeeIDLabel;
+        private System.Windows.Forms.TextBox employeeIDTextBox;
     }
 }

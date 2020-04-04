@@ -33,6 +33,7 @@ namespace RentMe.UserControls
             this.employeeIDSearchTextBox.Clear();
             this.phoneSearchTextBox.Clear();
             this.fullNameSearchTextBox.Clear();
+            this.employeeIDTextBox.Clear();
             this.firstNameTextBox.Clear();
             this.lastNameTextBox.Clear();
             this.sexComboBox.SelectedIndex = -1;
@@ -150,6 +151,7 @@ namespace RentMe.UserControls
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                this.employeeIDTextBox.Text = this.employee.EmployeeID.ToString();
                 this.firstNameTextBox.Text = this.employee.FName;
                 this.lastNameTextBox.Text = this.employee.LName;
                 this.sexComboBox.Text = this.employee.Sex;

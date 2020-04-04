@@ -13,8 +13,9 @@ namespace RentMe.DAL
         /// This method adds an employee to the database.
         /// </summary>
         /// <param name="employee">The employee to be added to the database.</param>
-        public void AddEmployee(Employee employee)
+        public int AddEmployee(Employee employee)
         {
+            int employeeID = 0;
             string insertStatement =
                 "INSERT INTO Employees (FName,LName,Sex,DOB,Phone,Address1,Address2,City,State,ZipCode,Username,Password,IsActive,IsAdmin) " +
                 "VALUES (@fName,@lName,@sex,@dob,@phone,@address1,@address2,@city,@state,@zipCode,@username,@password,@isActive,@isAdmin); ";
@@ -40,6 +41,24 @@ namespace RentMe.DAL
                     insertCommand.ExecuteNonQuery();
                 }
             }
+            string selectStatement =
+                "SELECT MAX(EmployeeID) AS EmployeeID " +
+                "FROM Employees; ";
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            employeeID = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            return employeeID;
         }
 
         /// <summary>
