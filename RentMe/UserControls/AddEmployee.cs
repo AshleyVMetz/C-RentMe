@@ -54,10 +54,10 @@ namespace RentMe.UserControls
                 string password = this.passwordMaskedTextBox.Text;
                 Boolean isActive = this.activeCheckBox.Checked;
                 Boolean isAdmin = this.adminCheckBox.Checked;
-                this.employeeController.AddEmployee(new Employee(0, fName, lName, sex, dob, phone, address1, address2, city, state,
-                                                                 zipCode, username, password, isActive, isAdmin));
+                int employeeID = this.employeeController.AddEmployee(new Employee(0, fName, lName, sex, dob, phone, address1, address2, city, state,
+                                                                                  zipCode, username, password, isActive, isAdmin));
                 this.ClearForm();
-                MessageBox.Show("The employee was successfully added.",
+                MessageBox.Show("The employee was successfully added. Their new ID is " + employeeID + ".",
                                 "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

@@ -22,9 +22,9 @@ namespace RentMe.Controller
         /// This method adds an employee to the database.
         /// </summary>
         /// <param name="employee">The employee to be added to the database.</param>
-        public void AddEmployee(Employee employee)
+        public int AddEmployee(Employee employee)
         {
-            this.employeeDataSource.AddEmployee(employee);
+            return this.employeeDataSource.AddEmployee(employee);
         }
 
         /// <summary>
