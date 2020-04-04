@@ -60,17 +60,24 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            this.updateEmployeeButton.Enabled = true;
-            this.GetEmployee();
-            if (this.employeeID == this.employee.EmployeeID)
+            try
             {
-                this.activeCheckBox.Enabled = false;
-                this.adminCheckBox.Enabled = false;
+                this.updateEmployeeButton.Enabled = true;
+                this.GetEmployee();
+                if (this.employeeID == this.employee.EmployeeID)
+                {
+                    this.activeCheckBox.Enabled = false;
+                    this.adminCheckBox.Enabled = false;
+                }
+                else
+                {
+                    this.activeCheckBox.Enabled = true;
+                    this.adminCheckBox.Enabled = true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                this.activeCheckBox.Enabled = true;
-                this.adminCheckBox.Enabled = true;
+                ex.ToString();
             }
         }
 
