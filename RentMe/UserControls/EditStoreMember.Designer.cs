@@ -59,7 +59,7 @@
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.SaveChangesButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.rentalsAndReturnsTabControl = new System.Windows.Forms.TabControl();
             this.rentalsTabPage = new System.Windows.Forms.TabPage();
@@ -324,15 +324,15 @@
             this.FirstNameLabel.TabIndex = 31;
             this.FirstNameLabel.Text = "First Name: *";
             // 
-            // SaveButton
+            // SaveChangesButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(479, 273);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(90, 26);
-            this.SaveButton.TabIndex = 17;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            this.SaveChangesButton.Location = new System.Drawing.Point(479, 273);
+            this.SaveChangesButton.Name = "SaveChangesButton";
+            this.SaveChangesButton.Size = new System.Drawing.Size(90, 26);
+            this.SaveChangesButton.TabIndex = 17;
+            this.SaveChangesButton.Text = "Save Changes";
+            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ClearButton
             // 
@@ -370,7 +370,7 @@
             this.returnsTabPage.Location = new System.Drawing.Point(4, 22);
             this.returnsTabPage.Name = "returnsTabPage";
             this.returnsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.returnsTabPage.Size = new System.Drawing.Size(758, 295);
+            this.returnsTabPage.Size = new System.Drawing.Size(758, 288);
             this.returnsTabPage.TabIndex = 1;
             this.returnsTabPage.Text = "Returns";
             this.returnsTabPage.UseVisualStyleBackColor = true;
@@ -381,7 +381,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.rentalsAndReturnsTabControl);
             this.Controls.Add(this.ClearButton);
-            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.Address2Label);
             this.Controls.Add(this.Address1Label);
             this.Controls.Add(this.PhoneLabel);
@@ -454,7 +454,7 @@
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.TabControl rentalsAndReturnsTabControl;
         private System.Windows.Forms.TabPage rentalsTabPage;

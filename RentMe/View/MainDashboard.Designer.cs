@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.AddStoreMember = new System.Windows.Forms.TabPage();
-            this.EditStoreMember = new System.Windows.Forms.TabPage();
+            this.ViewStoreMember = new System.Windows.Forms.TabPage();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelWelcomeMain = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.AddStoreMember.SuspendLayout();
-            this.EditStoreMember.SuspendLayout();
+            this.ViewStoreMember.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Home);
             this.tabControl1.Controls.Add(this.AddStoreMember);
-            this.tabControl1.Controls.Add(this.EditStoreMember);
+            this.tabControl1.Controls.Add(this.ViewStoreMember);
             this.tabControl1.Location = new System.Drawing.Point(12, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -78,16 +78,16 @@
             this.AddStoreMember.Text = "Add Store Member";
             this.AddStoreMember.UseVisualStyleBackColor = true;
             // 
-            // EditStoreMember
+            // ViewStoreMember
             // 
-            this.EditStoreMember.Controls.Add(this.editStoreMemberUserControl);
-            this.EditStoreMember.Location = new System.Drawing.Point(4, 22);
-            this.EditStoreMember.Name = "EditStoreMember";
-            this.EditStoreMember.Padding = new System.Windows.Forms.Padding(3);
-            this.EditStoreMember.Size = new System.Drawing.Size(772, 622);
-            this.EditStoreMember.TabIndex = 1;
-            this.EditStoreMember.Text = "Edit Store Member";
-            this.EditStoreMember.UseVisualStyleBackColor = true;
+            this.ViewStoreMember.Controls.Add(this.editStoreMemberUserControl);
+            this.ViewStoreMember.Location = new System.Drawing.Point(4, 22);
+            this.ViewStoreMember.Name = "ViewStoreMember";
+            this.ViewStoreMember.Padding = new System.Windows.Forms.Padding(3);
+            this.ViewStoreMember.Size = new System.Drawing.Size(772, 622);
+            this.ViewStoreMember.TabIndex = 1;
+            this.ViewStoreMember.Text = "View Store Member";
+            this.ViewStoreMember.UseVisualStyleBackColor = true;
             // 
             // labelUser
             // 
@@ -174,7 +174,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Home.ResumeLayout(false);
             this.AddStoreMember.ResumeLayout(false);
-            this.EditStoreMember.ResumeLayout(false);
+            this.ViewStoreMember.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +184,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage AddStoreMember;
-        private System.Windows.Forms.TabPage EditStoreMember;
+        private System.Windows.Forms.TabPage ViewStoreMember;
         private UserControls.AddStoreMember addCustomer1;
         private System.Windows.Forms.Label labelUser;
         private UserControls.EditStoreMember editStoreMemberUserControl;
