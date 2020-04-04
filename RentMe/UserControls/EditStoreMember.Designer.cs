@@ -59,14 +59,18 @@
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.SaveChangesButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.rentalsAndReturnsTabControl = new System.Windows.Forms.TabControl();
+            this.rentalsTabPage = new System.Windows.Forms.TabPage();
+            this.returnsTabPage = new System.Windows.Forms.TabPage();
+            this.rentalsAndReturnsTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(36, 33);
+            this.Label7.Location = new System.Drawing.Point(107, 26);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(68, 13);
             this.Label7.TabIndex = 0;
@@ -74,14 +78,14 @@
             // 
             // CustomerIDSearchTextBox
             // 
-            this.CustomerIDSearchTextBox.Location = new System.Drawing.Point(130, 30);
+            this.CustomerIDSearchTextBox.Location = new System.Drawing.Point(191, 23);
             this.CustomerIDSearchTextBox.Name = "CustomerIDSearchTextBox";
             this.CustomerIDSearchTextBox.Size = new System.Drawing.Size(187, 20);
             this.CustomerIDSearchTextBox.TabIndex = 1;
             // 
             // CustomerIDSearchButton
             // 
-            this.CustomerIDSearchButton.Location = new System.Drawing.Point(345, 26);
+            this.CustomerIDSearchButton.Location = new System.Drawing.Point(384, 21);
             this.CustomerIDSearchButton.Name = "CustomerIDSearchButton";
             this.CustomerIDSearchButton.Size = new System.Drawing.Size(96, 23);
             this.CustomerIDSearchButton.TabIndex = 2;
@@ -91,15 +95,15 @@
             // 
             // PhoneNumberSearchTextBox
             // 
-            this.PhoneNumberSearchTextBox.Location = new System.Drawing.Point(130, 69);
+            this.PhoneNumberSearchTextBox.Location = new System.Drawing.Point(191, 49);
             this.PhoneNumberSearchTextBox.Name = "PhoneNumberSearchTextBox";
             this.PhoneNumberSearchTextBox.Size = new System.Drawing.Size(187, 20);
-            this.PhoneNumberSearchTextBox.TabIndex = 4;
+            this.PhoneNumberSearchTextBox.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 72);
+            this.label1.Location = new System.Drawing.Point(107, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 3;
@@ -107,25 +111,25 @@
             // 
             // PhoneNumberSearchButton
             // 
-            this.PhoneNumberSearchButton.Location = new System.Drawing.Point(345, 66);
+            this.PhoneNumberSearchButton.Location = new System.Drawing.Point(384, 47);
             this.PhoneNumberSearchButton.Name = "PhoneNumberSearchButton";
             this.PhoneNumberSearchButton.Size = new System.Drawing.Size(96, 23);
-            this.PhoneNumberSearchButton.TabIndex = 5;
+            this.PhoneNumberSearchButton.TabIndex = 4;
             this.PhoneNumberSearchButton.Text = "Search";
             this.PhoneNumberSearchButton.UseVisualStyleBackColor = true;
             this.PhoneNumberSearchButton.Click += new System.EventHandler(this.PhoneNumberSearchButton_Click);
             // 
             // FirstNameSearchTextBox
             // 
-            this.FirstNameSearchTextBox.Location = new System.Drawing.Point(130, 107);
+            this.FirstNameSearchTextBox.Location = new System.Drawing.Point(191, 75);
             this.FirstNameSearchTextBox.Name = "FirstNameSearchTextBox";
             this.FirstNameSearchTextBox.Size = new System.Drawing.Size(187, 20);
-            this.FirstNameSearchTextBox.TabIndex = 7;
+            this.FirstNameSearchTextBox.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 111);
+            this.label2.Location = new System.Drawing.Point(107, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 6;
@@ -133,15 +137,15 @@
             // 
             // LastNameSearchTextBox
             // 
-            this.LastNameSearchTextBox.Location = new System.Drawing.Point(130, 137);
+            this.LastNameSearchTextBox.Location = new System.Drawing.Point(191, 101);
             this.LastNameSearchTextBox.Name = "LastNameSearchTextBox";
             this.LastNameSearchTextBox.Size = new System.Drawing.Size(187, 20);
-            this.LastNameSearchTextBox.TabIndex = 9;
+            this.LastNameSearchTextBox.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 140);
+            this.label3.Location = new System.Drawing.Point(107, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 8;
@@ -149,10 +153,10 @@
             // 
             // NameSearchButton
             // 
-            this.NameSearchButton.Location = new System.Drawing.Point(345, 135);
+            this.NameSearchButton.Location = new System.Drawing.Point(384, 99);
             this.NameSearchButton.Name = "NameSearchButton";
             this.NameSearchButton.Size = new System.Drawing.Size(96, 23);
-            this.NameSearchButton.TabIndex = 10;
+            this.NameSearchButton.TabIndex = 7;
             this.NameSearchButton.Text = "Search";
             this.NameSearchButton.UseVisualStyleBackColor = true;
             this.NameSearchButton.Click += new System.EventHandler(this.NameSearchButton_Click);
@@ -160,7 +164,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 208);
+            this.label4.Location = new System.Drawing.Point(107, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 11;
@@ -169,57 +173,57 @@
             // CustomerIDLabel
             // 
             this.CustomerIDLabel.AutoSize = true;
-            this.CustomerIDLabel.Location = new System.Drawing.Point(136, 211);
+            this.CustomerIDLabel.Location = new System.Drawing.Point(188, 145);
             this.CustomerIDLabel.Name = "CustomerIDLabel";
             this.CustomerIDLabel.Size = new System.Drawing.Size(0, 13);
             this.CustomerIDLabel.TabIndex = 12;
             // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.Location = new System.Drawing.Point(130, 270);
+            this.LastNameTextBox.Location = new System.Drawing.Point(191, 194);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(187, 20);
-            this.LastNameTextBox.TabIndex = 16;
+            this.LastNameTextBox.TabIndex = 9;
             // 
             // FirstNameTextBox
             // 
-            this.FirstNameTextBox.Location = new System.Drawing.Point(130, 237);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(191, 168);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(187, 20);
-            this.FirstNameTextBox.TabIndex = 14;
+            this.FirstNameTextBox.TabIndex = 8;
             // 
             // PhoneNumberTextBox
             // 
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(130, 304);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(191, 220);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(187, 20);
-            this.PhoneNumberTextBox.TabIndex = 18;
+            this.PhoneNumberTextBox.TabIndex = 10;
             // 
             // Address1TextBox
             // 
-            this.Address1TextBox.Location = new System.Drawing.Point(130, 339);
+            this.Address1TextBox.Location = new System.Drawing.Point(479, 142);
             this.Address1TextBox.Name = "Address1TextBox";
             this.Address1TextBox.Size = new System.Drawing.Size(187, 20);
-            this.Address1TextBox.TabIndex = 20;
+            this.Address1TextBox.TabIndex = 12;
             // 
             // Address2TextBox
             // 
-            this.Address2TextBox.Location = new System.Drawing.Point(130, 374);
+            this.Address2TextBox.Location = new System.Drawing.Point(479, 168);
             this.Address2TextBox.Name = "Address2TextBox";
             this.Address2TextBox.Size = new System.Drawing.Size(187, 20);
-            this.Address2TextBox.TabIndex = 22;
+            this.Address2TextBox.TabIndex = 13;
             // 
             // DateOfBirthPicker
             // 
-            this.DateOfBirthPicker.Location = new System.Drawing.Point(130, 523);
+            this.DateOfBirthPicker.Location = new System.Drawing.Point(191, 247);
             this.DateOfBirthPicker.Name = "DateOfBirthPicker";
             this.DateOfBirthPicker.Size = new System.Drawing.Size(187, 20);
-            this.DateOfBirthPicker.TabIndex = 26;
+            this.DateOfBirthPicker.TabIndex = 11;
             // 
             // DateOfBirthLabel
             // 
             this.DateOfBirthLabel.AutoSize = true;
-            this.DateOfBirthLabel.Location = new System.Drawing.Point(36, 523);
+            this.DateOfBirthLabel.Location = new System.Drawing.Point(107, 250);
             this.DateOfBirthLabel.Name = "DateOfBirthLabel";
             this.DateOfBirthLabel.Size = new System.Drawing.Size(78, 13);
             this.DateOfBirthLabel.TabIndex = 29;
@@ -227,15 +231,15 @@
             // 
             // ZipCodeTextBox
             // 
-            this.ZipCodeTextBox.Location = new System.Drawing.Point(130, 482);
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(479, 247);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
             this.ZipCodeTextBox.Size = new System.Drawing.Size(187, 20);
-            this.ZipCodeTextBox.TabIndex = 25;
+            this.ZipCodeTextBox.TabIndex = 16;
             // 
             // ZipCodeLabel
             // 
             this.ZipCodeLabel.AutoSize = true;
-            this.ZipCodeLabel.Location = new System.Drawing.Point(36, 487);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(409, 250);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
             this.ZipCodeLabel.Size = new System.Drawing.Size(60, 13);
             this.ZipCodeLabel.TabIndex = 28;
@@ -245,15 +249,15 @@
             // 
             this.StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StateComboBox.FormattingEnabled = true;
-            this.StateComboBox.Location = new System.Drawing.Point(130, 445);
+            this.StateComboBox.Location = new System.Drawing.Point(479, 220);
             this.StateComboBox.Name = "StateComboBox";
             this.StateComboBox.Size = new System.Drawing.Size(187, 21);
-            this.StateComboBox.TabIndex = 24;
+            this.StateComboBox.TabIndex = 15;
             // 
             // StateLabel
             // 
             this.StateLabel.AutoSize = true;
-            this.StateLabel.Location = new System.Drawing.Point(36, 451);
+            this.StateLabel.Location = new System.Drawing.Point(409, 223);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(42, 13);
             this.StateLabel.TabIndex = 27;
@@ -261,15 +265,15 @@
             // 
             // CityTextBox
             // 
-            this.CityTextBox.Location = new System.Drawing.Point(130, 411);
+            this.CityTextBox.Location = new System.Drawing.Point(479, 194);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(187, 20);
-            this.CityTextBox.TabIndex = 23;
+            this.CityTextBox.TabIndex = 14;
             // 
             // CityLabel
             // 
             this.CityLabel.AutoSize = true;
-            this.CityLabel.Location = new System.Drawing.Point(36, 416);
+            this.CityLabel.Location = new System.Drawing.Point(409, 197);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(34, 13);
             this.CityLabel.TabIndex = 26;
@@ -278,7 +282,7 @@
             // Address2Label
             // 
             this.Address2Label.AutoSize = true;
-            this.Address2Label.Location = new System.Drawing.Point(36, 382);
+            this.Address2Label.Location = new System.Drawing.Point(409, 171);
             this.Address2Label.Name = "Address2Label";
             this.Address2Label.Size = new System.Drawing.Size(57, 13);
             this.Address2Label.TabIndex = 35;
@@ -287,7 +291,7 @@
             // Address1Label
             // 
             this.Address1Label.AutoSize = true;
-            this.Address1Label.Location = new System.Drawing.Point(36, 345);
+            this.Address1Label.Location = new System.Drawing.Point(409, 144);
             this.Address1Label.Name = "Address1Label";
             this.Address1Label.Size = new System.Drawing.Size(64, 13);
             this.Address1Label.TabIndex = 34;
@@ -296,7 +300,7 @@
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(36, 310);
+            this.PhoneLabel.Location = new System.Drawing.Point(107, 223);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(48, 13);
             this.PhoneLabel.TabIndex = 33;
@@ -305,7 +309,7 @@
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(36, 275);
+            this.LastNameLabel.Location = new System.Drawing.Point(107, 197);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(68, 13);
             this.LastNameLabel.TabIndex = 32;
@@ -314,38 +318,70 @@
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(36, 240);
+            this.FirstNameLabel.Location = new System.Drawing.Point(107, 171);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(67, 13);
             this.FirstNameLabel.TabIndex = 31;
             this.FirstNameLabel.Text = "First Name: *";
             // 
-            // SaveButton
+            // SaveChangesButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(73, 565);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(101, 26);
-            this.SaveButton.TabIndex = 27;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            this.SaveChangesButton.Location = new System.Drawing.Point(479, 273);
+            this.SaveChangesButton.Name = "SaveChangesButton";
+            this.SaveChangesButton.Size = new System.Drawing.Size(90, 26);
+            this.SaveChangesButton.TabIndex = 17;
+            this.SaveChangesButton.Text = "Save Changes";
+            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(237, 565);
+            this.ClearButton.Location = new System.Drawing.Point(576, 273);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(95, 26);
-            this.ClearButton.TabIndex = 28;
+            this.ClearButton.Size = new System.Drawing.Size(90, 26);
+            this.ClearButton.TabIndex = 18;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
+            // rentalsAndReturnsTabControl
+            // 
+            this.rentalsAndReturnsTabControl.Controls.Add(this.rentalsTabPage);
+            this.rentalsAndReturnsTabControl.Controls.Add(this.returnsTabPage);
+            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 305);
+            this.rentalsAndReturnsTabControl.Name = "rentalsAndReturnsTabControl";
+            this.rentalsAndReturnsTabControl.SelectedIndex = 0;
+            this.rentalsAndReturnsTabControl.Size = new System.Drawing.Size(766, 314);
+            this.rentalsAndReturnsTabControl.TabIndex = 36;
+            this.rentalsAndReturnsTabControl.TabStop = false;
+            // 
+            // rentalsTabPage
+            // 
+            this.rentalsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.rentalsTabPage.Name = "rentalsTabPage";
+            this.rentalsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.rentalsTabPage.Size = new System.Drawing.Size(758, 288);
+            this.rentalsTabPage.TabIndex = 0;
+            this.rentalsTabPage.Text = "Rentals";
+            this.rentalsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // returnsTabPage
+            // 
+            this.returnsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.returnsTabPage.Name = "returnsTabPage";
+            this.returnsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.returnsTabPage.Size = new System.Drawing.Size(758, 288);
+            this.returnsTabPage.TabIndex = 1;
+            this.returnsTabPage.Text = "Returns";
+            this.returnsTabPage.UseVisualStyleBackColor = true;
             // 
             // EditStoreMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rentalsAndReturnsTabControl);
             this.Controls.Add(this.ClearButton);
-            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.Address2Label);
             this.Controls.Add(this.Address1Label);
             this.Controls.Add(this.PhoneLabel);
@@ -378,7 +414,8 @@
             this.Controls.Add(this.CustomerIDSearchTextBox);
             this.Controls.Add(this.Label7);
             this.Name = "EditStoreMember";
-            this.Size = new System.Drawing.Size(473, 608);
+            this.Size = new System.Drawing.Size(772, 622);
+            this.rentalsAndReturnsTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +454,10 @@
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.TabControl rentalsAndReturnsTabControl;
+        private System.Windows.Forms.TabPage rentalsTabPage;
+        private System.Windows.Forms.TabPage returnsTabPage;
     }
 }

@@ -53,7 +53,7 @@
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(47, 28);
+            this.FirstNameLabel.Location = new System.Drawing.Point(30, 27);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(67, 13);
             this.FirstNameLabel.TabIndex = 0;
@@ -61,14 +61,14 @@
             // 
             // FirstNameTextBox
             // 
-            this.FirstNameTextBox.Location = new System.Drawing.Point(141, 23);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(124, 22);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(187, 20);
             this.FirstNameTextBox.TabIndex = 1;
             // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.Location = new System.Drawing.Point(141, 58);
+            this.LastNameTextBox.Location = new System.Drawing.Point(124, 57);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(187, 20);
             this.LastNameTextBox.TabIndex = 2;
@@ -76,7 +76,7 @@
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(47, 63);
+            this.LastNameLabel.Location = new System.Drawing.Point(30, 62);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(68, 13);
             this.LastNameLabel.TabIndex = 2;
@@ -84,7 +84,7 @@
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(141, 93);
+            this.PhoneTextBox.Location = new System.Drawing.Point(124, 92);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(187, 20);
             this.PhoneTextBox.TabIndex = 3;
@@ -92,7 +92,7 @@
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(47, 98);
+            this.PhoneLabel.Location = new System.Drawing.Point(30, 97);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(48, 13);
             this.PhoneLabel.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             // Address1TextBox
             // 
-            this.Address1TextBox.Location = new System.Drawing.Point(141, 128);
+            this.Address1TextBox.Location = new System.Drawing.Point(124, 127);
             this.Address1TextBox.Name = "Address1TextBox";
             this.Address1TextBox.Size = new System.Drawing.Size(187, 20);
             this.Address1TextBox.TabIndex = 4;
@@ -108,7 +108,7 @@
             // Address1Label
             // 
             this.Address1Label.AutoSize = true;
-            this.Address1Label.Location = new System.Drawing.Point(47, 133);
+            this.Address1Label.Location = new System.Drawing.Point(30, 132);
             this.Address1Label.Name = "Address1Label";
             this.Address1Label.Size = new System.Drawing.Size(64, 13);
             this.Address1Label.TabIndex = 50;
@@ -116,7 +116,7 @@
             // 
             // Address2TextBox
             // 
-            this.Address2TextBox.Location = new System.Drawing.Point(141, 165);
+            this.Address2TextBox.Location = new System.Drawing.Point(124, 164);
             this.Address2TextBox.Name = "Address2TextBox";
             this.Address2TextBox.Size = new System.Drawing.Size(187, 20);
             this.Address2TextBox.TabIndex = 5;
@@ -124,7 +124,7 @@
             // Address2Label
             // 
             this.Address2Label.AutoSize = true;
-            this.Address2Label.Location = new System.Drawing.Point(47, 170);
+            this.Address2Label.Location = new System.Drawing.Point(30, 169);
             this.Address2Label.Name = "Address2Label";
             this.Address2Label.Size = new System.Drawing.Size(57, 13);
             this.Address2Label.TabIndex = 52;
@@ -132,7 +132,7 @@
             // 
             // CityTextBox
             // 
-            this.CityTextBox.Location = new System.Drawing.Point(141, 201);
+            this.CityTextBox.Location = new System.Drawing.Point(124, 200);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(187, 20);
             this.CityTextBox.TabIndex = 6;
@@ -140,7 +140,7 @@
             // CityLabel
             // 
             this.CityLabel.AutoSize = true;
-            this.CityLabel.Location = new System.Drawing.Point(47, 206);
+            this.CityLabel.Location = new System.Drawing.Point(30, 205);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(34, 13);
             this.CityLabel.TabIndex = 53;
@@ -149,7 +149,7 @@
             // StateLabel
             // 
             this.StateLabel.AutoSize = true;
-            this.StateLabel.Location = new System.Drawing.Point(47, 241);
+            this.StateLabel.Location = new System.Drawing.Point(30, 240);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(42, 13);
             this.StateLabel.TabIndex = 54;
@@ -159,14 +159,14 @@
             // 
             this.StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StateComboBox.FormattingEnabled = true;
-            this.StateComboBox.Location = new System.Drawing.Point(141, 235);
+            this.StateComboBox.Location = new System.Drawing.Point(124, 234);
             this.StateComboBox.Name = "StateComboBox";
             this.StateComboBox.Size = new System.Drawing.Size(187, 21);
             this.StateComboBox.TabIndex = 7;
             // 
             // ZipCodeTextBox
             // 
-            this.ZipCodeTextBox.Location = new System.Drawing.Point(141, 272);
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(124, 271);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
             this.ZipCodeTextBox.Size = new System.Drawing.Size(187, 20);
             this.ZipCodeTextBox.TabIndex = 8;
@@ -174,7 +174,7 @@
             // ZipCodeLabel
             // 
             this.ZipCodeLabel.AutoSize = true;
-            this.ZipCodeLabel.Location = new System.Drawing.Point(47, 277);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(30, 276);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
             this.ZipCodeLabel.Size = new System.Drawing.Size(60, 13);
             this.ZipCodeLabel.TabIndex = 55;
@@ -183,7 +183,7 @@
             // DateOfBirthLabel
             // 
             this.DateOfBirthLabel.AutoSize = true;
-            this.DateOfBirthLabel.Location = new System.Drawing.Point(47, 313);
+            this.DateOfBirthLabel.Location = new System.Drawing.Point(30, 312);
             this.DateOfBirthLabel.Name = "DateOfBirthLabel";
             this.DateOfBirthLabel.Size = new System.Drawing.Size(78, 13);
             this.DateOfBirthLabel.TabIndex = 56;
@@ -191,9 +191,9 @@
             // 
             // AddCustomerButton
             // 
-            this.AddCustomerButton.Location = new System.Drawing.Point(73, 371);
+            this.AddCustomerButton.Location = new System.Drawing.Point(124, 341);
             this.AddCustomerButton.Name = "AddCustomerButton";
-            this.AddCustomerButton.Size = new System.Drawing.Size(121, 23);
+            this.AddCustomerButton.Size = new System.Drawing.Size(115, 23);
             this.AddCustomerButton.TabIndex = 10;
             this.AddCustomerButton.Text = "Add Store Member";
             this.AddCustomerButton.UseVisualStyleBackColor = true;
@@ -201,9 +201,9 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(253, 371);
+            this.ClearButton.Location = new System.Drawing.Point(245, 341);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearButton.Size = new System.Drawing.Size(66, 23);
             this.ClearButton.TabIndex = 11;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -211,7 +211,7 @@
             // 
             // DateOfBirthPicker
             // 
-            this.DateOfBirthPicker.Location = new System.Drawing.Point(141, 313);
+            this.DateOfBirthPicker.Location = new System.Drawing.Point(124, 306);
             this.DateOfBirthPicker.Name = "DateOfBirthPicker";
             this.DateOfBirthPicker.Size = new System.Drawing.Size(187, 20);
             this.DateOfBirthPicker.TabIndex = 9;
@@ -241,7 +241,7 @@
             this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.FirstNameLabel);
             this.Name = "AddStoreMember";
-            this.Size = new System.Drawing.Size(437, 449);
+            this.Size = new System.Drawing.Size(351, 398);
             this.ResumeLayout(false);
             this.PerformLayout();
 
