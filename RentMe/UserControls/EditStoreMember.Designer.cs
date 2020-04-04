@@ -64,7 +64,11 @@
             this.rentalsAndReturnsTabControl = new System.Windows.Forms.TabControl();
             this.rentalsTabPage = new System.Windows.Forms.TabPage();
             this.returnsTabPage = new System.Windows.Forms.TabPage();
+            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
+            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.rentalsAndReturnsTabControl.SuspendLayout();
+            this.rentalsTabPage.SuspendLayout();
+            this.returnsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // Label7
@@ -357,6 +361,7 @@
             // 
             // rentalsTabPage
             // 
+            this.rentalsTabPage.Controls.Add(this.viewRentalsUserControl);
             this.rentalsTabPage.Location = new System.Drawing.Point(4, 22);
             this.rentalsTabPage.Name = "rentalsTabPage";
             this.rentalsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -367,6 +372,7 @@
             // 
             // returnsTabPage
             // 
+            this.returnsTabPage.Controls.Add(this.viewReturnsUserControl);
             this.returnsTabPage.Location = new System.Drawing.Point(4, 22);
             this.returnsTabPage.Name = "returnsTabPage";
             this.returnsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -374,6 +380,20 @@
             this.returnsTabPage.TabIndex = 1;
             this.returnsTabPage.Text = "Returns";
             this.returnsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // viewRentalsUserControl
+            // 
+            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
+            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewRentalsUserControl.TabIndex = 0;
+            // 
+            // viewReturnsUserControl
+            // 
+            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
+            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewReturnsUserControl.TabIndex = 0;
             // 
             // EditStoreMember
             // 
@@ -416,6 +436,8 @@
             this.Name = "EditStoreMember";
             this.Size = new System.Drawing.Size(772, 622);
             this.rentalsAndReturnsTabControl.ResumeLayout(false);
+            this.rentalsTabPage.ResumeLayout(false);
+            this.returnsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +481,7 @@
         private System.Windows.Forms.TabControl rentalsAndReturnsTabControl;
         private System.Windows.Forms.TabPage rentalsTabPage;
         private System.Windows.Forms.TabPage returnsTabPage;
+        private ViewRentals viewRentalsUserControl;
+        private ViewReturns viewReturnsUserControl;
     }
 }

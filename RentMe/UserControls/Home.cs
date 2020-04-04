@@ -6,9 +6,16 @@ using RentMe.Model;
 
 namespace RentMe.UserControls
 {
+    /// <summary>
+    /// This class models a user control for searching furniture.
+    /// </summary>
     public partial class Home : UserControl
     {
         private readonly FurnitureController furnitureController;
+
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public Home()
         {
             InitializeComponent();
@@ -16,6 +23,9 @@ namespace RentMe.UserControls
             this.PopulateComponents();
         }
 
+        /// <summary>
+        /// This helper method populates the style and category comboboxes.
+        /// </summary>
         private void PopulateComponents()
         {
             List<Style> styles = new List<Style>();
@@ -46,6 +56,11 @@ namespace RentMe.UserControls
             this.CategoryComboBox.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// This method searches furniture by serial number when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SerialNumberSearchButton_Click(object sender, EventArgs e)
         {
             List<Furniture> furnitures = new List<Furniture>();
@@ -75,6 +90,10 @@ namespace RentMe.UserControls
             RefreshDataGrid(furnitures);
         }
 
+        /// <summary>
+        /// This helper method refreshes the returned furniture items.
+        /// </summary>
+        /// <param name="furnitures"></param>
         private void RefreshDataGrid(List<Furniture> furnitures)
         {
             this.FurnitureListView.Items.Clear();
@@ -95,6 +114,11 @@ namespace RentMe.UserControls
 
         }
 
+        /// <summary>
+        /// This method searches furniture by style when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StyleSearchButton_Click(object sender, EventArgs e)
         {
             this.CategoryComboBox.SelectedIndex = -1;
@@ -124,6 +148,11 @@ namespace RentMe.UserControls
             RefreshDataGrid(furnitures);
         }
 
+        /// <summary>
+        /// This method searches furniture by category when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CategorySearchButton_Click(object sender, EventArgs e)
         {
             this.StyleComboBox.SelectedIndex = -1;
@@ -153,6 +182,9 @@ namespace RentMe.UserControls
             RefreshDataGrid(furnitures);
         }
 
+        /// <summary>
+        /// This helper method clears the returned furniture items.
+        /// </summary>
         private void ClearDataGrid()
         {
             this.FurnitureListView.Items.Clear();
