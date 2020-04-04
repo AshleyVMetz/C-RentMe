@@ -12,6 +12,7 @@ namespace RentMe.UserControls
     {
         private readonly EmployeeController employeeController;
         private Employee employee;
+        public int employeeID;
 
         /// <summary>
         /// Constructor method.
@@ -43,9 +44,11 @@ namespace RentMe.UserControls
             this.stateComboBox.SelectedIndex = -1;
             this.zipCodeTextBox.Clear();
             this.usernameTextBox.Clear();
-            this.passwordTextBox.Clear();
+            this.passwordMaskedTextBox.Clear();
             this.activeCheckBox.Checked = false;
+            this.activeCheckBox.Enabled = true;
             this.adminCheckBox.Checked = false;
+            this.adminCheckBox.Enabled = true;
             this.updateEmployeeButton.Enabled = false;
         }
 
@@ -58,6 +61,16 @@ namespace RentMe.UserControls
         {
             this.updateEmployeeButton.Enabled = true;
             this.GetEmployee();
+            if (this.employeeID == this.employee.EmployeeID)
+            {
+                this.activeCheckBox.Enabled = false;
+                this.adminCheckBox.Enabled = false;
+            }
+            else
+            {
+                this.activeCheckBox.Enabled = true;
+                this.adminCheckBox.Enabled = true;
+            }
         }
 
         /// <summary>
@@ -80,7 +93,7 @@ namespace RentMe.UserControls
                 string state = this.stateComboBox.Text;
                 string zipCode = this.zipCodeTextBox.Text;
                 string username = this.usernameTextBox.Text;
-                string password = this.passwordTextBox.Text;
+                string password = this.passwordMaskedTextBox.Text;
                 Boolean isActive = this.activeCheckBox.Checked;
                 Boolean isAdmin = this.adminCheckBox.Checked;
                 this.employeeController.UpdateEmployee(this.employee, new Employee(0, fName, lName, sex, dob, phone, address1, address2, city, state,
@@ -148,7 +161,7 @@ namespace RentMe.UserControls
                 this.stateComboBox.Text = this.employee.State;
                 this.zipCodeTextBox.Text = this.employee.ZipCode;
                 this.usernameTextBox.Text = this.employee.Username;
-                this.passwordTextBox.Text = this.employee.Password;
+                this.passwordMaskedTextBox.Text = this.employee.Password;
                 this.activeCheckBox.Checked = this.employee.IsActive;
                 this.adminCheckBox.Checked = this.employee.IsAdmin;
             }

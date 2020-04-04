@@ -37,7 +37,6 @@
             this.updateEmployeeButton = new System.Windows.Forms.Button();
             this.adminLabel = new System.Windows.Forms.Label();
             this.activeLabel = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.firstOrLabel = new System.Windows.Forms.Label();
             this.secondOrLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
+            this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // stateComboBox
@@ -204,14 +204,6 @@
             this.activeLabel.Size = new System.Drawing.Size(43, 13);
             this.activeLabel.TabIndex = 55;
             this.activeLabel.Text = "Active?";
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(179, 494);
-            this.passwordTextBox.MaxLength = 50;
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(187, 20);
-            this.passwordTextBox.TabIndex = 17;
             // 
             // passwordLabel
             // 
@@ -460,10 +452,20 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // passwordMaskedTextBox
+            // 
+            this.passwordMaskedTextBox.HidePromptOnLeave = true;
+            this.passwordMaskedTextBox.Location = new System.Drawing.Point(179, 494);
+            this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
+            this.passwordMaskedTextBox.PasswordChar = '*';
+            this.passwordMaskedTextBox.Size = new System.Drawing.Size(187, 20);
+            this.passwordMaskedTextBox.TabIndex = 17;
+            // 
             // UpdateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.passwordMaskedTextBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.secondOrLabel);
             this.Controls.Add(this.firstOrLabel);
@@ -482,7 +484,6 @@
             this.Controls.Add(this.updateEmployeeButton);
             this.Controls.Add(this.adminLabel);
             this.Controls.Add(this.activeLabel);
-            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.usernameLabel);
@@ -521,7 +522,6 @@
         private System.Windows.Forms.Button updateEmployeeButton;
         private System.Windows.Forms.Label adminLabel;
         private System.Windows.Forms.Label activeLabel;
-        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label usernameLabel;
@@ -551,5 +551,6 @@
         private System.Windows.Forms.Label firstOrLabel;
         private System.Windows.Forms.Label secondOrLabel;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.MaskedTextBox passwordMaskedTextBox;
     }
 }

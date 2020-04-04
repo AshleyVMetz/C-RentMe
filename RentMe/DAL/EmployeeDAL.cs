@@ -231,7 +231,7 @@ namespace RentMe.DAL
                         "SET FName=@fName, LName=@lName, Sex=@sex, DOB=@dob, Phone=@phone, Address1=@address1, Address2=@address2, City=@city, " +
                             "State=@state, ZipCode=@zipCode, Username=@username, Password=@password, IsActive=@isActive, IsAdmin=@isAdmin " +
                         "WHERE EmployeeID=@employeeID AND FName=@oldFName AND LName=@oldLName AND Sex=@oldSex AND DOB=@oldDOB AND Phone=@oldPhone " +
-                            "AND Address1=@oldAddress1 AND Address2=@oldAddress2 AND City=@oldCity AND State=@oldState AND ZipCode=@oldZipCode " +
+                            "AND Address1=@oldAddress1 AND City=@oldCity AND State=@oldState AND ZipCode=@oldZipCode " +
                             "AND Username=@oldUsername AND Password=@oldPassword AND IsActive=@oldIsActive AND IsAdmin=@oldIsAdmin; ";
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
@@ -245,7 +245,6 @@ namespace RentMe.DAL
                     insertCommand.Parameters.AddWithValue("@oldDOB", oldEmployeeDetails.DOB.ToString("yyyy'-'MM'-'dd"));
                     insertCommand.Parameters.AddWithValue("@oldPhone", oldEmployeeDetails.Phone);
                     insertCommand.Parameters.AddWithValue("@oldAddress1", oldEmployeeDetails.Address1);
-                    insertCommand.Parameters.AddWithValue("@oldAddress2", oldEmployeeDetails.Address2);
                     insertCommand.Parameters.AddWithValue("@oldCity", oldEmployeeDetails.City);
                     insertCommand.Parameters.AddWithValue("@oldState", oldEmployeeDetails.State);
                     insertCommand.Parameters.AddWithValue("@oldZipCode", oldEmployeeDetails.ZipCode);

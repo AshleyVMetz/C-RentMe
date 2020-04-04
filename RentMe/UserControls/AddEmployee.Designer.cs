@@ -46,7 +46,6 @@
             this.zipCodeLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.activeLabel = new System.Windows.Forms.Label();
             this.adminLabel = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.sexComboBox = new System.Windows.Forms.ComboBox();
             this.stateComboBox = new System.Windows.Forms.ComboBox();
+            this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -214,14 +214,6 @@
             this.usernameLabel.TabIndex = 20;
             this.usernameLabel.Text = "Username: *";
             // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(179, 435);
-            this.passwordTextBox.MaxLength = 50;
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(187, 20);
-            this.passwordTextBox.TabIndex = 12;
-            // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
@@ -374,10 +366,20 @@
             this.stateComboBox.Size = new System.Drawing.Size(187, 21);
             this.stateComboBox.TabIndex = 9;
             // 
+            // passwordMaskedTextBox
+            // 
+            this.passwordMaskedTextBox.HidePromptOnLeave = true;
+            this.passwordMaskedTextBox.Location = new System.Drawing.Point(179, 435);
+            this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
+            this.passwordMaskedTextBox.PasswordChar = '*';
+            this.passwordMaskedTextBox.Size = new System.Drawing.Size(187, 20);
+            this.passwordMaskedTextBox.TabIndex = 12;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.passwordMaskedTextBox);
             this.Controls.Add(this.stateComboBox);
             this.Controls.Add(this.sexComboBox);
             this.Controls.Add(this.dobDateTimePicker);
@@ -387,7 +389,6 @@
             this.Controls.Add(this.addEmployeeButton);
             this.Controls.Add(this.adminLabel);
             this.Controls.Add(this.activeLabel);
-            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.usernameLabel);
@@ -435,7 +436,6 @@
         private System.Windows.Forms.Label zipCodeLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label activeLabel;
         private System.Windows.Forms.Label adminLabel;
@@ -447,5 +447,6 @@
         private System.Windows.Forms.DateTimePicker dobDateTimePicker;
         private System.Windows.Forms.ComboBox sexComboBox;
         private System.Windows.Forms.ComboBox stateComboBox;
+        private System.Windows.Forms.MaskedTextBox passwordMaskedTextBox;
     }
 }

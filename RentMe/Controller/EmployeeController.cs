@@ -1,6 +1,5 @@
 ﻿using RentMe.DAL;
 using RentMe.Model;
-using System;
 
 namespace RentMe.Controller
 {
@@ -25,14 +24,7 @@ namespace RentMe.Controller
         /// <param name="employee">The employee to be added to the database.</param>
         public void AddEmployee(Employee employee)
         {
-            if (employee == null)
-            {
-                throw new ArgumentNullException("Employee cannot be null.");
-            }
-            else
-            {
-                this.employeeDataSource.AddEmployee(employee);
-            }
+            this.employeeDataSource.AddEmployee(employee);
         }
 
         /// <summary>
