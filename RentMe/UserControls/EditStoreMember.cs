@@ -182,6 +182,8 @@ namespace RentMe.UserControls
             this.DateOfBirthPicker.Value = storeMember.Dob;
             this.viewRentalsUserControl.storeMemberID = this.CustomerIDLabel.Text;
             this.viewRentalsUserControl.RefreshListView();
+            this.viewReturnsUserControl.storeMemberID = this.CustomerIDLabel.Text;
+            this.viewReturnsUserControl.RefreshListView();
         }
 
 
@@ -257,6 +259,8 @@ namespace RentMe.UserControls
             LastNameSearchTextBox.Text = "";
             this.viewRentalsUserControl.storeMemberID = this.CustomerIDLabel.Text;
             this.viewRentalsUserControl.RefreshListView();
+            this.viewReturnsUserControl.storeMemberID = this.CustomerIDLabel.Text;
+            this.viewReturnsUserControl.RefreshListView();
         }
 
         /// <summary>
