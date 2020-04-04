@@ -30,15 +30,15 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
-            this.home1 = new RentMe.UserControls.Home();
             this.AddStoreMember = new System.Windows.Forms.TabPage();
-            this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
             this.EditStoreMember = new System.Windows.Forms.TabPage();
-            this.editStoreMemberUserControl = new RentMe.UserControls.EditStoreMember();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelWelcomeMain = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
+            this.home1 = new RentMe.UserControls.Home();
+            this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
+            this.editStoreMemberUserControl = new RentMe.UserControls.EditStoreMember();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.AddStoreMember.SuspendLayout();
@@ -67,14 +67,6 @@
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
             // 
-            // home1
-            // 
-            this.home1.Location = new System.Drawing.Point(66, 53);
-            this.home1.Margin = new System.Windows.Forms.Padding(4);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(645, 453);
-            this.home1.TabIndex = 0;
-            // 
             // AddStoreMember
             // 
             this.AddStoreMember.Controls.Add(this.addCustomer1);
@@ -85,14 +77,6 @@
             this.AddStoreMember.TabIndex = 0;
             this.AddStoreMember.Text = "Add Store Member";
             this.AddStoreMember.UseVisualStyleBackColor = true;
-            // 
-            // addCustomer1
-            // 
-            this.addCustomer1.Location = new System.Drawing.Point(220, 69);
-            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4);
-            this.addCustomer1.Name = "addCustomer1";
-            this.addCustomer1.Size = new System.Drawing.Size(351, 398);
-            this.addCustomer1.TabIndex = 0;
             // 
             // EditStoreMember
             // 
@@ -105,22 +89,15 @@
             this.EditStoreMember.Text = "Edit Store Member";
             this.EditStoreMember.UseVisualStyleBackColor = true;
             // 
-            // editStoreMemberUserControl
-            // 
-            this.editStoreMemberUserControl.Location = new System.Drawing.Point(0, 0);
-            this.editStoreMemberUserControl.Margin = new System.Windows.Forms.Padding(4);
-            this.editStoreMemberUserControl.Name = "editStoreMemberUserControl";
-            this.editStoreMemberUserControl.Size = new System.Drawing.Size(772, 622);
-            this.editStoreMemberUserControl.TabIndex = 0;
-            // 
             // labelUser
             // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(708, 14);
+            this.labelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelUser.Location = new System.Drawing.Point(419, 9);
             this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 13);
+            this.labelUser.Size = new System.Drawing.Size(289, 23);
             this.labelUser.TabIndex = 1;
+            this.labelUser.Text = "Username";
             this.labelUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelName
@@ -152,6 +129,30 @@
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // home1
+            // 
+            this.home1.Location = new System.Drawing.Point(66, 53);
+            this.home1.Margin = new System.Windows.Forms.Padding(4);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(645, 453);
+            this.home1.TabIndex = 0;
+            // 
+            // addCustomer1
+            // 
+            this.addCustomer1.Location = new System.Drawing.Point(220, 69);
+            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4);
+            this.addCustomer1.Name = "addCustomer1";
+            this.addCustomer1.Size = new System.Drawing.Size(351, 398);
+            this.addCustomer1.TabIndex = 0;
+            // 
+            // editStoreMemberUserControl
+            // 
+            this.editStoreMemberUserControl.Location = new System.Drawing.Point(0, 0);
+            this.editStoreMemberUserControl.Margin = new System.Windows.Forms.Padding(4);
+            this.editStoreMemberUserControl.Name = "editStoreMemberUserControl";
+            this.editStoreMemberUserControl.Size = new System.Drawing.Size(772, 622);
+            this.editStoreMemberUserControl.TabIndex = 0;
             // 
             // EmployeeDashboard
             // 
