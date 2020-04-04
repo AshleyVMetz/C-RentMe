@@ -38,6 +38,7 @@ namespace RentMe.DAL
                         while (reader.Read())
                         {
                             var loginResult = new LoginResult();
+                            loginResult.EmployeeID = reader.GetInt32(0);
                             loginResult.IsAdmin = reader.GetBoolean(reader.GetOrdinal("IsAdmin"));
                             loginResult.FName = reader["FName"].ToString();
                             loginResult.LName = reader["LName"].ToString();

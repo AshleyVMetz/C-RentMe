@@ -12,6 +12,7 @@ namespace RentMe.UserControls
     {
         private readonly EmployeeController employeeController;
         private Employee employee;
+        public int employeeID;
 
         /// <summary>
         /// Constructor method.
@@ -45,7 +46,9 @@ namespace RentMe.UserControls
             this.usernameTextBox.Clear();
             this.passwordMaskedTextBox.Clear();
             this.activeCheckBox.Checked = false;
+            this.activeCheckBox.Enabled = true;
             this.adminCheckBox.Checked = false;
+            this.adminCheckBox.Enabled = true;
             this.updateEmployeeButton.Enabled = false;
         }
 
@@ -58,6 +61,16 @@ namespace RentMe.UserControls
         {
             this.updateEmployeeButton.Enabled = true;
             this.GetEmployee();
+            if (this.employeeID == this.employee.EmployeeID)
+            {
+                this.activeCheckBox.Enabled = false;
+                this.adminCheckBox.Enabled = false;
+            }
+            else
+            {
+                this.activeCheckBox.Enabled = true;
+                this.adminCheckBox.Enabled = true;
+            }
         }
 
         /// <summary>
