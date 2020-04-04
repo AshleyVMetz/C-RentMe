@@ -43,7 +43,7 @@ namespace RentMe.UserControls
             this.stateComboBox.SelectedIndex = -1;
             this.zipCodeTextBox.Clear();
             this.usernameTextBox.Clear();
-            this.passwordTextBox.Clear();
+            this.passwordMaskedTextBox.Clear();
             this.activeCheckBox.Checked = false;
             this.adminCheckBox.Checked = false;
             this.updateEmployeeButton.Enabled = false;
@@ -80,7 +80,7 @@ namespace RentMe.UserControls
                 string state = this.stateComboBox.Text;
                 string zipCode = this.zipCodeTextBox.Text;
                 string username = this.usernameTextBox.Text;
-                string password = this.passwordTextBox.Text;
+                string password = this.passwordMaskedTextBox.Text;
                 Boolean isActive = this.activeCheckBox.Checked;
                 Boolean isAdmin = this.adminCheckBox.Checked;
                 this.employeeController.UpdateEmployee(this.employee, new Employee(0, fName, lName, sex, dob, phone, address1, address2, city, state,
@@ -148,7 +148,7 @@ namespace RentMe.UserControls
                 this.stateComboBox.Text = this.employee.State;
                 this.zipCodeTextBox.Text = this.employee.ZipCode;
                 this.usernameTextBox.Text = this.employee.Username;
-                this.passwordTextBox.Text = this.employee.Password;
+                this.passwordMaskedTextBox.Text = this.employee.Password;
                 this.activeCheckBox.Checked = this.employee.IsActive;
                 this.adminCheckBox.Checked = this.employee.IsAdmin;
             }
