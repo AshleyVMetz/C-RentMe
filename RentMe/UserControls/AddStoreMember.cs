@@ -6,10 +6,16 @@ using RentMe.Util;
 
 namespace RentMe.UserControls
 {
+    /// <summary>
+    /// This class models a user control for adding a store member.
+    /// </summary>
     public partial class AddStoreMember : UserControl
     {
         private readonly StoreMemberController storeMemberController;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public AddStoreMember()
         {
             storeMemberController = new StoreMemberController();
@@ -17,6 +23,11 @@ namespace RentMe.UserControls
             AddStateData();
         }
 
+        /// <summary>
+        /// This method adds a store member to the database using the parameters entered on the form when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCustomerButton_Click(object sender, EventArgs e)
         {
             try
@@ -53,6 +64,9 @@ namespace RentMe.UserControls
             }
         }
 
+        /// <summary>
+        /// This helper method populates the state combobox options.
+        /// </summary>
         private void AddStateData()
         {
             ComboBoxUtil.UpdateStateComboBox(this.StateComboBox);
@@ -60,11 +74,19 @@ namespace RentMe.UserControls
             this.StateComboBox.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// This method clears the form values when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearButton_Click(object sender, EventArgs e)
         {
             this.ClearAll();
         }
 
+        /// <summary>
+        /// This helper method clears the form values.
+        /// </summary>
         private void ClearAll()
         {
             this.FirstNameTextBox.Text = "";

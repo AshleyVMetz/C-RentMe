@@ -52,7 +52,7 @@
             this.SerialNumberSearchButton.Location = new System.Drawing.Point(425, 23);
             this.SerialNumberSearchButton.Name = "SerialNumberSearchButton";
             this.SerialNumberSearchButton.Size = new System.Drawing.Size(96, 23);
-            this.SerialNumberSearchButton.TabIndex = 5;
+            this.SerialNumberSearchButton.TabIndex = 2;
             this.SerialNumberSearchButton.Text = "Search";
             this.SerialNumberSearchButton.UseVisualStyleBackColor = true;
             this.SerialNumberSearchButton.Click += new System.EventHandler(this.SerialNumberSearchButton_Click);
@@ -62,7 +62,7 @@
             this.SerialNumberTextBox.Location = new System.Drawing.Point(210, 25);
             this.SerialNumberTextBox.Name = "SerialNumberTextBox";
             this.SerialNumberTextBox.Size = new System.Drawing.Size(187, 20);
-            this.SerialNumberTextBox.TabIndex = 4;
+            this.SerialNumberTextBox.TabIndex = 1;
             // 
             // Label7
             // 
@@ -78,7 +78,7 @@
             this.StyleSearchButton.Location = new System.Drawing.Point(425, 60);
             this.StyleSearchButton.Name = "StyleSearchButton";
             this.StyleSearchButton.Size = new System.Drawing.Size(96, 23);
-            this.StyleSearchButton.TabIndex = 8;
+            this.StyleSearchButton.TabIndex = 4;
             this.StyleSearchButton.Text = "Search";
             this.StyleSearchButton.UseVisualStyleBackColor = true;
             this.StyleSearchButton.Click += new System.EventHandler(this.StyleSearchButton_Click);
@@ -100,7 +100,7 @@
             this.StyleComboBox.Location = new System.Drawing.Point(210, 62);
             this.StyleComboBox.Name = "StyleComboBox";
             this.StyleComboBox.Size = new System.Drawing.Size(187, 21);
-            this.StyleComboBox.TabIndex = 25;
+            this.StyleComboBox.TabIndex = 3;
             this.StyleComboBox.ValueMember = "Value";
             // 
             // CategoryComboBox
@@ -111,7 +111,7 @@
             this.CategoryComboBox.Location = new System.Drawing.Point(210, 99);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(187, 21);
-            this.CategoryComboBox.TabIndex = 28;
+            this.CategoryComboBox.TabIndex = 5;
             this.CategoryComboBox.ValueMember = "Value";
             // 
             // CategorySearchButton
@@ -119,7 +119,7 @@
             this.CategorySearchButton.Location = new System.Drawing.Point(425, 97);
             this.CategorySearchButton.Name = "CategorySearchButton";
             this.CategorySearchButton.Size = new System.Drawing.Size(96, 23);
-            this.CategorySearchButton.TabIndex = 27;
+            this.CategorySearchButton.TabIndex = 6;
             this.CategorySearchButton.Text = "Search";
             this.CategorySearchButton.UseVisualStyleBackColor = true;
             this.CategorySearchButton.Click += new System.EventHandler(this.CategorySearchButton_Click);
@@ -148,6 +148,7 @@
             this.FurnitureListView.Name = "FurnitureListView";
             this.FurnitureListView.Size = new System.Drawing.Size(639, 303);
             this.FurnitureListView.TabIndex = 29;
+            this.FurnitureListView.TabStop = false;
             this.FurnitureListView.UseCompatibleStateImageBehavior = false;
             this.FurnitureListView.View = System.Windows.Forms.View.Details;
             // 

@@ -72,7 +72,7 @@
             // usernameTextBox
             // 
             this.usernameTextBox.Location = new System.Drawing.Point(127, 56);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(213, 20);
             this.usernameTextBox.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             this.EmployeeLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeLoginButton.Location = new System.Drawing.Point(127, 132);
-            this.EmployeeLoginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmployeeLoginButton.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeLoginButton.Name = "EmployeeLoginButton";
             this.EmployeeLoginButton.Size = new System.Drawing.Size(64, 28);
             this.EmployeeLoginButton.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.passwordTextBox.HidePromptOnLeave = true;
             this.passwordTextBox.Location = new System.Drawing.Point(127, 94);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(213, 20);
@@ -111,12 +111,12 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.employeeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EmployeeLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EmployeeLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

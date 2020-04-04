@@ -6,16 +6,27 @@ using RentMe.Util;
 
 namespace RentMe.UserControls
 {
+    /// <summary>
+    /// This class models a user control to view and edit store members.
+    /// </summary>
     public partial class EditStoreMember : UserControl
     {
         private readonly StoreMemberController storeMemberController;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public EditStoreMember()
         {
             InitializeComponent();
             storeMemberController = new StoreMemberController();
         }
 
+        /// <summary>
+        /// This method searches for a customer by ID when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CustomerIDSearchButton_Click(object sender, EventArgs e)
         {
             PhoneNumberSearchTextBox.Text = "";
@@ -67,6 +78,11 @@ namespace RentMe.UserControls
 
         }
 
+        /// <summary>
+        /// This method searches for a customer by phone number when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PhoneNumberSearchButton_Click(object sender, EventArgs e)
         {
             CustomerIDSearchTextBox.Text = "";
@@ -103,6 +119,11 @@ namespace RentMe.UserControls
             }
         }
 
+        /// <summary>
+        /// This method searches for a customer by name when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NameSearchButton_Click(object sender, EventArgs e)
         {
 
@@ -142,6 +163,10 @@ namespace RentMe.UserControls
             }
         }
 
+        /// <summary>
+        /// This helper method displays the search results.
+        /// </summary>
+        /// <param name="storeMember"></param>
         private void DisplayResults(StoreMember storeMember)
         {
             this.CustomerIDLabel.Text = Convert.ToString(storeMember.MemberID);
@@ -155,8 +180,16 @@ namespace RentMe.UserControls
             this.StateComboBox.SelectedItem = storeMember.State;
             this.ZipCodeTextBox.Text = storeMember.Zip;
             this.DateOfBirthPicker.Value = storeMember.Dob;
+            this.viewRentalsUserControl.storeMemberID = this.CustomerIDLabel.Text;
+            this.viewRentalsUserControl.RefreshListView();
         }
 
+
+        /// <summary>
+        /// This method updates the specified customer in the database using the parameters entered on the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (this.CustomerIDLabel.Text.Length < 1)
@@ -203,6 +236,9 @@ namespace RentMe.UserControls
 
         }
 
+        /// <summary>
+        /// This helper method clears the form values.
+        /// </summary>
         private void ClearAll()
         {
             this.CustomerIDLabel.Text = "";
@@ -219,8 +255,15 @@ namespace RentMe.UserControls
             PhoneNumberSearchTextBox.Text = "";
             FirstNameSearchTextBox.Text = "";
             LastNameSearchTextBox.Text = "";
+            this.viewRentalsUserControl.storeMemberID = this.CustomerIDLabel.Text;
+            this.viewRentalsUserControl.RefreshListView();
         }
 
+        /// <summary>
+        /// This method clears the form values when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearButton_Click(object sender, EventArgs e)
         {
             this.ClearAll();
