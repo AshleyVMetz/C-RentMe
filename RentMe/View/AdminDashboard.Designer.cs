@@ -33,19 +33,23 @@
             this.addEmployeeUserControl = new RentMe.UserControls.AddEmployee();
             this.updateEmployeeTabPage = new System.Windows.Forms.TabPage();
             this.updateEmployeeUserControl = new RentMe.UserControls.UpdateEmployee();
+            this.reportTabPage = new System.Windows.Forms.TabPage();
             this.userLabel = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
             this.nameLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.adminReportUserControl = new RentMe.UserControls.AdminReport();
             this.adminTabControl.SuspendLayout();
             this.addEmployeeTabPage.SuspendLayout();
             this.updateEmployeeTabPage.SuspendLayout();
+            this.reportTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // adminTabControl
             // 
             this.adminTabControl.Controls.Add(this.addEmployeeTabPage);
             this.adminTabControl.Controls.Add(this.updateEmployeeTabPage);
+            this.adminTabControl.Controls.Add(this.reportTabPage);
             this.adminTabControl.Location = new System.Drawing.Point(12, 40);
             this.adminTabControl.Name = "adminTabControl";
             this.adminTabControl.SelectedIndex = 0;
@@ -90,6 +94,17 @@
             this.updateEmployeeUserControl.Size = new System.Drawing.Size(443, 634);
             this.updateEmployeeUserControl.TabIndex = 0;
             // 
+            // reportTabPage
+            // 
+            this.reportTabPage.Controls.Add(this.adminReportUserControl);
+            this.reportTabPage.Location = new System.Drawing.Point(4, 22);
+            this.reportTabPage.Name = "reportTabPage";
+            this.reportTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.reportTabPage.Size = new System.Drawing.Size(443, 634);
+            this.reportTabPage.TabIndex = 2;
+            this.reportTabPage.Text = "Report";
+            this.reportTabPage.UseVisualStyleBackColor = true;
+            // 
             // userLabel
             // 
             this.userLabel.Location = new System.Drawing.Point(228, 11);
@@ -129,6 +144,13 @@
             this.welcomeLabel.Text = "Welcome";
             this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // adminReportUserControl
+            // 
+            this.adminReportUserControl.Location = new System.Drawing.Point(0, 0);
+            this.adminReportUserControl.Name = "adminReportUserControl";
+            this.adminReportUserControl.Size = new System.Drawing.Size(443, 634);
+            this.adminReportUserControl.TabIndex = 0;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +171,7 @@
             this.adminTabControl.ResumeLayout(false);
             this.addEmployeeTabPage.ResumeLayout(false);
             this.updateEmployeeTabPage.ResumeLayout(false);
+            this.reportTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -164,5 +187,7 @@
         private UserControls.UpdateEmployee updateEmployeeUserControl;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.TabPage reportTabPage;
+        private UserControls.AdminReport adminReportUserControl;
     }
 }
