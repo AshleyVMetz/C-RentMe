@@ -54,5 +54,23 @@ namespace RentMe.Util
 
             return false;
         }
+
+        public static Boolean ValidateReturn(ReturnItem returnItem)
+        {
+            if (returnItem.SerialNumber.Trim().Length < 1)
+            {
+                MessageBox.Show("Serial Number cannot be empty!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            if (returnItem.RentalID.ToString().Trim().Length < 1)
+            {
+                MessageBox.Show("RentalID cannot be empty!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+           
+            return false;
+        }
     }
 }

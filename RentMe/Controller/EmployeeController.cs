@@ -1,5 +1,7 @@
 ﻿using RentMe.DAL;
 using RentMe.Model;
+using System;
+using System.Collections.Generic;
 
 namespace RentMe.Controller
 {
@@ -45,6 +47,11 @@ namespace RentMe.Controller
         public Employee GetEmployeeByPhone(string phone)
         {
             return this.employeeDataSource.GetEmployeeByPhone(phone);
+        }
+
+        public List<Employee> GetEmployeeList()
+        {
+            return employeeDataSource.GetEmployeeList();
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using RentMe.DAL;
 using RentMe.Model;
+using System;
 using System.Collections.Generic;
 
 namespace RentMe.Controller
@@ -27,6 +28,16 @@ namespace RentMe.Controller
         public List<RentedItem> GetRentalTransactionsWithItemsByStoreMemberID(string storeMemberID)
         {
             return this.rentalDataSource.GetRentalTransactionsWithItemsByStoreMemberID(int.Parse(storeMemberID));
+        }
+
+        public Item GetRentalTransactionByRentalID(int rentalID)
+        {
+            return this.rentalDataSource.GetRentalTransactionByRentalID(rentalID);
+        }
+
+        internal List<int> GetRentalIDListByMemberID(int memberID)
+        {
+            return this.rentalDataSource.GetRentalIDListByMemberID(memberID);
         }
     }
 }

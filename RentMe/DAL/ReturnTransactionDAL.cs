@@ -57,5 +57,66 @@ namespace RentMe.DAL
             }
             return returnedList;
         }
+
+        internal void UpdateTransaction(ReturnTransaction transaction)
+        {
+            string updateStatement =
+                @"Update [dbo].[ReturnTransaction] 
+                SET [FineDueTotal] = @newFineDueTotal,
+                [RefundDueTotal]=@newRefundDueTotal
+                Where ReturnID = @returnID";
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    cmd.Parameters.AddWithValue("@newFineDueTotal", transaction.FineDueTotal);
+                    cmd.Parameters.AddWithValue("@newRefundDueTotal", transaction.RefundDueTotal);
+                    cmd.Parameters.AddWithValue("@returnID", transaction.ReturnID);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
+        public int CreateReturnTransaction(ReturnTransaction transaction)
+        {
+            string insertStatement =
+           @"INSERT INTO dbo.ReturnTransaction
+            (ReturnDate
+             , FineDueTotal
+             , RefundDueTotal
+             , EmployeeID ) 
+            VALUES
+           (@returnDate
+           ,@fineDueTotal
+           ,@refundDueTotal
+           ,@employeeID ); 
+           SELECT SCOPE_IDENTITY()";
+
+
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+
+            {
+
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(insertStatement, connection))
+
+                {
+                    cmd.Parameters.AddWithValue("@returnDate", transaction.ReturnDate);
+                    cmd.Parameters.AddWithValue("@fineDueTotal", 0);
+                    cmd.Parameters.AddWithValue("@refundDueTotal", 0);
+                    cmd.Parameters.AddWithValue("@employeeID", transaction.EmployeeID);
+                    var idObject = cmd.ExecuteScalar();
+                    var id = int.Parse(idObject.ToString());
+                    connection.Close();
+                    return id;
+                }
+
+            }
+
+        }
     }
 }

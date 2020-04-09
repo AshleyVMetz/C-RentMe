@@ -53,5 +53,59 @@ namespace RentMe.DAL
             }
             return rentedList;
         }
+
+        internal List<int> GetRentalIDListByMemberID(int memberID)
+        {
+            List<int> list = new List<int>();
+            string selectStatement =
+                @"SELECT RentalID FROM RentalTransaction Where MemberID = @memberID; ";
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@memberID", memberID);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int rentalID = int.Parse(reader["RentalID"].ToString());
+                            list.Add(rentalID);
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+    
+
+        public Item GetRentalTransactionByRentalID(int rentalID)
+        {
+            Item item = new Item();
+            string selectStatement =
+                "SELECT ScheduledReturn " +
+                "FROM RentalTransaction " +
+                "WHERE RentalTransaction.RentalID=@rentalID ";
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@rentalID", rentalID);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                           
+                           
+                            item.ScheduledReturn = (DateTime)reader["ScheduledReturn"];
+                           
+                        }
+                    }
+                }
+            }
+            return item;
+        }
     }
+    
 }

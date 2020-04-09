@@ -1,4 +1,5 @@
 ﻿using RentMe.Model;
+using RentMe.Util;
 using System;
 using System.Data.SqlClient;
 
@@ -17,7 +18,7 @@ namespace RentMe.DAL
         /// <returns></returns>
         public LoginResult EmployeeLogin(String username, String password)
         {
-
+            var encryptedPassword = Security.encrypt(password);
             string selectStatement =
                 @"SELECT *
                 FROM dbo.Employees
@@ -30,7 +31,7 @@ namespace RentMe.DAL
                 using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
                     selectCommand.Parameters.AddWithValue("@username", username);
-                    selectCommand.Parameters.AddWithValue("@password", password);
+                    selectCommand.Parameters.AddWithValue("@password", encryptedPassword);
 
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
