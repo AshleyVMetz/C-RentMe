@@ -74,6 +74,7 @@
     <Compile Include="Controller\FurnitureController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\RentalTransactionController.cs" />
+    <Compile Include="Controller\ReturnController.cs" />
     <Compile Include="Controller\ReturnTransactionController.cs" />
     <Compile Include="Controller\StoreMemberController.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
@@ -81,12 +82,17 @@
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\RentalTransactionDAL.cs" />
     <Compile Include="DAL\RentMeDBConnection.cs" />
+    <Compile Include="DAL\ReturnDAL.cs" />
     <Compile Include="DAL\ReturnTransactionDAL.cs" />
     <Compile Include="DAL\StoreMemberDAL.cs" />
     <Compile Include="Model\Furniture.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\RentedItem.cs" />
+    <Compile Include="Model\ReturnableItem.cs" />
+    <Compile Include="Model\ReturnItem.cs" />
+    <Compile Include="Model\ReturnTransaction.cs" />
     <Compile Include="Model\ReturnedItem.cs" />
     <Compile Include="Model\StoreMember.cs" />
     <Compile Include="Model\Category.cs" />
@@ -122,6 +128,12 @@
     <Compile Include="UserControls\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Return.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Return.Designer.cs">
+      <DependentUpon>Return.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UpdateEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +153,7 @@
       <DependentUpon>ViewReturns.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\ComboBoxUtil.cs" />
+    <Compile Include="Util\Security.cs" />
     <Compile Include="Util\Validator.cs" />
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -185,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Return.resx">
+      <DependentUpon>Return.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateEmployee.resx">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
@@ -232,18 +248,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,7 @@
 ﻿using RentMe.Model;
+using RentMe.Util;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace RentMe.DAL
@@ -35,7 +37,7 @@ namespace RentMe.DAL
                     insertCommand.Parameters.AddWithValue("@state", employee.State);
                     insertCommand.Parameters.AddWithValue("@zipCode", employee.ZipCode);
                     insertCommand.Parameters.AddWithValue("@username", employee.Username);
-                    insertCommand.Parameters.AddWithValue("@password", employee.Password);
+                    insertCommand.Parameters.AddWithValue("@password", Security.encrypt(employee.Password));
                     insertCommand.Parameters.AddWithValue("@isActive", employee.IsActive ? 1 : 0);
                     insertCommand.Parameters.AddWithValue("@isAdmin", employee.IsAdmin ? 1 : 0);
                     insertCommand.ExecuteNonQuery();
@@ -59,6 +61,36 @@ namespace RentMe.DAL
                 }
             }
             return employeeID;
+        }
+
+        internal List<Employee> GetEmployeeList()
+        {
+            List<Employee> employeeList = new List<Employee>();
+            string selectStatement =
+                @"SELECT EmployeeID, FName, LName
+                FROM Employees 
+                Where IsActive = 1";
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var employee = new Employee();
+                            employee.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+                            employee.FName = reader["FName"].ToString();
+                            employee.LName = reader["LName"].ToString();
+                            employee.FullName = employee.FName + " " + employee.LName;
+                            employeeList.Add(employee);
+                        }
+                    }
+                }
+            }
+            return employeeList;
         }
 
         /// <summary>

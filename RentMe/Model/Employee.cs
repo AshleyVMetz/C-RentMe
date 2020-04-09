@@ -11,9 +11,9 @@ namespace RentMe.Model
         /// <summary>
         /// Accessors for employee instance variables.
         /// </summary>
-        public int EmployeeID { get; }
-        public string FName { get; }
-        public string LName { get; }
+        public int EmployeeID { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
         public string Sex { get; }
         public DateTime DOB { get; }
         public string Phone { get; }
@@ -26,6 +26,7 @@ namespace RentMe.Model
         public string Password { get; }
         public Boolean IsActive { get; }
         public Boolean IsAdmin { get; }
+        public string FullName { get; internal set; }
 
         /// <summary>
         /// Constructor method.
@@ -78,6 +79,10 @@ namespace RentMe.Model
             this.Password = password;
             this.IsActive = isActive;
             this.IsAdmin = isAdmin;
+        }
+
+        public Employee()
+        {
         }
     }
 }
