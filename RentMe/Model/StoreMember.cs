@@ -27,5 +27,7 @@ namespace RentMe.Model
         public string State { get; set; }
 
         public string Zip { get; set; }
+
+        public string Sex { get; set; }
     }
 }

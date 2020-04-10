@@ -52,6 +52,13 @@ namespace RentMe.Util
                 return true;
             }
 
+            if (storeMember.Sex.Trim().Length < 1)
+            {
+                MessageBox.Show("Gender has to be selected!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
             return false;
         }
 

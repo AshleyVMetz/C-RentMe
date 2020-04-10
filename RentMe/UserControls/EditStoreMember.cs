@@ -178,6 +178,8 @@ namespace RentMe.UserControls
             this.CityTextBox.Text = storeMember.City;
             ComboBoxUtil.UpdateStateComboBox(this.StateComboBox);
             this.StateComboBox.SelectedItem = storeMember.State;
+            ComboBoxUtil.UpdateGenderComboBox(this.GenderComboBox);
+            this.GenderComboBox.SelectedItem = storeMember.Sex;
             this.ZipCodeTextBox.Text = storeMember.Zip;
             this.DateOfBirthPicker.Value = storeMember.Dob;
             this.viewRentalsUserControl.storeMemberID = this.CustomerIDLabel.Text;
@@ -212,6 +214,7 @@ namespace RentMe.UserControls
                 Address2 = this.Address2TextBox.Text,
                 City = this.CityTextBox.Text,
                 State = this.StateComboBox.Text,
+                Sex = this.GenderComboBox.Text,
                 Zip = this.ZipCodeTextBox.Text
             };
 
@@ -253,6 +256,7 @@ namespace RentMe.UserControls
             this.CityTextBox.Text = "";
             this.ZipCodeTextBox.Text = "";
             this.StateComboBox.Items.Clear();
+            this.GenderComboBox.Items.Clear();
             CustomerIDSearchTextBox.Text = "";
             PhoneNumberSearchTextBox.Text = "";
             FirstNameSearchTextBox.Text = "";

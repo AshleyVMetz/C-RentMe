@@ -66,6 +66,8 @@
             this.returnsTabPage = new System.Windows.Forms.TabPage();
             this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
             this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
+            this.GenderComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.rentalsAndReturnsTabControl.SuspendLayout();
             this.rentalsTabPage.SuspendLayout();
             this.returnsTabPage.SuspendLayout();
@@ -330,7 +332,7 @@
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(479, 273);
+            this.SaveChangesButton.Location = new System.Drawing.Point(328, 313);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(90, 26);
             this.SaveChangesButton.TabIndex = 17;
@@ -340,7 +342,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(576, 273);
+            this.ClearButton.Location = new System.Drawing.Point(425, 313);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(90, 26);
             this.ClearButton.TabIndex = 18;
@@ -352,7 +354,7 @@
             // 
             this.rentalsAndReturnsTabControl.Controls.Add(this.rentalsTabPage);
             this.rentalsAndReturnsTabControl.Controls.Add(this.returnsTabPage);
-            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 305);
+            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 342);
             this.rentalsAndReturnsTabControl.Name = "rentalsAndReturnsTabControl";
             this.rentalsAndReturnsTabControl.SelectedIndex = 0;
             this.rentalsAndReturnsTabControl.Size = new System.Drawing.Size(766, 314);
@@ -395,10 +397,30 @@
             this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
             this.viewReturnsUserControl.TabIndex = 0;
             // 
+            // GenderComboBox
+            // 
+            this.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GenderComboBox.FormattingEnabled = true;
+            this.GenderComboBox.Location = new System.Drawing.Point(191, 275);
+            this.GenderComboBox.Name = "GenderComboBox";
+            this.GenderComboBox.Size = new System.Drawing.Size(187, 21);
+            this.GenderComboBox.TabIndex = 61;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(108, 279);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Gender: *";
+            // 
             // EditStoreMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.GenderComboBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.rentalsAndReturnsTabControl);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.SaveChangesButton);
@@ -434,7 +456,7 @@
             this.Controls.Add(this.CustomerIDSearchTextBox);
             this.Controls.Add(this.Label7);
             this.Name = "EditStoreMember";
-            this.Size = new System.Drawing.Size(772, 622);
+            this.Size = new System.Drawing.Size(772, 659);
             this.rentalsAndReturnsTabControl.ResumeLayout(false);
             this.rentalsTabPage.ResumeLayout(false);
             this.returnsTabPage.ResumeLayout(false);
@@ -483,5 +505,7 @@
         private System.Windows.Forms.TabPage returnsTabPage;
         private ViewRentals viewRentalsUserControl;
         private ViewReturns viewReturnsUserControl;
+        private System.Windows.Forms.ComboBox GenderComboBox;
+        private System.Windows.Forms.Label label5;
     }
 }
