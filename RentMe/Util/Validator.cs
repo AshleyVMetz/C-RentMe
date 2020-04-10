@@ -59,6 +59,13 @@ namespace RentMe.Util
                 return true;
             }
 
+            if (!Regex.IsMatch(storeMember.Zip, @"^(\d{5}(?:\-\d{4})?)$"))
+            {
+                MessageBox.Show("Invalid Zip code Should be in the format 11111 or 11111-1111!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
             if (storeMember.Sex.Trim().Length < 1)
             {
                 MessageBox.Show("Gender has to be selected!!!!",
