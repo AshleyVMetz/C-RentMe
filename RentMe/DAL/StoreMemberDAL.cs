@@ -88,6 +88,7 @@ namespace RentMe.DAL
         public StoreMember GetStoreMemberByPhoneNumber(string phoneNumber)
         {
             StoreMember storeMember = null;
+            int counter = 0;
 
             string selectStatement =
                 "select * from dbo.StoreMembers WHERE Phone = @Phone ";
@@ -103,6 +104,11 @@ namespace RentMe.DAL
                     {
                         while (reader.Read())
                         {
+                            counter++;
+                            if (counter > 1)
+                            {
+                                throw new ArgumentException("There is more than 1 store member with that phone. Please search by another criteria.");
+                            }
                             storeMember = this.RetrieveStoreMember(reader);
                         }
                     }
@@ -120,6 +126,7 @@ namespace RentMe.DAL
         public StoreMember GetStoreMemberByName(string firstName, string lastName)
         {
             StoreMember storeMember = null;
+            int counter = 0;
 
             string selectStatement =
                 "select * from dbo.StoreMembers WHERE lower(FName) = lower(@FirstName) and lower(LName) = lower(@LastName) ";
@@ -137,6 +144,11 @@ namespace RentMe.DAL
                     {
                         while (reader.Read())
                         {
+                            counter++;
+                            if (counter > 1)
+                            {
+                                throw new ArgumentException("There is more than 1 store member by that name. Please search by another criteria.");
+                            }
                             storeMember = this.RetrieveStoreMember(reader);
                         }
                     }

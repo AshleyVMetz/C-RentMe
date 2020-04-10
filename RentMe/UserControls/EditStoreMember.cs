@@ -106,6 +106,7 @@ namespace RentMe.UserControls
             {
                 MessageBox.Show("Error while searching for Store Member!!!! - " + ex.Message,
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (storeMember != null)
@@ -150,6 +151,7 @@ namespace RentMe.UserControls
             {
                 MessageBox.Show("Error while searching for Store Member!!!! - " + ex.Message,
                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (storeMember != null)
