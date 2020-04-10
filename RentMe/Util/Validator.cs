@@ -42,6 +42,13 @@ namespace RentMe.Util
                 return true;
             }
 
+            if (GetDifferenceInYears(storeMember.Dob, DateTime.Now) < 18)
+            {
+                MessageBox.Show("Customer below 18 years cannot be registered!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
             if (storeMember.Address1.Trim().Length < 1 ||
                 storeMember.City.Trim().Length < 1 ||
                 storeMember.State.Trim().Length < 1 ||
@@ -78,6 +85,19 @@ namespace RentMe.Util
             }
            
             return false;
+        }
+
+        private static int GetDifferenceInYears(DateTime startDate, DateTime endDate)
+        {
+            int years = endDate.Year - startDate.Year;
+
+            if (startDate.Month == endDate.Month &&
+                endDate.Day < startDate.Day || endDate.Month < startDate.Month)
+            {
+                years--;
+            }
+
+            return years;
         }
     }
 }
