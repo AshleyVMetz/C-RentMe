@@ -72,13 +72,13 @@ namespace RentMe.UserControls
                 var furnitures = furnitureController.GetFurnituresBySerialNumber(returnItem.SerialNumber);
                 var itemScheduledReturn = rentalTransactionController.GetRentalTransactionByRentalID(returnItem.RentalID);
 
-                var daysLate = DayNum(DateTime.Now.ToString(), itemScheduledReturn.ScheduledReturn.ToString());
-                var daysEarly = DayNum(itemScheduledReturn.ScheduledReturn.ToString(), DateTime.Now.ToString());
+                var daysLate = DayNum(DateTime.Now.Date.ToString(), itemScheduledReturn.ScheduledReturn.ToString()) + 1;
+                var daysEarly = DayNum(itemScheduledReturn.ScheduledReturn.ToString(), DateTime.Now.Date.ToString()) - 1;
 
                 if (furnitures.Count > 0)
                 {
                     var furniture = furnitures.FirstOrDefault();
-                    int resultDiff = DateTime.Compare(DateTime.Now, itemScheduledReturn.ScheduledReturn);
+                    int resultDiff = DateTime.Compare(DateTime.Now.Date, itemScheduledReturn.ScheduledReturn);
                     if (resultDiff < 0)
                     {
                         returnItem.RefundDue = Convert.ToDecimal(furniture.DailyRentalRate * daysEarly * returnItem.Quantity);
@@ -121,7 +121,8 @@ namespace RentMe.UserControls
             returnTransactionController.UpdateTransaction(transaction);
             MessageBox.Show("Successfully Returned Furniture Items");
             buttonSearch_Click(sender, e);
-            
+            labelAmountFineDue.Text = transaction.FineDueTotal.ToString();
+            label4AmountRefundDue.Text = transaction.RefundDueTotal.ToString();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
