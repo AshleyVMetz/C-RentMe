@@ -119,7 +119,7 @@
             this.editStoreMemberUserControl.Location = new System.Drawing.Point(0, 0);
             this.editStoreMemberUserControl.Margin = new System.Windows.Forms.Padding(4);
             this.editStoreMemberUserControl.Name = "editStoreMemberUserControl";
-            this.editStoreMemberUserControl.Size = new System.Drawing.Size(772, 622);
+            this.editStoreMemberUserControl.Size = new System.Drawing.Size(772, 634);
             this.editStoreMemberUserControl.TabIndex = 0;
             // 
             // tabPage1

@@ -63,11 +63,11 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.rentalsAndReturnsTabControl = new System.Windows.Forms.TabControl();
             this.rentalsTabPage = new System.Windows.Forms.TabPage();
+            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
             this.returnsTabPage = new System.Windows.Forms.TabPage();
+            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
-            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.rentalsAndReturnsTabControl.SuspendLayout();
             this.rentalsTabPage.SuspendLayout();
             this.returnsTabPage.SuspendLayout();
@@ -354,7 +354,7 @@
             // 
             this.rentalsAndReturnsTabControl.Controls.Add(this.rentalsTabPage);
             this.rentalsAndReturnsTabControl.Controls.Add(this.returnsTabPage);
-            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 327);
+            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 330);
             this.rentalsAndReturnsTabControl.Name = "rentalsAndReturnsTabControl";
             this.rentalsAndReturnsTabControl.SelectedIndex = 0;
             this.rentalsAndReturnsTabControl.Size = new System.Drawing.Size(766, 314);
@@ -372,6 +372,13 @@
             this.rentalsTabPage.Text = "Rentals";
             this.rentalsTabPage.UseVisualStyleBackColor = true;
             // 
+            // viewRentalsUserControl
+            // 
+            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
+            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewRentalsUserControl.TabIndex = 0;
+            // 
             // returnsTabPage
             // 
             this.returnsTabPage.Controls.Add(this.viewReturnsUserControl);
@@ -382,6 +389,13 @@
             this.returnsTabPage.TabIndex = 1;
             this.returnsTabPage.Text = "Returns";
             this.returnsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // viewReturnsUserControl
+            // 
+            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, -2);
+            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
+            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewReturnsUserControl.TabIndex = 0;
             // 
             // GenderComboBox
             // 
@@ -400,20 +414,6 @@
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 62;
             this.label5.Text = "Gender: *";
-            // 
-            // viewRentalsUserControl
-            // 
-            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, -2);
-            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
-            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
-            this.viewRentalsUserControl.TabIndex = 0;
-            // 
-            // viewReturnsUserControl
-            // 
-            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, -2);
-            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
-            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
-            this.viewReturnsUserControl.TabIndex = 0;
             // 
             // EditStoreMember
             // 
