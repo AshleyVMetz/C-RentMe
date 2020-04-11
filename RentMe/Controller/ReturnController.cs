@@ -7,6 +7,9 @@ namespace RentMe.Controller
 {
     class ReturnController
     {
+        /// <summary>
+        /// This class is the controller for return.
+        /// </summary>
         private ReturnDAL returnDAL;
 
         public ReturnController()
@@ -14,10 +17,11 @@ namespace RentMe.Controller
             this.returnDAL = new ReturnDAL();
         }
 
-        
-
-       
-
+        /// <summary>
+        /// This method creates a return item
+        /// </summary>
+        /// <param name="returnItem">item to be returned</param>
+        /// <returns>true or false</returns>
         public bool CreateReturnItem(ReturnItem returnItem)
         {
             return this.returnDAL.CreateReturnItem(returnItem);
@@ -28,9 +32,6 @@ namespace RentMe.Controller
             return returnDAL.GetReturnableItemsByRentalID(rentalID);
         }
 
-      /*  internal List<ReturnableItem> GetReturnableItemsByRentalIDList(List<int> rentalIDList)
-        {
-            return returnDAL.GetReturnableItemsByRentalIDList(rentalIDList);
-        }*/
+
     }
 }
