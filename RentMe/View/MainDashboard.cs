@@ -51,5 +51,13 @@ namespace RentMe
             this.Visible = false;
             previousForm.Visible = true;
         }
+
+        private void EmployeeDashboardTabControll_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (this.EmployeeDashboardTabControl.SelectedIndex == 4)
+            {
+                this.CartUserControl.AddCartItems();
+            }
+        }
     }
 }

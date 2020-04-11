@@ -118,6 +118,12 @@
     <Compile Include="UserControls\AdminReport.Designer.cs">
       <DependentUpon>AdminReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Cart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EditStoreMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AdminReport.resx">
       <DependentUpon>AdminReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EditStoreMember.resx">
       <DependentUpon>EditStoreMember.cs</DependentUpon>
