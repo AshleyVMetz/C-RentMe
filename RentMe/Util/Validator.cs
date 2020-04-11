@@ -106,5 +106,25 @@ namespace RentMe.Util
 
             return years;
         }
+
+        public static Boolean ValidateCartItem(CartItem item)
+        {
+            if (item.SerialNumber.Equals("") || item.Description.Equals("") || item.DailyRentalRate <= 0)
+            {
+                MessageBox.Show("Select an item before adding it to cart!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (item.Quantity <= 0)
+            {
+                MessageBox.Show("Select quantity to add it to cart!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
+using RentMe.Util;
 
 namespace RentMe.UserControls
 {
@@ -221,10 +222,49 @@ namespace RentMe.UserControls
             QuantityRequiredComboBox.Items.Clear();
             QuantityRequiredComboBox.SelectedIndex = -1;
 
-            for (int i=1; i < quantity; i++)
+            for (int i=1; i <= quantity; i++)
             {
                 QuantityRequiredComboBox.Items.Add(""+i);
             }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SerialNumberLabel.Text = "";
+            DescriptionLabel.Text = "";
+            StyleLabel.Text = "";
+            CategoryLabel.Text = "";
+            DailyRateLabel.Text = "";
+            FineRateLabel.Text = "";
+            QuantityAvailableLabel.Text = "";
+            PopulateQuantity(0);
+        }
+
+        private void AddToCartButton_Click(object sender, EventArgs e)
+        {
+            CartItem item = new CartItem();
+            item.SerialNumber = SerialNumberLabel.Text;
+            item.Description = DescriptionLabel.Text;
+            if (DailyRateLabel.Text.Length > 0)
+            {
+                item.DailyRentalRate = Int32.Parse(DailyRateLabel.Text);
+            }
+            
+            if (QuantityRequiredComboBox.Text.Length > 0)
+            {
+                item.Quantity = Int32.Parse(QuantityRequiredComboBox.Text);
+            } else
+            {
+                item.Quantity = 0;
+            }
+
+            if (Validator.ValidateCartItem(item))
+            {
+                return;
+            }
+
+            EmployeeDashboard.cart.Items.Add(item);
+
         }
     }
 }

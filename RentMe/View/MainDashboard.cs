@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using RentMe.Model;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace RentMe
 {
@@ -8,6 +10,7 @@ namespace RentMe
     public partial class EmployeeDashboard : Form
     {
         Form previousForm = null;
+        public static Cart cart = null;
 
         /// <summary>
         /// Constructor method.
@@ -23,6 +26,8 @@ namespace RentMe
             labelName.Text = fname + " " + lname;
 
             this.previousForm = form;
+            cart = new Cart();
+            cart.Items = new List<CartItem>();
 
         }
 
