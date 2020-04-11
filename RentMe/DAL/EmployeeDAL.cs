@@ -63,6 +63,10 @@ namespace RentMe.DAL
             return employeeID;
         }
 
+        /// <summary>
+        /// This method gets a list of employees.
+        /// </summary>
+        /// <returns>A list.</returns>
         internal List<Employee> GetEmployeeList()
         {
             List<Employee> employeeList = new List<Employee>();
@@ -75,7 +79,7 @@ namespace RentMe.DAL
                 connection.Open();
                 using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
-                    
+
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())

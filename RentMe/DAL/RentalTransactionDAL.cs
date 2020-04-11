@@ -54,6 +54,11 @@ namespace RentMe.DAL
             return rentedList;
         }
 
+        /// <summary>
+        /// This method gets a list of rental id by member id.
+        /// </summary>
+        /// <param name="memberID">memberID</param>
+        /// <returns>A list</returns>
         internal List<int> GetRentalIDListByMemberID(int memberID)
         {
             List<int> list = new List<int>();
@@ -77,8 +82,12 @@ namespace RentMe.DAL
             }
             return list;
         }
-    
 
+        /// <summary>
+        /// This method gets a rental transaction by rental ID.
+        /// </summary>
+        /// <param name="rentalID">rentalID</param>
+        /// <returns>A Rental Item</returns>
         public Item GetRentalTransactionByRentalID(int rentalID)
         {
             Item item = new Item();
@@ -96,10 +105,10 @@ namespace RentMe.DAL
                     {
                         while (reader.Read())
                         {
-                           
-                           
+
+
                             item.ScheduledReturn = (DateTime)reader["ScheduledReturn"];
-                           
+
                         }
                     }
                 }
@@ -163,7 +172,7 @@ namespace RentMe.DAL
                     }
 
                     transaction.Commit();
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -178,5 +187,5 @@ namespace RentMe.DAL
         }
 
     }
-    
+
 }

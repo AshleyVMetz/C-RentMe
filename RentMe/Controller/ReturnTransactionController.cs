@@ -1,6 +1,5 @@
 ﻿using RentMe.DAL;
 using RentMe.Model;
-using System;
 using System.Collections.Generic;
 
 namespace RentMe.Controller
@@ -30,11 +29,20 @@ namespace RentMe.Controller
             return this.returnDataSource.GetReturnTransactionsWithItemsByStoreMemberID(int.Parse(storeMemberID));
         }
 
+        /// <summary>
+        /// This method returns an int of return transaction.
+        /// </summary>
+        /// <param name="transaction"></param>
+        /// <returns>An int of returnTransactionID</returns>
         internal int CreateReturnTransaction(ReturnTransaction transaction)
         {
             return this.returnDataSource.CreateReturnTransaction(transaction);
         }
 
+        /// <summary>
+        /// This method updates the transaction.
+        /// </summary>
+        /// <param name="transaction"></param>
         internal void UpdateTransaction(ReturnTransaction transaction)
         {
             this.returnDataSource.UpdateTransaction(transaction);

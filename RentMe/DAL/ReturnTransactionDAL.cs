@@ -58,6 +58,11 @@ namespace RentMe.DAL
             return returnedList;
         }
 
+        /// <summary>
+        /// This method updates a return transaction.
+        /// </summary>
+        /// <param name="transaction">A return transaction</param>
+
         internal void UpdateTransaction(ReturnTransaction transaction)
         {
             string updateStatement =
@@ -79,6 +84,11 @@ namespace RentMe.DAL
             }
         }
 
+        /// <summary>
+        /// This method creates a return transaction.
+        /// </summary>
+        /// <param name="transaction">A return transaction</param>
+        /// <returns>The return transaction ID</returns>
         public int CreateReturnTransaction(ReturnTransaction transaction)
         {
             string insertStatement =

@@ -30,11 +30,21 @@ namespace RentMe.Controller
             return this.rentalDataSource.GetRentalTransactionsWithItemsByStoreMemberID(int.Parse(storeMemberID));
         }
 
+        /// <summary>
+        /// This method gets the rental transaction by rentalID.
+        /// </summary>
+        /// <param name="rentalID">rentalID</param>
+        /// <returns>The transaction item</returns>
         public Item GetRentalTransactionByRentalID(int rentalID)
         {
             return this.rentalDataSource.GetRentalTransactionByRentalID(rentalID);
         }
 
+        /// <summary>
+        /// This method gets a list of the rental ID by member ID.
+        /// </summary>
+        /// <param name="memberID">memberID</param>
+        /// <returns>A list of rentalIDs</returns>
         internal List<int> GetRentalIDListByMemberID(int memberID)
         {
             return this.rentalDataSource.GetRentalIDListByMemberID(memberID);
@@ -49,6 +59,6 @@ namespace RentMe.Controller
         {
             return this.rentalDataSource.InsertRentalTransaction(cart);
         }
-    
+
     }
 }

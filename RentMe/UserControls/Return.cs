@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
 
 namespace RentMe.UserControls
 {
+    /// <summary>
+    /// This class is for the return user control.
+    /// </summary>
     public partial class Return : UserControl
     {
         ReturnController returnController;
@@ -22,6 +21,8 @@ namespace RentMe.UserControls
         int memberID;
         List<int> rentalIDList;
         List<ReturnableItem> itemsToReturn;
+
+
         public Return()
         {
             InitializeComponent();
@@ -89,7 +90,7 @@ namespace RentMe.UserControls
                     {
                         returnItem.RefundDue = 0;
                         returnItem.FineDue = 0;
-                       
+
                     }
                     else
                     {
@@ -100,14 +101,14 @@ namespace RentMe.UserControls
 
 
                 }
-               var result = returnController.CreateReturnItem(returnItem);
+                var result = returnController.CreateReturnItem(returnItem);
                 if (!result)
                 {
                     MessageBox.Show("Failed to Return Items. Please make sure the quantity is valid");
                     return;
                 }
             }
-           
+
             if (finalBalance > 0)
             {
                 transaction.RefundDueTotal = finalBalance;
@@ -138,16 +139,20 @@ namespace RentMe.UserControls
             return (int)t.TotalDays;
         }
 
+        /// <summary>
+        /// This method clears the return data.
+        /// </summary>
+
         public void Clear()
         {
-            
+
             textBoxStoreMemberID.Text = "";
             dataGridViewReturnableItems.DataSource = null;
             dataGridViewReturnableItems.Refresh();
             buttonReturn.Enabled = false;
             comboBoxEmployee.Enabled = false;
-           
-            
+
+
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
