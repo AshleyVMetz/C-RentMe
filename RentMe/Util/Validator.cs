@@ -42,12 +42,33 @@ namespace RentMe.Util
                 return true;
             }
 
+            if (GetDifferenceInYears(storeMember.Dob, DateTime.Now) < 18)
+            {
+                MessageBox.Show("Customer below 18 years cannot be registered!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
             if (storeMember.Address1.Trim().Length < 1 ||
                 storeMember.City.Trim().Length < 1 ||
                 storeMember.State.Trim().Length < 1 ||
                 storeMember.Zip.Trim().Length < 1)
             {
                 MessageBox.Show("All mandatory address fields should be filled!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (!Regex.IsMatch(storeMember.Zip, @"^(\d{5}(?:\-\d{4})?)$"))
+            {
+                MessageBox.Show("Invalid Zip code Should be in the format 11111 or 11111-1111!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (storeMember.Sex.Trim().Length < 1)
+            {
+                MessageBox.Show("Gender has to be selected!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
@@ -69,7 +90,87 @@ namespace RentMe.Util
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-           
+
+            return false;
+        }
+
+        private static int GetDifferenceInYears(DateTime startDate, DateTime endDate)
+        {
+            int years = endDate.Year - startDate.Year;
+
+            if (startDate.Month == endDate.Month &&
+                endDate.Day < startDate.Day || endDate.Month < startDate.Month)
+            {
+                years--;
+            }
+
+            return years;
+        }
+
+        public static Boolean ValidateCartItem(CartItem item)
+        {
+            if (item.SerialNumber.Equals("") || item.Description.Equals("") || item.DailyRentalRate <= 0)
+            {
+                MessageBox.Show("Select an item before adding it to cart!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (item.Quantity <= 0)
+            {
+                MessageBox.Show("Select quantity to add it to cart!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            return false;
+        }
+
+        public static Boolean ValidateCart(Cart cart)
+        {
+            DateTime today = DateTime.Now;
+
+            if (cart.RentalStartDate.Year < today.Year ||
+                cart.RentalStartDate.Month < today.Month ||
+                cart.RentalStartDate.Day < today.Day)
+            {
+                MessageBox.Show("Rental start date cannot be before today!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (cart.RentalEndDate.Year < cart.RentalStartDate.Year ||
+                cart.RentalEndDate.Month < cart.RentalStartDate.Month ||
+                cart.RentalEndDate.Day < cart.RentalStartDate.Day)
+            {
+                MessageBox.Show("Rental end date cannot be before Rental start date!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            int rentalDays = (int) Math.Round(cart.RentalEndDate.Subtract(cart.RentalStartDate).TotalDays);
+
+            if (rentalDays == 0)
+            {
+                MessageBox.Show("Furnitures should be rented at least for a day!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (cart.Items.Count == 0)
+            {
+                MessageBox.Show("Add furniture to cart before checkout!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (cart.MemberID <= 0)
+            {
+                MessageBox.Show("Enter Customer Id before checkout!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
             return false;
         }
     }

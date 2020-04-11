@@ -21,6 +21,7 @@ namespace RentMe.UserControls
             storeMemberController = new StoreMemberController();
             InitializeComponent();
             AddStateData();
+            AddGenderData();
         }
 
         /// <summary>
@@ -42,7 +43,8 @@ namespace RentMe.UserControls
                     Address2 = this.Address2TextBox.Text,
                     City = this.CityTextBox.Text,
                     State = this.StateComboBox.Text,
-                    Zip = this.ZipCodeTextBox.Text
+                    Zip = this.ZipCodeTextBox.Text,
+                    Sex = this.GenderComboBox.Text
                 };
 
                 if (Validator.ValidateStoreMember(storeMember))
@@ -75,6 +77,16 @@ namespace RentMe.UserControls
         }
 
         /// <summary>
+        /// This helper method populates the gender combobox options.
+        /// </summary>
+        private void AddGenderData()
+        {
+            ComboBoxUtil.UpdateGenderComboBox(this.GenderComboBox);
+
+            this.GenderComboBox.SelectedIndex = -1;
+        }
+
+        /// <summary>
         /// This method clears the form values when the button is clicked.
         /// </summary>
         /// <param name="sender"></param>
@@ -98,6 +110,7 @@ namespace RentMe.UserControls
             this.CityTextBox.Text = "";
             this.ZipCodeTextBox.Text = "";
             this.StateComboBox.SelectedIndex = -1;
+            this.GenderComboBox.SelectedIndex = -1;
         }
     }
 }

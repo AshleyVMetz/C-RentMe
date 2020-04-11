@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
+using RentMe.Util;
 
 namespace RentMe.UserControls
 {
@@ -12,6 +14,8 @@ namespace RentMe.UserControls
     public partial class Home : UserControl
     {
         private readonly FurnitureController furnitureController;
+
+        int gListView1LostFocusItem = -1;
 
         /// <summary>
         /// Constructor method.
@@ -190,5 +194,81 @@ namespace RentMe.UserControls
             this.FurnitureListView.Items.Clear();
         }
 
+        private void FurnitureListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Just test");
+            Console.WriteLine(FurnitureListView.SelectedItems);
+            if (FurnitureListView.SelectedItems.Count > 0)
+            {
+                Console.WriteLine(FurnitureListView.SelectedItems[0]);
+                this.PopulateCartSelection(FurnitureListView.SelectedItems[0]);
+            }
+        }
+
+        private void PopulateCartSelection(ListViewItem item)
+        {
+            SerialNumberLabel.Text = item.SubItems[0].Text;
+            DescriptionLabel.Text = item.SubItems[1].Text;
+            StyleLabel.Text = item.SubItems[2].Text;
+            CategoryLabel.Text = item.SubItems[3].Text;
+            DailyRateLabel.Text = item.SubItems[5].Text;
+            FineRateLabel.Text = item.SubItems[6].Text;
+            QuantityAvailableLabel.Text = item.SubItems[4].Text;
+            PopulateQuantity(Int32.Parse(item.SubItems[4].Text));
+        }
+
+        private void PopulateQuantity(int quantity)
+        {
+            QuantityRequiredComboBox.Items.Clear();
+            QuantityRequiredComboBox.SelectedIndex = -1;
+
+            for (int i=1; i <= quantity; i++)
+            {
+                QuantityRequiredComboBox.Items.Add(""+i);
+            }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SerialNumberLabel.Text = "";
+            DescriptionLabel.Text = "";
+            StyleLabel.Text = "";
+            CategoryLabel.Text = "";
+            DailyRateLabel.Text = "";
+            FineRateLabel.Text = "";
+            QuantityAvailableLabel.Text = "";
+            PopulateQuantity(0);
+        }
+
+        private void AddToCartButton_Click(object sender, EventArgs e)
+        {
+            CartItem item = new CartItem();
+            item.SerialNumber = SerialNumberLabel.Text;
+            item.Description = DescriptionLabel.Text;
+            if (DailyRateLabel.Text.Length > 0)
+            {
+                item.DailyRentalRate = Int32.Parse(DailyRateLabel.Text);
+            }
+            
+            if (QuantityRequiredComboBox.Text.Length > 0)
+            {
+                item.Quantity = Int32.Parse(QuantityRequiredComboBox.Text);
+            } else
+            {
+                item.Quantity = 0;
+            }
+
+            if (Validator.ValidateCartItem(item))
+            {
+                return;
+            }
+
+            EmployeeDashboard.cart.Items.Add(item);
+
+            MessageBox.Show("Furniture Added to cart!!!!",
+                    "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+        }
     }
 }

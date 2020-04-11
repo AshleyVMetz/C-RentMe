@@ -64,5 +64,15 @@ namespace RentMe.Util
             comboBox.Items.Add("WI");
             comboBox.Items.Add("WY");
         }
+
+        /// <summary>
+        /// Populates Gender ComboBox with US states values
+        /// </summary>
+        public static void UpdateGenderComboBox(ComboBox comboBox)
+        {
+            comboBox.Items.Add("Male");
+            comboBox.Items.Add("Female");
+            comboBox.Items.Add("Not Specified");
+        }
     }
 }

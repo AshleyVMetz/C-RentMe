@@ -17,8 +17,8 @@ namespace RentMe.DAL
         /// <returns>true if record got inserted, else false</returns>
         public Boolean AddStoreMember(StoreMember StoreMember)
         {
-            string sqlStatement = "INSERT INTO dbo.StoreMembers (fName, lName, dob, phone, address1, address2, city, state, zipcode) " +
-                "VALUES (@FirstName, @LastName, @Dob, @Phone, @Address1, @Address2, @City, @State, @Zip)";
+            string sqlStatement = "INSERT INTO dbo.StoreMembers (fName, lName, dob, phone, address1, address2, city, state, zipcode, sex) " +
+                "VALUES (@FirstName, @LastName, @Dob, @Phone, @Address1, @Address2, @City, @State, @Zip, @Sex)";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
@@ -35,6 +35,7 @@ namespace RentMe.DAL
                     sqlCommand.Parameters.AddWithValue("@City", StoreMember.City);
                     sqlCommand.Parameters.AddWithValue("@State", StoreMember.State);
                     sqlCommand.Parameters.AddWithValue("@Zip", StoreMember.Zip);
+                    sqlCommand.Parameters.AddWithValue("@Sex", StoreMember.Sex);
                     int execution = sqlCommand.ExecuteNonQuery();
 
                     if (execution > 0)
@@ -70,17 +71,7 @@ namespace RentMe.DAL
                     {
                         while (reader.Read())
                         {
-                            storeMember = new StoreMember();
-                            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
-                            storeMember.FirstName = reader["FName"].ToString();
-                            storeMember.LastName = reader["LName"].ToString();
-                            storeMember.Phone = reader["Phone"].ToString();
-                            storeMember.Address1 = reader["Address1"].ToString();
-                            storeMember.Address2 = reader["Address2"].ToString();
-                            storeMember.City = reader["City"].ToString();
-                            storeMember.State = reader["State"].ToString();
-                            storeMember.Zip = reader["ZipCode"].ToString();
-                            storeMember.Dob = (DateTime)reader["DOB"];
+                            storeMember = this.RetrieveStoreMember(reader);
                         }
                     }
                 }
@@ -97,6 +88,7 @@ namespace RentMe.DAL
         public StoreMember GetStoreMemberByPhoneNumber(string phoneNumber)
         {
             StoreMember storeMember = null;
+            int counter = 0;
 
             string selectStatement =
                 "select * from dbo.StoreMembers WHERE Phone = @Phone ";
@@ -112,17 +104,12 @@ namespace RentMe.DAL
                     {
                         while (reader.Read())
                         {
-                            storeMember = new StoreMember();
-                            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
-                            storeMember.FirstName = reader["FName"].ToString();
-                            storeMember.LastName = reader["LName"].ToString();
-                            storeMember.Phone = reader["Phone"].ToString();
-                            storeMember.Address1 = reader["Address1"].ToString();
-                            storeMember.Address2 = reader["Address2"].ToString();
-                            storeMember.City = reader["City"].ToString();
-                            storeMember.State = reader["State"].ToString();
-                            storeMember.Zip = reader["ZipCode"].ToString();
-                            storeMember.Dob = (DateTime)reader["DOB"];
+                            counter++;
+                            if (counter > 1)
+                            {
+                                throw new ArgumentException("There is more than 1 store member with that phone. Please search by another criteria.");
+                            }
+                            storeMember = this.RetrieveStoreMember(reader);
                         }
                     }
                 }
@@ -139,6 +126,7 @@ namespace RentMe.DAL
         public StoreMember GetStoreMemberByName(string firstName, string lastName)
         {
             StoreMember storeMember = null;
+            int counter = 0;
 
             string selectStatement =
                 "select * from dbo.StoreMembers WHERE lower(FName) = lower(@FirstName) and lower(LName) = lower(@LastName) ";
@@ -156,17 +144,12 @@ namespace RentMe.DAL
                     {
                         while (reader.Read())
                         {
-                            storeMember = new StoreMember();
-                            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
-                            storeMember.FirstName = reader["FName"].ToString();
-                            storeMember.LastName = reader["LName"].ToString();
-                            storeMember.Phone = reader["Phone"].ToString();
-                            storeMember.Address1 = reader["Address1"].ToString();
-                            storeMember.Address2 = reader["Address2"].ToString();
-                            storeMember.City = reader["City"].ToString();
-                            storeMember.State = reader["State"].ToString();
-                            storeMember.Zip = reader["ZipCode"].ToString();
-                            storeMember.Dob = (DateTime)reader["DOB"];
+                            counter++;
+                            if (counter > 1)
+                            {
+                                throw new ArgumentException("There is more than 1 store member by that name. Please search by another criteria.");
+                            }
+                            storeMember = this.RetrieveStoreMember(reader);
                         }
                     }
                 }
@@ -182,7 +165,7 @@ namespace RentMe.DAL
         /// <returns>true if storeMember got successfully updated else false</returns>
         public Boolean UpdateStoreMember(StoreMember storeMember)
         {
-            string sqlStatement = "UPDATE dbo.StoreMembers set FName = @FName, LName = @LName, Phone = @Phone, Address1 = @Address1, Address2 = @Address2, City=@City, State=@State, ZipCode=@ZipCode, DOB=@DOB WHERE MemberID=@MemberId ";
+            string sqlStatement = "UPDATE dbo.StoreMembers set FName = @FName, LName = @LName, Phone = @Phone, Address1 = @Address1, Address2 = @Address2, City=@City, State=@State, ZipCode=@ZipCode, DOB=@DOB, Sex=@Sex WHERE MemberID=@MemberId ";
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
@@ -200,6 +183,7 @@ namespace RentMe.DAL
                     sqlCommand.Parameters.AddWithValue("@ZipCode", storeMember.Zip);
                     sqlCommand.Parameters.AddWithValue("@DOB", storeMember.Dob);
                     sqlCommand.Parameters.AddWithValue("@MemberId", storeMember.MemberID);
+                    sqlCommand.Parameters.AddWithValue("@Sex", storeMember.Sex);
 
                     int execution = sqlCommand.ExecuteNonQuery();
 
@@ -212,6 +196,26 @@ namespace RentMe.DAL
 
             return false;
         }
+
+        private StoreMember RetrieveStoreMember(SqlDataReader reader)
+        {
+            StoreMember storeMember = new StoreMember();
+            storeMember.MemberID = Convert.ToInt32(reader["MemberID"]);
+            storeMember.FirstName = reader["FName"].ToString();
+            storeMember.LastName = reader["LName"].ToString();
+            storeMember.Phone = reader["Phone"].ToString();
+            storeMember.Address1 = reader["Address1"].ToString();
+            storeMember.Address2 = reader["Address2"].ToString();
+            storeMember.City = reader["City"].ToString();
+            storeMember.State = reader["State"].ToString();
+            storeMember.Zip = reader["ZipCode"].ToString();
+            storeMember.Dob = (DateTime)reader["DOB"];
+            storeMember.Sex = reader["Sex"].ToString();
+
+            return storeMember;
+        }
+
+
 
     }
 }

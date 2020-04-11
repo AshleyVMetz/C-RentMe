@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using RentMe.Model;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace RentMe
 {
@@ -8,6 +10,7 @@ namespace RentMe
     public partial class EmployeeDashboard : Form
     {
         Form previousForm = null;
+        public static Cart cart = null;
 
         /// <summary>
         /// Constructor method.
@@ -16,14 +19,16 @@ namespace RentMe
         /// <param name="fname">The first name of the logged in user.</param>
         /// <param name="lname">The last name of the logged in user.</param>
         /// <param name="form">The login form.</param>
-        public EmployeeDashboard(string username, string fname, string lname, Form form)
+        public EmployeeDashboard(string username, string fname, string lname, int employeeId, Form form)
         {
             InitializeComponent();
             labelUser.Text = username;
             labelName.Text = fname + " " + lname;
 
             this.previousForm = form;
-
+            cart = new Cart();
+            cart.Items = new List<CartItem>();
+            cart.EmployeeID = employeeId;
         }
 
         /// <summary>
@@ -45,6 +50,14 @@ namespace RentMe
         {
             this.Visible = false;
             previousForm.Visible = true;
+        }
+
+        private void EmployeeDashboardTabControll_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (this.EmployeeDashboardTabControl.SelectedIndex == 4)
+            {
+                this.CartUserControl.AddCartItems();
+            }
         }
     }
 }

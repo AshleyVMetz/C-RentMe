@@ -39,5 +39,16 @@ namespace RentMe.Controller
         {
             return this.rentalDataSource.GetRentalIDListByMemberID(memberID);
         }
+
+        /// <summary>
+        /// Inserts cart items to rental tables
+        /// </summary>
+        /// <param name="cart">Cart containing rental items</param>
+        /// <returns>true if everything got inserted correctly else if there is any exception</returns>
+        public Boolean InsertRentalTransaction(Cart cart)
+        {
+            return this.rentalDataSource.InsertRentalTransaction(cart);
+        }
+    
     }
 }
