@@ -263,12 +263,27 @@ namespace RentMe.UserControls
                 return;
             }
 
-            EmployeeDashboard.cart.Items.Add(item);
+            CartItem matchedCartItem = null;
+
+            foreach ( CartItem cartItem in EmployeeDashboard.cart.Items)
+            {
+                if(cartItem.SerialNumber == item.SerialNumber)
+                {
+                    matchedCartItem = cartItem;
+                    break;
+                }
+            }
+
+            if (matchedCartItem == null)
+            {
+                EmployeeDashboard.cart.Items.Add(item);
+            } else
+            {
+                matchedCartItem.Quantity = item.Quantity;
+            }
 
             MessageBox.Show("Furniture Added to cart!!!!",
                     "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
         }
     }
 }
