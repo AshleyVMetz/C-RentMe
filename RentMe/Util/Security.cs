@@ -1,15 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RentMe.Util
 {
+    /// <summary>
+    /// This class is used to encrypt and decrypt passwords.
+    /// </summary>
     public static class Security
     {
+        /// <summary>
+        /// This method encrypts a password.
+        /// </summary>
+        /// <param name="encryptString">password</param>
+        /// <returns></returns>
         public static string encrypt(string encryptString)
         {
             string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,6 +39,11 @@ namespace RentMe.Util
             return encryptString;
         }
 
+        /// <summary>
+        /// This method decrypts a password.
+        /// </summary>
+        /// <param name="cipherText">encrypted password</param>
+        /// <returns></returns>
         public static string Decrypt(string cipherText)
         {
             string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

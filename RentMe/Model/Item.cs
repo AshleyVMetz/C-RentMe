@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RentMe.Model
 {
-   public class Item
+    /// <summary>
+    /// This class is the model for a rental Item with a rentalID and scheduled return.
+    /// </summary>
+    public class Item
     {
         public int RentalID { get; }
      
