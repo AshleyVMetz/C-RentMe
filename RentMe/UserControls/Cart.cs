@@ -48,7 +48,7 @@ namespace RentMe.UserControls
                 quantityComboBox.Location = new Point(314, 15 + (40 * i));
                 quantityComboBox.Width = 40;
                 CartItemPanel.Controls.Add(quantityComboBox);
-
+                
                 Label rentalRateLabel = new Label();
                 rentalRateLabel.Name = "RentalRateLabel" + i;
                 rentalRateLabel.Text = item.DailyRentalRate.ToString();
@@ -60,9 +60,11 @@ namespace RentMe.UserControls
                 updateButton.Text = "Update";
                 updateButton.Location = new Point(517, 15 + (40 * i));
                 CartItemPanel.Controls.Add(updateButton);
+                updateButton.Click += new EventHandler(UpdateButton_ClickHandler);
+
             }
 
-            
+
         }
 
         private void PopulateComboBox(ComboBox comboBox, int quantity)
@@ -74,10 +76,28 @@ namespace RentMe.UserControls
                 comboBox.Items.Add("" + i);
             }
 
-            comboBox.SelectedIndex = quantity-1;
+            comboBox.SelectedIndex = quantity;
         }
 
-        // X positions - -3, 113, 314, 397, 517
-        // Y positions - 13, 57,
+        private void UpdateButton_ClickHandler(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int index = Int32.Parse(button.Name.Substring(button.Name.Length - 1));
+
+            ComboBox comboBox = (ComboBox)CartItemPanel.Controls["QuantityComboBox" + index];
+            int quantity = Int32.Parse(comboBox.Text);
+
+            CartItem item = EmployeeDashboard.cart.Items[index];
+            if (quantity == 0)
+            {
+                EmployeeDashboard.cart.Items.Remove(item);
+            } else
+            {
+                item.Quantity = quantity;
+            }
+            
+            AddCartItems();
+        }
+
     }
 }
