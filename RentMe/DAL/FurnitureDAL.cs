@@ -207,5 +207,31 @@ namespace RentMe.DAL
 
             return furnitureList;
         }
+
+        /// <summary>
+        /// Find number of available furnitures
+        /// </summary>
+        /// <param name="serialNumber"></param>
+        /// <returns>Number of furnitures available</returns>
+        public int GetCurrentFurnitureCount(string serialNumber)
+        {
+            int quantity = 0;
+            string selectStatement =
+                "SELECT quantity from dbo.FurnitureItem where Serial# = @SerialNumber ";
+
+            using (SqlConnection connection = RentMeDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@SerialNumber", serialNumber);
+
+                    quantity = Convert.ToInt32(selectCommand.ExecuteScalar());
+                }
+            }
+
+            return quantity;
+        }
     }
 }
