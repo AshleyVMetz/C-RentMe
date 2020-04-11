@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace RentMe.Model
 {
+    /// <summary>
+    /// Class which represents Cart containing all Cart Items and related details
+    /// </summary>
     public class Cart
     {
         public List<CartItem> Items { get; set; }

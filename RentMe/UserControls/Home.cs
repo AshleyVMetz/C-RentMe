@@ -265,6 +265,10 @@ namespace RentMe.UserControls
 
             EmployeeDashboard.cart.Items.Add(item);
 
+            MessageBox.Show("Furniture Added to cart!!!!",
+                    "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
         }
     }
 }

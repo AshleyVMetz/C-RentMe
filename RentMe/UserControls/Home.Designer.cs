@@ -65,6 +65,7 @@
             this.AddToCartButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SerialNumberSearchButton
@@ -165,7 +166,7 @@
             this.FineRate});
             this.FurnitureListView.FullRowSelect = true;
             this.FurnitureListView.HideSelection = false;
-            this.FurnitureListView.Location = new System.Drawing.Point(14, 125);
+            this.FurnitureListView.Location = new System.Drawing.Point(14, 147);
             this.FurnitureListView.Name = "FurnitureListView";
             this.FurnitureListView.Size = new System.Drawing.Size(661, 200);
             this.FurnitureListView.TabIndex = 29;
@@ -212,7 +213,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(100, 381);
+            this.label3.Location = new System.Drawing.Point(100, 390);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 30;
@@ -221,7 +222,7 @@
             // SerialNumberLabel
             // 
             this.SerialNumberLabel.AutoSize = true;
-            this.SerialNumberLabel.Location = new System.Drawing.Point(179, 381);
+            this.SerialNumberLabel.Location = new System.Drawing.Point(179, 390);
             this.SerialNumberLabel.Name = "SerialNumberLabel";
             this.SerialNumberLabel.Size = new System.Drawing.Size(0, 13);
             this.SerialNumberLabel.TabIndex = 31;
@@ -229,7 +230,7 @@
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(500, 381);
+            this.DescriptionLabel.Location = new System.Drawing.Point(500, 390);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(0, 13);
             this.DescriptionLabel.TabIndex = 33;
@@ -238,7 +239,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(403, 381);
+            this.label5.Location = new System.Drawing.Point(403, 390);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 32;
@@ -247,7 +248,7 @@
             // StyleLabel
             // 
             this.StyleLabel.AutoSize = true;
-            this.StyleLabel.Location = new System.Drawing.Point(179, 404);
+            this.StyleLabel.Location = new System.Drawing.Point(179, 413);
             this.StyleLabel.Name = "StyleLabel";
             this.StyleLabel.Size = new System.Drawing.Size(0, 13);
             this.StyleLabel.TabIndex = 35;
@@ -256,7 +257,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(117, 404);
+            this.label6.Location = new System.Drawing.Point(117, 413);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 34;
@@ -265,7 +266,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(500, 404);
+            this.CategoryLabel.Location = new System.Drawing.Point(500, 413);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(0, 13);
             this.CategoryLabel.TabIndex = 37;
@@ -274,7 +275,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(419, 404);
+            this.label10.Location = new System.Drawing.Point(419, 413);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 36;
@@ -283,7 +284,7 @@
             // DailyRateLabel
             // 
             this.DailyRateLabel.AutoSize = true;
-            this.DailyRateLabel.Location = new System.Drawing.Point(179, 427);
+            this.DailyRateLabel.Location = new System.Drawing.Point(179, 436);
             this.DailyRateLabel.Name = "DailyRateLabel";
             this.DailyRateLabel.Size = new System.Drawing.Size(0, 13);
             this.DailyRateLabel.TabIndex = 39;
@@ -292,7 +293,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(54, 427);
+            this.label8.Location = new System.Drawing.Point(54, 436);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 13);
             this.label8.TabIndex = 38;
@@ -301,7 +302,7 @@
             // FineRateLabel
             // 
             this.FineRateLabel.AutoSize = true;
-            this.FineRateLabel.Location = new System.Drawing.Point(501, 427);
+            this.FineRateLabel.Location = new System.Drawing.Point(501, 436);
             this.FineRateLabel.Name = "FineRateLabel";
             this.FineRateLabel.Size = new System.Drawing.Size(0, 13);
             this.FineRateLabel.TabIndex = 41;
@@ -310,7 +311,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(381, 427);
+            this.label9.Location = new System.Drawing.Point(381, 436);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 13);
             this.label9.TabIndex = 40;
@@ -319,7 +320,7 @@
             // QuantityAvailableLabel
             // 
             this.QuantityAvailableLabel.AutoSize = true;
-            this.QuantityAvailableLabel.Location = new System.Drawing.Point(179, 450);
+            this.QuantityAvailableLabel.Location = new System.Drawing.Point(179, 459);
             this.QuantityAvailableLabel.Name = "QuantityAvailableLabel";
             this.QuantityAvailableLabel.Size = new System.Drawing.Size(0, 13);
             this.QuantityAvailableLabel.TabIndex = 43;
@@ -328,7 +329,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(43, 450);
+            this.label11.Location = new System.Drawing.Point(43, 459);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(118, 13);
             this.label11.TabIndex = 42;
@@ -338,7 +339,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(31, 526);
+            this.label12.Location = new System.Drawing.Point(31, 535);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(117, 13);
             this.label12.TabIndex = 44;
@@ -349,7 +350,7 @@
             this.QuantityRequiredComboBox.DisplayMember = "Text";
             this.QuantityRequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.QuantityRequiredComboBox.FormattingEnabled = true;
-            this.QuantityRequiredComboBox.Location = new System.Drawing.Point(154, 521);
+            this.QuantityRequiredComboBox.Location = new System.Drawing.Point(154, 530);
             this.QuantityRequiredComboBox.Name = "QuantityRequiredComboBox";
             this.QuantityRequiredComboBox.Size = new System.Drawing.Size(51, 21);
             this.QuantityRequiredComboBox.TabIndex = 45;
@@ -359,7 +360,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(32, 492);
+            this.label14.Location = new System.Drawing.Point(32, 501);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 17);
             this.label14.TabIndex = 50;
@@ -367,7 +368,7 @@
             // 
             // AddToCartButton
             // 
-            this.AddToCartButton.Location = new System.Drawing.Point(244, 521);
+            this.AddToCartButton.Location = new System.Drawing.Point(244, 530);
             this.AddToCartButton.Name = "AddToCartButton";
             this.AddToCartButton.Size = new System.Drawing.Size(136, 23);
             this.AddToCartButton.TabIndex = 51;
@@ -377,7 +378,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(421, 521);
+            this.ClearButton.Location = new System.Drawing.Point(421, 530);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(136, 23);
             this.ClearButton.TabIndex = 52;
@@ -389,16 +390,27 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 346);
+            this.label4.Location = new System.Drawing.Point(32, 355);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 53;
             this.label4.Text = "Selected Item";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(14, 128);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(155, 13);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "(Click on row to select furniture)";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.AddToCartButton);
@@ -475,5 +487,6 @@
         private System.Windows.Forms.Button AddToCartButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label13;
     }
 }

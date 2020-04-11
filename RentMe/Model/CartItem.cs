@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace RentMe.Model
 {
+    /// <summary>
+    /// Cart Item object to hold individual Cart
+    /// </summary>
     public class CartItem
     {
         public string SerialNumber { get; set; }
