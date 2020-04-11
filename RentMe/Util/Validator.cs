@@ -148,6 +148,15 @@ namespace RentMe.Util
                 return true;
             }
 
+            int rentalDays = (int) Math.Round(cart.RentalEndDate.Subtract(cart.RentalStartDate).TotalDays);
+
+            if (rentalDays == 0)
+            {
+                MessageBox.Show("Furnitures should be rented at least for a day!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
             if (cart.Items.Count == 0)
             {
                 MessageBox.Show("Add furniture to cart before checkout!!!!",

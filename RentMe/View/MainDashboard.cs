@@ -19,7 +19,7 @@ namespace RentMe
         /// <param name="fname">The first name of the logged in user.</param>
         /// <param name="lname">The last name of the logged in user.</param>
         /// <param name="form">The login form.</param>
-        public EmployeeDashboard(string username, string fname, string lname, Form form)
+        public EmployeeDashboard(string username, string fname, string lname, int employeeId, Form form)
         {
             InitializeComponent();
             labelUser.Text = username;
@@ -28,7 +28,7 @@ namespace RentMe
             this.previousForm = form;
             cart = new Cart();
             cart.Items = new List<CartItem>();
-
+            cart.EmployeeID = employeeId;
         }
 
         /// <summary>

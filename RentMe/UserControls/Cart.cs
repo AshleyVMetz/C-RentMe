@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using RentMe.Controller;
 using RentMe.Model;
 using RentMe.Util;
 
@@ -14,9 +9,14 @@ namespace RentMe.UserControls
 {
     public partial class Cart : UserControl
     {
+        private readonly StoreMemberController storeMemberController;
+        private readonly RentalTransactionController rentalTransactionController;
+
         public Cart()
         {
             InitializeComponent();
+            storeMemberController = new StoreMemberController();
+            rentalTransactionController = new RentalTransactionController();
         }
 
         /// <summary>
@@ -135,12 +135,59 @@ namespace RentMe.UserControls
             Console.WriteLine("Validation is fine");
 
             // Check if memberId is valid
+            StoreMember storeMember = null;
 
-            // Check if each furniture's quantity is available
+            try
+            {
+                storeMember = this.storeMemberController.GetStoreMemberByCustomerId(customerId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while getting Store Member information!!!! - " + ex.Message,
+                   "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            // Calculate amount and show confirmation with final amount
+            if (storeMember != null)
+            {
+                // Find Total amount due
+                double totalAmount = 0;
+                int rentalDays = (int) Math.Round(RentalEndTimePicker.Value.Subtract(RentalStartTimePicker.Value).TotalDays);
 
-            // Place order
+                for (int i=0; i < EmployeeDashboard.cart.Items.Count; i++ )
+                {
+                    CartItem item = EmployeeDashboard.cart.Items[i];
+                    totalAmount += (item.Quantity * item.DailyRentalRate * rentalDays);
+                }
+
+                // Show confirmation with final amount
+                String message = "Total rental cost for the customer - " + storeMember.FirstName + " " + storeMember.LastName + " is " + totalAmount;
+                DialogResult dr = MessageBox.Show(message, "Confirm Cost for rental", MessageBoxButtons.YesNoCancel,
+                                    MessageBoxIcon.Information);
+
+                if (dr == DialogResult.Yes)
+                {
+                    // Place order
+                    Boolean isInserted = this.rentalTransactionController.InsertRentalTransaction(EmployeeDashboard.cart);
+
+                    if (!isInserted)
+                    {
+                        MessageBox.Show("Error while creating rental transaction!!!! - ",
+                  "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("Rental transaction successful!!!! - ",
+                  "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Customer found!!!! - ",
+                  "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+     
         }
     }
 }
