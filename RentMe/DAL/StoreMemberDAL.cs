@@ -215,5 +215,7 @@ namespace RentMe.DAL
             return storeMember;
         }
 
+
+
     }
 }

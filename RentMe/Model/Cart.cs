@@ -13,6 +13,8 @@ namespace RentMe.Model
     {
         public List<CartItem> Items { get; set; }
 
+        public int MemberID { get; set; }
+
         public DateTime RentalStartDate { get; set; }
 
         public DateTime RentalEndDate { get; set; }

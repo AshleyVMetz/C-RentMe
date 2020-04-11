@@ -90,7 +90,7 @@ namespace RentMe.Util
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-           
+
             return false;
         }
 
@@ -126,5 +126,43 @@ namespace RentMe.Util
             return false;
         }
 
+        public static Boolean ValidateCart(Cart cart)
+        {
+            DateTime today = DateTime.Now;
+
+            if (cart.RentalStartDate.Year < today.Year ||
+                cart.RentalStartDate.Month < today.Month ||
+                cart.RentalStartDate.Day < today.Day)
+            {
+                MessageBox.Show("Rental start date cannot be before today!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (cart.RentalEndDate.Year < cart.RentalStartDate.Year ||
+                cart.RentalEndDate.Month < cart.RentalStartDate.Month ||
+                cart.RentalEndDate.Day < cart.RentalStartDate.Day)
+            {
+                MessageBox.Show("Rental end date cannot be before Rental start date!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (cart.Items.Count == 0)
+            {
+                MessageBox.Show("Add furniture to cart before checkout!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (cart.MemberID <= 0)
+            {
+                MessageBox.Show("Enter Customer Id before checkout!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

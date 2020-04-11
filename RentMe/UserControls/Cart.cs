@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentMe.Model;
+using RentMe.Util;
 
 namespace RentMe.UserControls
 {
@@ -99,5 +100,47 @@ namespace RentMe.UserControls
             AddCartItems();
         }
 
+        private void CheckoutButton_Click(object sender, EventArgs e)
+        {
+
+            if (CustomerIDTextBox.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Customer Id cannot be empty!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int customerId = 0;
+
+            try
+            {
+                customerId = Convert.ToInt32(CustomerIDTextBox.Text);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Customer Id should be a Number!!!! - " + ex.Message,
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            EmployeeDashboard.cart.MemberID = customerId;
+            EmployeeDashboard.cart.RentalStartDate = RentalStartTimePicker.Value;
+            EmployeeDashboard.cart.RentalEndDate = RentalEndTimePicker.Value;
+
+            if (Validator.ValidateCart(EmployeeDashboard.cart))
+            {
+                return;
+            }
+
+            Console.WriteLine("Validation is fine");
+
+            // Check if memberId is valid
+
+            // Check if each furniture's quantity is available
+
+            // Calculate amount and show confirmation with final amount
+
+            // Place order
+        }
     }
 }

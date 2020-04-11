@@ -34,8 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.DateToDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.DateFromDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.RentalEndTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.RentalStartTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CustomerIDTextBox = new System.Windows.Forms.TextBox();
@@ -101,19 +101,19 @@
             this.label13.TabIndex = 53;
             this.label13.Text = "Rental End :";
             // 
-            // DateToDateTimePicker
+            // RentalEndTimePicker
             // 
-            this.DateToDateTimePicker.Location = new System.Drawing.Point(415, 360);
-            this.DateToDateTimePicker.Name = "DateToDateTimePicker";
-            this.DateToDateTimePicker.Size = new System.Drawing.Size(193, 20);
-            this.DateToDateTimePicker.TabIndex = 52;
+            this.RentalEndTimePicker.Location = new System.Drawing.Point(415, 360);
+            this.RentalEndTimePicker.Name = "RentalEndTimePicker";
+            this.RentalEndTimePicker.Size = new System.Drawing.Size(193, 20);
+            this.RentalEndTimePicker.TabIndex = 52;
             // 
-            // DateFromDateTimePicker
+            // RentalStartTimePicker
             // 
-            this.DateFromDateTimePicker.Location = new System.Drawing.Point(104, 359);
-            this.DateFromDateTimePicker.Name = "DateFromDateTimePicker";
-            this.DateFromDateTimePicker.Size = new System.Drawing.Size(190, 20);
-            this.DateFromDateTimePicker.TabIndex = 51;
+            this.RentalStartTimePicker.Location = new System.Drawing.Point(104, 359);
+            this.RentalStartTimePicker.Name = "RentalStartTimePicker";
+            this.RentalStartTimePicker.Size = new System.Drawing.Size(190, 20);
+            this.RentalStartTimePicker.TabIndex = 51;
             // 
             // label5
             // 
@@ -150,6 +150,7 @@
             this.CheckoutButton.TabIndex = 56;
             this.CheckoutButton.Text = "Checkout";
             this.CheckoutButton.UseVisualStyleBackColor = true;
+            this.CheckoutButton.Click += new System.EventHandler(this.CheckoutButton_Click);
             // 
             // label10
             // 
@@ -170,9 +171,9 @@
             this.Controls.Add(this.CustomerIDTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.DateToDateTimePicker);
+            this.Controls.Add(this.RentalEndTimePicker);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.DateFromDateTimePicker);
+            this.Controls.Add(this.RentalStartTimePicker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -193,8 +194,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker DateToDateTimePicker;
-        private System.Windows.Forms.DateTimePicker DateFromDateTimePicker;
+        private System.Windows.Forms.DateTimePicker RentalEndTimePicker;
+        private System.Windows.Forms.DateTimePicker RentalStartTimePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox CustomerIDTextBox;
