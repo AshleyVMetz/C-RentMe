@@ -11,6 +11,9 @@ namespace RentMe.Controller
     {
         private FurnitureDAL furnitureDAL;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public FurnitureController()
         {
             this.furnitureDAL = new FurnitureDAL();
@@ -73,6 +76,5 @@ namespace RentMe.Controller
         {
             return this.furnitureDAL.GetCurrentFurnitureCount(serialNumber);
         }
-
     }
 }

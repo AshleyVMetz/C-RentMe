@@ -68,8 +68,5 @@ namespace RentMe.Util
             }
             return cipherText;
         }
-
-
-
     }
 }

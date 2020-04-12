@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 
-
 namespace RentMe.View
 {
     /// <summary>
@@ -12,6 +11,9 @@ namespace RentMe.View
     {
         private readonly LoginController controller;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public EmployeeLogin()
         {
             InitializeComponent();
@@ -68,7 +70,6 @@ namespace RentMe.View
             {
                 MessageBox.Show("Employee Does Not Exist");
             }
-
         }
     }
 }

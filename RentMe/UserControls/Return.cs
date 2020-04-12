@@ -22,7 +22,9 @@ namespace RentMe.UserControls
         List<int> rentalIDList;
         List<ReturnableItem> itemsToReturn;
 
-
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public Return()
         {
             InitializeComponent();
@@ -36,6 +38,9 @@ namespace RentMe.UserControls
             comboBoxEmployee.Enabled = false;
         }
 
+        /// <summary>
+        /// This method loads the list of employees.
+        /// </summary>
         private void LoadEmployees()
         {
             var employeeList = new List<Employee>();
@@ -49,6 +54,11 @@ namespace RentMe.UserControls
             comboBoxEmployee.ValueMember = "EmployeeID";
         }
 
+        /// <summary>
+        /// This method submits a return when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonReturn_Click(object sender, EventArgs e)
         {
             ReturnTransaction transaction = new ReturnTransaction();
@@ -126,11 +136,22 @@ namespace RentMe.UserControls
             label4AmountRefundDue.Text = transaction.RefundDueTotal.ToString();
         }
 
+        /// <summary>
+        /// This method cancels the return when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Clear();
         }
 
+        /// <summary>
+        /// This helper method returns the days between dates.
+        /// </summary>
+        /// <param name="date">The date</param>
+        /// <param name="startDate">The start date</param>
+        /// <returns>The days between dates.</returns>
         static int DayNum(string date, string startDate)
         {
             DateTime start = DateTime.Parse(startDate);
@@ -155,6 +176,11 @@ namespace RentMe.UserControls
 
         }
 
+        /// <summary>
+        /// This method searches the returnable items when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             memberID = int.Parse(textBoxStoreMemberID.Text);

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
@@ -14,8 +13,6 @@ namespace RentMe.UserControls
     public partial class Home : UserControl
     {
         private readonly FurnitureController furnitureController;
-
-        int gListView1LostFocusItem = -1;
 
         /// <summary>
         /// Constructor method.
@@ -194,6 +191,11 @@ namespace RentMe.UserControls
             this.FurnitureListView.Items.Clear();
         }
 
+        /// <summary>
+        /// This method changes the furniture for cart selection when the list view selected index is changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FurnitureListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Just test");
@@ -205,6 +207,10 @@ namespace RentMe.UserControls
             }
         }
 
+        /// <summary>
+        /// This helper method populates the furniture for cart selection.
+        /// </summary>
+        /// <param name="item">The item available for cart selection.</param>
         private void PopulateCartSelection(ListViewItem item)
         {
             SerialNumberLabel.Text = item.SubItems[0].Text;
@@ -217,6 +223,10 @@ namespace RentMe.UserControls
             PopulateQuantity(Int32.Parse(item.SubItems[4].Text));
         }
 
+        /// <summary>
+        /// This helper method populates the quantity available combobox.
+        /// </summary>
+        /// <param name="quantity">The quantity available for cart selection.</param>
         private void PopulateQuantity(int quantity)
         {
             QuantityRequiredComboBox.Items.Clear();
@@ -228,6 +238,11 @@ namespace RentMe.UserControls
             }
         }
 
+        /// <summary>
+        /// This method clears the furniture for cart selection when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearButton_Click(object sender, EventArgs e)
         {
             SerialNumberLabel.Text = "";
@@ -240,6 +255,11 @@ namespace RentMe.UserControls
             PopulateQuantity(0);
         }
 
+        /// <summary>
+        /// This method adds the furniture for cart selection to the cart when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddToCartButton_Click(object sender, EventArgs e)
         {
             CartItem item = new CartItem();

@@ -8,12 +8,18 @@ using RentMe.Util;
 
 namespace RentMe.UserControls
 {
+    /// <summary>
+    /// This method models a user control for the cart.
+    /// </summary>
     public partial class Cart : UserControl
     {
         private readonly StoreMemberController storeMemberController;
         private readonly RentalTransactionController rentalTransactionController;
         private readonly FurnitureController furnitureController;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public Cart()
         {
             InitializeComponent();
@@ -70,6 +76,11 @@ namespace RentMe.UserControls
 
         }
 
+        /// <summary>
+        /// This method updates the cart when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateButton_ClickHandler(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -87,6 +98,7 @@ namespace RentMe.UserControls
                 availableQuantity = furnitureController.GetCurrentFurnitureCount(item.SerialNumber);
             } catch(Exception ex)
             {
+                ex.ToString();
                 MessageBox.Show("Error while fetching available quantity!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -112,6 +124,11 @@ namespace RentMe.UserControls
             AddCartItems();
         }
 
+        /// <summary>
+        /// This method checks out with the current cart when clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckoutButton_Click(object sender, EventArgs e)
         {
 
@@ -174,7 +191,7 @@ namespace RentMe.UserControls
 
                 // Show confirmation with final amount
                 String message = "Total rental cost for the customer - " + storeMember.FirstName + " " + storeMember.LastName + " is " + totalAmount;
-                DialogResult dr = MessageBox.Show(message, "Confirm Cost for rental", MessageBoxButtons.YesNoCancel,
+                DialogResult dr = MessageBox.Show(message, "Confirm Cost for rental", MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Information);
 
                 if (dr == DialogResult.Yes)
@@ -204,6 +221,9 @@ namespace RentMe.UserControls
      
         }
 
+        /// <summary>
+        /// This helper method refreshes the cart.
+        /// </summary>
         private void ClearAllCart()
         {
             EmployeeDashboard.cart.Items = new List<CartItem>();

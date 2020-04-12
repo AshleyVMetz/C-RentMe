@@ -52,12 +52,14 @@ namespace RentMe
             previousForm.Visible = true;
         }
 
-        private void EmployeeDashboardTabControll_SelectedIndexChanged(object sender, System.EventArgs e)
+        /// <summary>
+        /// This method refreshes the cart when the tab is entered.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CartTab_Enter(object sender, System.EventArgs e)
         {
-            if (this.EmployeeDashboardTabControl.SelectedIndex == 4)
-            {
-                this.CartUserControl.AddCartItems();
-            }
+            this.CartUserControl.AddCartItems();
         }
     }
 }

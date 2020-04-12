@@ -63,11 +63,11 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.rentalsAndReturnsTabControl = new System.Windows.Forms.TabControl();
             this.rentalsTabPage = new System.Windows.Forms.TabPage();
+            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
             this.returnsTabPage = new System.Windows.Forms.TabPage();
+            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
-            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.rentalsAndReturnsTabControl.SuspendLayout();
             this.rentalsTabPage.SuspendLayout();
             this.returnsTabPage.SuspendLayout();
@@ -332,7 +332,7 @@
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(328, 298);
+            this.SaveChangesButton.Location = new System.Drawing.Point(479, 285);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(90, 26);
             this.SaveChangesButton.TabIndex = 17;
@@ -342,7 +342,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(425, 298);
+            this.ClearButton.Location = new System.Drawing.Point(576, 285);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(90, 26);
             this.ClearButton.TabIndex = 18;
@@ -354,7 +354,7 @@
             // 
             this.rentalsAndReturnsTabControl.Controls.Add(this.rentalsTabPage);
             this.rentalsAndReturnsTabControl.Controls.Add(this.returnsTabPage);
-            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 327);
+            this.rentalsAndReturnsTabControl.Location = new System.Drawing.Point(3, 317);
             this.rentalsAndReturnsTabControl.Name = "rentalsAndReturnsTabControl";
             this.rentalsAndReturnsTabControl.SelectedIndex = 0;
             this.rentalsAndReturnsTabControl.Size = new System.Drawing.Size(766, 314);
@@ -372,6 +372,13 @@
             this.rentalsTabPage.Text = "Rentals";
             this.rentalsTabPage.UseVisualStyleBackColor = true;
             // 
+            // viewRentalsUserControl
+            // 
+            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
+            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewRentalsUserControl.TabIndex = 0;
+            // 
             // returnsTabPage
             // 
             this.returnsTabPage.Controls.Add(this.viewReturnsUserControl);
@@ -383,11 +390,18 @@
             this.returnsTabPage.Text = "Returns";
             this.returnsTabPage.UseVisualStyleBackColor = true;
             // 
+            // viewReturnsUserControl
+            // 
+            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
+            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewReturnsUserControl.TabIndex = 0;
+            // 
             // GenderComboBox
             // 
             this.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenderComboBox.FormattingEnabled = true;
-            this.GenderComboBox.Location = new System.Drawing.Point(191, 260);
+            this.GenderComboBox.Location = new System.Drawing.Point(191, 258);
             this.GenderComboBox.Name = "GenderComboBox";
             this.GenderComboBox.Size = new System.Drawing.Size(187, 21);
             this.GenderComboBox.TabIndex = 61;
@@ -395,25 +409,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(108, 264);
+            this.label5.Location = new System.Drawing.Point(107, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 62;
             this.label5.Text = "Gender: *";
-            // 
-            // viewRentalsUserControl
-            // 
-            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, -2);
-            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
-            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
-            this.viewRentalsUserControl.TabIndex = 0;
-            // 
-            // viewReturnsUserControl
-            // 
-            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, -2);
-            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
-            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
-            this.viewReturnsUserControl.TabIndex = 0;
             // 
             // EditStoreMember
             // 
@@ -456,7 +456,7 @@
             this.Controls.Add(this.CustomerIDSearchTextBox);
             this.Controls.Add(this.Label7);
             this.Name = "EditStoreMember";
-            this.Size = new System.Drawing.Size(772, 647);
+            this.Size = new System.Drawing.Size(772, 634);
             this.rentalsAndReturnsTabControl.ResumeLayout(false);
             this.rentalsTabPage.ResumeLayout(false);
             this.returnsTabPage.ResumeLayout(false);

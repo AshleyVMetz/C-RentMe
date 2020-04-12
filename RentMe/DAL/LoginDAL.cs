@@ -32,8 +32,6 @@ namespace RentMe.DAL
                 {
                     selectCommand.Parameters.AddWithValue("@username", username);
                     selectCommand.Parameters.AddWithValue("@password", encryptedPassword);
-
-
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
@@ -50,6 +48,5 @@ namespace RentMe.DAL
             }
             return null;
         }
-
     }
 }
