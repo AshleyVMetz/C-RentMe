@@ -10,6 +10,11 @@ namespace RentMe.Util
     /// </summary>
     class Validator
     {
+        /// <summary>
+        /// This method provides store member validation.
+        /// </summary>
+        /// <param name="storeMember">The store member to be validated.</param>
+        /// <returns>False if and only if all parameters are valid.</returns>
         public static Boolean ValidateStoreMember(StoreMember storeMember)
         {
             if (storeMember.FirstName.Trim().Length < 1)
@@ -75,9 +80,13 @@ namespace RentMe.Util
 
             return false;
         }
-
-       
-
+        
+        /// <summary>
+        /// This method returns the difference between dates in years.
+        /// </summary>
+        /// <param name="startDate">The start date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <returns>The difference between dates in years.</returns>
         private static int GetDifferenceInYears(DateTime startDate, DateTime endDate)
         {
             int years = endDate.Year - startDate.Year;
@@ -91,6 +100,11 @@ namespace RentMe.Util
             return years;
         }
 
+        /// <summary>
+        /// This method provides cart item validation.
+        /// </summary>
+        /// <param name="item">The item to be validated.</param>
+        /// <returns>False if and only if all parameters are valid.</returns>
         public static Boolean ValidateCartItem(CartItem item)
         {
             if (item.SerialNumber.Equals("") || item.Description.Equals("") || item.DailyRentalRate <= 0)
@@ -110,6 +124,11 @@ namespace RentMe.Util
             return false;
         }
 
+        /// <summary>
+        /// This method provides cart validation.
+        /// </summary>
+        /// <param name="item">The cart to be validated.</param>
+        /// <returns>False if and only if all parameters are valid.</returns>
         public static Boolean ValidateCart(Cart cart)
         {
             DateTime today = DateTime.Now;

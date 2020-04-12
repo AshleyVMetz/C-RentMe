@@ -2,6 +2,9 @@
 
 namespace RentMe.Model
 {
+    /// <summary>
+    /// This class models a return transaction.
+    /// </summary>
     public class ReturnTransaction
     {
         public int ReturnID { get; set; }

@@ -287,7 +287,7 @@ namespace RentMe.DAL
                             "State=@state, ZipCode=@zipCode, Username=@username, Password=@password, IsActive=@isActive, IsAdmin=@isAdmin " +
                         "WHERE EmployeeID=@employeeID AND FName=@oldFName AND LName=@oldLName AND Sex=@oldSex AND DOB=@oldDOB AND Phone=@oldPhone " +
                             "AND Address1=@oldAddress1 AND City=@oldCity AND State=@oldState AND ZipCode=@oldZipCode " +
-                            "AND Username=@oldUsername AND Password=@oldPassword AND IsActive=@oldIsActive AND IsAdmin=@oldIsAdmin; ";
+                            "AND Username=@oldUsername AND IsActive=@oldIsActive AND IsAdmin=@oldIsAdmin; ";
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
                 connection.Open();
@@ -304,7 +304,6 @@ namespace RentMe.DAL
                     insertCommand.Parameters.AddWithValue("@oldState", oldEmployeeDetails.State);
                     insertCommand.Parameters.AddWithValue("@oldZipCode", oldEmployeeDetails.ZipCode);
                     insertCommand.Parameters.AddWithValue("@oldUsername", oldEmployeeDetails.Username);
-                    insertCommand.Parameters.AddWithValue("@oldPassword", oldEmployeeDetails.Password);
                     insertCommand.Parameters.AddWithValue("@oldIsActive", oldEmployeeDetails.IsActive ? 1 : 0);
                     insertCommand.Parameters.AddWithValue("@oldIsAdmin", oldEmployeeDetails.IsAdmin ? 1 : 0);
                     insertCommand.Parameters.AddWithValue("@FName", newEmployeeDetails.FName);
@@ -318,7 +317,7 @@ namespace RentMe.DAL
                     insertCommand.Parameters.AddWithValue("@State", newEmployeeDetails.State);
                     insertCommand.Parameters.AddWithValue("@ZipCode", newEmployeeDetails.ZipCode);
                     insertCommand.Parameters.AddWithValue("@Username", newEmployeeDetails.Username);
-                    insertCommand.Parameters.AddWithValue("@Password", newEmployeeDetails.Password);
+                    insertCommand.Parameters.AddWithValue("@Password", Security.encrypt(newEmployeeDetails.Password));
                     insertCommand.Parameters.AddWithValue("@IsActive", newEmployeeDetails.IsActive ? 1 : 0);
                     insertCommand.Parameters.AddWithValue("@IsAdmin", newEmployeeDetails.IsAdmin ? 1 : 0);
                     insertCommand.ExecuteNonQuery();

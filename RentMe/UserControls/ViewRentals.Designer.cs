@@ -34,13 +34,14 @@
             this.scheduledReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.employeeFullName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.totalCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.totalCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // rentalListView
             // 
+            this.rentalListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rentalListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.RentalID,
             this.dateOfRental,
@@ -81,12 +82,7 @@
             // itemDescription
             // 
             this.itemDescription.Text = "Item Description";
-            this.itemDescription.Width = 200;
-            // 
-            // totalCost
-            // 
-            this.totalCost.Text = "Total Cost";
-            this.totalCost.Width = 62;
+            this.itemDescription.Width = 182;
             // 
             // itemPrice
             // 
@@ -97,6 +93,11 @@
             // 
             this.itemQuantity.Text = "Quantity";
             this.itemQuantity.Width = 62;
+            // 
+            // totalCost
+            // 
+            this.totalCost.Text = "Total Cost";
+            this.totalCost.Width = 62;
             // 
             // ViewRentals
             // 

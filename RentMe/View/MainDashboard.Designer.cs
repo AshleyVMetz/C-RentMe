@@ -31,39 +31,38 @@
             this.EmployeeDashboardTabControl = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.home1 = new RentMe.UserControls.Home();
-            this.AddStoreMember = new System.Windows.Forms.TabPage();
-            this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
-            this.ViewStoreMember = new System.Windows.Forms.TabPage();
-            this.editStoreMemberUserControl = new RentMe.UserControls.EditStoreMember();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.return1 = new RentMe.UserControls.Return();
             this.CartTab = new System.Windows.Forms.TabPage();
             this.CartUserControl = new RentMe.UserControls.Cart();
+            this.returnTabPage = new System.Windows.Forms.TabPage();
+            this.return1 = new RentMe.UserControls.Return();
+            this.ViewStoreMember = new System.Windows.Forms.TabPage();
+            this.editStoreMemberUserControl = new RentMe.UserControls.EditStoreMember();
+            this.AddStoreMember = new System.Windows.Forms.TabPage();
+            this.addCustomer1 = new RentMe.UserControls.AddStoreMember();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelWelcomeMain = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
             this.EmployeeDashboardTabControl.SuspendLayout();
             this.Home.SuspendLayout();
-            this.AddStoreMember.SuspendLayout();
-            this.ViewStoreMember.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.CartTab.SuspendLayout();
+            this.returnTabPage.SuspendLayout();
+            this.ViewStoreMember.SuspendLayout();
+            this.AddStoreMember.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmployeeDashboardTabControl
             // 
             this.EmployeeDashboardTabControl.Controls.Add(this.Home);
-            this.EmployeeDashboardTabControl.Controls.Add(this.AddStoreMember);
-            this.EmployeeDashboardTabControl.Controls.Add(this.ViewStoreMember);
-            this.EmployeeDashboardTabControl.Controls.Add(this.tabPage1);
             this.EmployeeDashboardTabControl.Controls.Add(this.CartTab);
-            this.EmployeeDashboardTabControl.Location = new System.Drawing.Point(12, 38);
+            this.EmployeeDashboardTabControl.Controls.Add(this.returnTabPage);
+            this.EmployeeDashboardTabControl.Controls.Add(this.ViewStoreMember);
+            this.EmployeeDashboardTabControl.Controls.Add(this.AddStoreMember);
+            this.EmployeeDashboardTabControl.Location = new System.Drawing.Point(12, 37);
             this.EmployeeDashboardTabControl.Name = "EmployeeDashboardTabControl";
             this.EmployeeDashboardTabControl.SelectedIndex = 0;
             this.EmployeeDashboardTabControl.Size = new System.Drawing.Size(780, 660);
             this.EmployeeDashboardTabControl.TabIndex = 0;
-            this.EmployeeDashboardTabControl.SelectedIndexChanged += new System.EventHandler(this.EmployeeDashboardTabControll_SelectedIndexChanged);
             // 
             // Home
             // 
@@ -78,30 +77,49 @@
             // 
             // home1
             // 
-            this.home1.Location = new System.Drawing.Point(28, 4);
+            this.home1.Location = new System.Drawing.Point(40, 22);
             this.home1.Margin = new System.Windows.Forms.Padding(4);
             this.home1.Name = "home1";
             this.home1.Size = new System.Drawing.Size(709, 574);
             this.home1.TabIndex = 0;
             // 
-            // AddStoreMember
+            // CartTab
             // 
-            this.AddStoreMember.Controls.Add(this.addCustomer1);
-            this.AddStoreMember.Location = new System.Drawing.Point(4, 22);
-            this.AddStoreMember.Name = "AddStoreMember";
-            this.AddStoreMember.Padding = new System.Windows.Forms.Padding(3);
-            this.AddStoreMember.Size = new System.Drawing.Size(772, 634);
-            this.AddStoreMember.TabIndex = 0;
-            this.AddStoreMember.Text = "Add Store Member";
-            this.AddStoreMember.UseVisualStyleBackColor = true;
+            this.CartTab.Controls.Add(this.CartUserControl);
+            this.CartTab.Location = new System.Drawing.Point(4, 22);
+            this.CartTab.Name = "CartTab";
+            this.CartTab.Padding = new System.Windows.Forms.Padding(3);
+            this.CartTab.Size = new System.Drawing.Size(772, 634);
+            this.CartTab.TabIndex = 4;
+            this.CartTab.Text = "Cart";
+            this.CartTab.UseVisualStyleBackColor = true;
+            this.CartTab.Enter += new System.EventHandler(this.CartTab_Enter);
             // 
-            // addCustomer1
+            // CartUserControl
             // 
-            this.addCustomer1.Location = new System.Drawing.Point(220, 69);
-            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4);
-            this.addCustomer1.Name = "addCustomer1";
-            this.addCustomer1.Size = new System.Drawing.Size(351, 398);
-            this.addCustomer1.TabIndex = 0;
+            this.CartUserControl.Location = new System.Drawing.Point(65, 28);
+            this.CartUserControl.Name = "CartUserControl";
+            this.CartUserControl.Size = new System.Drawing.Size(679, 465);
+            this.CartUserControl.TabIndex = 0;
+            // 
+            // returnTabPage
+            // 
+            this.returnTabPage.Controls.Add(this.return1);
+            this.returnTabPage.Location = new System.Drawing.Point(4, 22);
+            this.returnTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this.returnTabPage.Name = "returnTabPage";
+            this.returnTabPage.Size = new System.Drawing.Size(772, 634);
+            this.returnTabPage.TabIndex = 3;
+            this.returnTabPage.Text = "Return";
+            this.returnTabPage.UseVisualStyleBackColor = true;
+            // 
+            // return1
+            // 
+            this.return1.Location = new System.Drawing.Point(127, 35);
+            this.return1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.return1.Name = "return1";
+            this.return1.Size = new System.Drawing.Size(552, 372);
+            this.return1.TabIndex = 0;
             // 
             // ViewStoreMember
             // 
@@ -122,42 +140,24 @@
             this.editStoreMemberUserControl.Size = new System.Drawing.Size(772, 634);
             this.editStoreMemberUserControl.TabIndex = 0;
             // 
-            // tabPage1
+            // AddStoreMember
             // 
-            this.tabPage1.Controls.Add(this.return1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(772, 634);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Return";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.AddStoreMember.Controls.Add(this.addCustomer1);
+            this.AddStoreMember.Location = new System.Drawing.Point(4, 22);
+            this.AddStoreMember.Name = "AddStoreMember";
+            this.AddStoreMember.Padding = new System.Windows.Forms.Padding(3);
+            this.AddStoreMember.Size = new System.Drawing.Size(772, 634);
+            this.AddStoreMember.TabIndex = 0;
+            this.AddStoreMember.Text = "Add Store Member";
+            this.AddStoreMember.UseVisualStyleBackColor = true;
             // 
-            // return1
+            // addCustomer1
             // 
-            this.return1.Location = new System.Drawing.Point(56, 10);
-            this.return1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.return1.Name = "return1";
-            this.return1.Size = new System.Drawing.Size(552, 372);
-            this.return1.TabIndex = 0;
-            // 
-            // CartTab
-            // 
-            this.CartTab.Controls.Add(this.CartUserControl);
-            this.CartTab.Location = new System.Drawing.Point(4, 22);
-            this.CartTab.Name = "CartTab";
-            this.CartTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CartTab.Size = new System.Drawing.Size(772, 634);
-            this.CartTab.TabIndex = 4;
-            this.CartTab.Text = "Cart";
-            this.CartTab.UseVisualStyleBackColor = true;
-            // 
-            // CartUserControl
-            // 
-            this.CartUserControl.Location = new System.Drawing.Point(0, 0);
-            this.CartUserControl.Name = "CartUserControl";
-            this.CartUserControl.Size = new System.Drawing.Size(679, 465);
-            this.CartUserControl.TabIndex = 0;
+            this.addCustomer1.Location = new System.Drawing.Point(220, 69);
+            this.addCustomer1.Margin = new System.Windows.Forms.Padding(4);
+            this.addCustomer1.Name = "addCustomer1";
+            this.addCustomer1.Size = new System.Drawing.Size(351, 398);
+            this.addCustomer1.TabIndex = 0;
             // 
             // labelUser
             // 
@@ -204,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 702);
+            this.ClientSize = new System.Drawing.Size(804, 709);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.labelWelcomeMain);
             this.Controls.Add(this.labelName);
@@ -219,10 +219,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeeDashboard_FormClosing);
             this.EmployeeDashboardTabControl.ResumeLayout(false);
             this.Home.ResumeLayout(false);
-            this.AddStoreMember.ResumeLayout(false);
-            this.ViewStoreMember.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.CartTab.ResumeLayout(false);
+            this.returnTabPage.ResumeLayout(false);
+            this.ViewStoreMember.ResumeLayout(false);
+            this.AddStoreMember.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +241,7 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelWelcomeMain;
         private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage returnTabPage;
         private UserControls.Return return1;
         private System.Windows.Forms.TabPage CartTab;
         private UserControls.Cart CartUserControl;

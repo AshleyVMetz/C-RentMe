@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.returnListView = new System.Windows.Forms.ListView();
+            this.returnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RentalID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.returnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.scheduledReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.employeeFullName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.fineDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fineDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.refundDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.returnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // returnListView
             // 
+            this.returnListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.returnListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.returnID,
             this.RentalID,
@@ -59,6 +60,10 @@
             this.returnListView.TabIndex = 1;
             this.returnListView.UseCompatibleStateImageBehavior = false;
             this.returnListView.View = System.Windows.Forms.View.Details;
+            // 
+            // returnID
+            // 
+            this.returnID.Text = "Return ID";
             // 
             // RentalID
             // 
@@ -82,23 +87,19 @@
             // itemDescription
             // 
             this.itemDescription.Text = "Item Description";
-            this.itemDescription.Width = 158;
-            // 
-            // fineDue
-            // 
-            this.fineDue.Text = "Fine";
+            this.itemDescription.Width = 140;
             // 
             // itemQuantity
             // 
             this.itemQuantity.Text = "Quantity";
             // 
+            // fineDue
+            // 
+            this.fineDue.Text = "Fine";
+            // 
             // refundDue
             // 
             this.refundDue.Text = "Refund";
-            // 
-            // returnID
-            // 
-            this.returnID.Text = "Return ID";
             // 
             // ViewReturns
             // 
