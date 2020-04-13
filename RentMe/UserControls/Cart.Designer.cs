@@ -41,6 +41,7 @@
             this.CustomerIDTextBox = new System.Windows.Forms.TextBox();
             this.CheckoutButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@
             // CartItemPanel
             // 
             this.CartItemPanel.AutoScroll = true;
-            this.CartItemPanel.Location = new System.Drawing.Point(16, 85);
+            this.CartItemPanel.Location = new System.Drawing.Point(16, 103);
             this.CartItemPanel.Name = "CartItemPanel";
             this.CartItemPanel.Size = new System.Drawing.Size(617, 254);
             this.CartItemPanel.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 69);
+            this.label2.Location = new System.Drawing.Point(13, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(129, 69);
+            this.label3.Location = new System.Drawing.Point(129, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 15);
             this.label3.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(327, 69);
+            this.label4.Location = new System.Drawing.Point(327, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 15);
             this.label4.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(330, 363);
+            this.label13.Location = new System.Drawing.Point(330, 381);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 13);
             this.label13.TabIndex = 53;
@@ -103,14 +104,14 @@
             // 
             // RentalEndTimePicker
             // 
-            this.RentalEndTimePicker.Location = new System.Drawing.Point(415, 360);
+            this.RentalEndTimePicker.Location = new System.Drawing.Point(415, 378);
             this.RentalEndTimePicker.Name = "RentalEndTimePicker";
             this.RentalEndTimePicker.Size = new System.Drawing.Size(193, 20);
             this.RentalEndTimePicker.TabIndex = 52;
             // 
             // RentalStartTimePicker
             // 
-            this.RentalStartTimePicker.Location = new System.Drawing.Point(104, 359);
+            this.RentalStartTimePicker.Location = new System.Drawing.Point(104, 377);
             this.RentalStartTimePicker.Name = "RentalStartTimePicker";
             this.RentalStartTimePicker.Size = new System.Drawing.Size(190, 20);
             this.RentalStartTimePicker.TabIndex = 51;
@@ -119,7 +120,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 362);
+            this.label5.Location = new System.Drawing.Point(12, 380);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 50;
@@ -129,7 +130,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 400);
+            this.label7.Location = new System.Drawing.Point(13, 418);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 13);
             this.label7.TabIndex = 54;
@@ -137,14 +138,14 @@
             // 
             // CustomerIDTextBox
             // 
-            this.CustomerIDTextBox.Location = new System.Drawing.Point(104, 400);
+            this.CustomerIDTextBox.Location = new System.Drawing.Point(104, 418);
             this.CustomerIDTextBox.Name = "CustomerIDTextBox";
             this.CustomerIDTextBox.Size = new System.Drawing.Size(190, 20);
             this.CustomerIDTextBox.TabIndex = 55;
             // 
             // CheckoutButton
             // 
-            this.CheckoutButton.Location = new System.Drawing.Point(326, 400);
+            this.CheckoutButton.Location = new System.Drawing.Point(326, 418);
             this.CheckoutButton.Name = "CheckoutButton";
             this.CheckoutButton.Size = new System.Drawing.Size(84, 23);
             this.CheckoutButton.TabIndex = 56;
@@ -156,16 +157,27 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(394, 69);
+            this.label10.Location = new System.Drawing.Point(394, 87);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(157, 15);
             this.label10.TabIndex = 57;
             this.label10.Text = "Daily Rental Rate (in $)";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(224, 13);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "Note: To remove an item, update quantity to 0";
+            // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.CheckoutButton);
             this.Controls.Add(this.CustomerIDTextBox);
@@ -180,7 +192,7 @@
             this.Controls.Add(this.CartItemPanel);
             this.Controls.Add(this.label1);
             this.Name = "Cart";
-            this.Size = new System.Drawing.Size(636, 433);
+            this.Size = new System.Drawing.Size(644, 453);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +213,6 @@
         private System.Windows.Forms.TextBox CustomerIDTextBox;
         private System.Windows.Forms.Button CheckoutButton;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
     }
 }

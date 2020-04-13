@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using RentMe.Controller;
@@ -7,16 +8,24 @@ using RentMe.Util;
 
 namespace RentMe.UserControls
 {
+    /// <summary>
+    /// This method models a user control for the cart.
+    /// </summary>
     public partial class Cart : UserControl
     {
         private readonly StoreMemberController storeMemberController;
         private readonly RentalTransactionController rentalTransactionController;
+        private readonly FurnitureController furnitureController;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public Cart()
         {
             InitializeComponent();
             storeMemberController = new StoreMemberController();
             rentalTransactionController = new RentalTransactionController();
+            furnitureController = new FurnitureController();
         }
 
         /// <summary>
@@ -42,13 +51,12 @@ namespace RentMe.UserControls
                 descriptionLabel.Width = 180;
                 CartItemPanel.Controls.Add(descriptionLabel);
 
-                ComboBox quantityComboBox = new ComboBox();
-                quantityComboBox.Name = "QuantityComboBox" + i;
-                quantityComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-                PopulateComboBox(quantityComboBox, item.Quantity);
-                quantityComboBox.Location = new Point(314, 15 + (40 * i));
-                quantityComboBox.Width = 40;
-                CartItemPanel.Controls.Add(quantityComboBox);
+                TextBox quantityTextBox = new TextBox();
+                quantityTextBox.Name = "QuantityTextBox" + i;
+                quantityTextBox.Text = item.Quantity.ToString();
+                quantityTextBox.Location = new Point(314, 15 + (40 * i));
+                quantityTextBox.Width = 40;
+                CartItemPanel.Controls.Add(quantityTextBox);
                 
                 Label rentalRateLabel = new Label();
                 rentalRateLabel.Name = "RentalRateLabel" + i;
@@ -68,27 +76,43 @@ namespace RentMe.UserControls
 
         }
 
-        private void PopulateComboBox(ComboBox comboBox, int quantity)
-        {
-            comboBox.Items.Clear();
-
-            for (int i = 0; i <= quantity; i++)
-            {
-                comboBox.Items.Add("" + i);
-            }
-
-            comboBox.SelectedIndex = quantity;
-        }
-
+        /// <summary>
+        /// This method updates the cart when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateButton_ClickHandler(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             int index = Int32.Parse(button.Name.Substring(button.Name.Length - 1));
 
-            ComboBox comboBox = (ComboBox)CartItemPanel.Controls["QuantityComboBox" + index];
-            int quantity = Int32.Parse(comboBox.Text);
+            TextBox textBox = (TextBox)CartItemPanel.Controls["QuantityTextBox" + index];
+            int quantity = Int32.Parse(textBox.Text);
 
             CartItem item = EmployeeDashboard.cart.Items[index];
+
+            int availableQuantity = 0;
+
+            try
+            {
+                availableQuantity = furnitureController.GetCurrentFurnitureCount(item.SerialNumber);
+            } catch(Exception ex)
+            {
+                ex.ToString();
+                MessageBox.Show("Error while fetching available quantity!!!!",
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+
+            if (quantity > availableQuantity)
+            {
+                MessageBox.Show("Added quantity is more than available quantity!! Available quantity is - " + availableQuantity,
+                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                AddCartItems();
+                return;
+            }
+
             if (quantity == 0)
             {
                 EmployeeDashboard.cart.Items.Remove(item);
@@ -100,6 +124,11 @@ namespace RentMe.UserControls
             AddCartItems();
         }
 
+        /// <summary>
+        /// This method checks out with the current cart when clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckoutButton_Click(object sender, EventArgs e)
         {
 
@@ -162,7 +191,7 @@ namespace RentMe.UserControls
 
                 // Show confirmation with final amount
                 String message = "Total rental cost for the customer - " + storeMember.FirstName + " " + storeMember.LastName + " is " + totalAmount;
-                DialogResult dr = MessageBox.Show(message, "Confirm Cost for rental", MessageBoxButtons.YesNoCancel,
+                DialogResult dr = MessageBox.Show(message, "Confirm Cost for rental", MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Information);
 
                 if (dr == DialogResult.Yes)
@@ -180,6 +209,8 @@ namespace RentMe.UserControls
                     MessageBox.Show("Rental transaction successful!!!! - ",
                   "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    ClearAllCart();
+
                 }
             }
             else
@@ -188,6 +219,18 @@ namespace RentMe.UserControls
                   "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
      
+        }
+
+        /// <summary>
+        /// This helper method refreshes the cart.
+        /// </summary>
+        private void ClearAllCart()
+        {
+            EmployeeDashboard.cart.Items = new List<CartItem>();
+            CustomerIDTextBox.Text = "";
+            RentalStartTimePicker.Value = DateTime.Now;
+            RentalEndTimePicker.Value = DateTime.Now;
+            AddCartItems();
         }
     }
 }

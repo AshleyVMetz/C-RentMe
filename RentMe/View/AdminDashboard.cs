@@ -14,7 +14,6 @@ namespace RentMe.View
         /// </summary>
         /// <param name="username">The username of the logged in user.</param>
         public AdminDashboard(int employeeID, string username, string fName, string lName, Form form)
-
         {
             InitializeComponent();
             this.updateEmployeeUserControl.employeeID = employeeID;

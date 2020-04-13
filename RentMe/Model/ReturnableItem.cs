@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RentMe.Model
+﻿namespace RentMe.Model
 {
+    /// <summary>
+    /// This class models an item that can be returned.
+    /// </summary>
     public class ReturnableItem
     {
         public string SerialNumber { get; set; }

@@ -10,6 +10,9 @@ namespace RentMe.Controller
     {
         private LoginDAL loginDAL;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public LoginController()
         {
             this.loginDAL = new LoginDAL();
@@ -25,7 +28,5 @@ namespace RentMe.Controller
         {
             return loginDAL.EmployeeLogin(username, password);
         }
-
-
     }
 }

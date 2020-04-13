@@ -59,6 +59,5 @@ namespace RentMe.Controller
         {
             return this.rentalDataSource.InsertRentalTransaction(cart);
         }
-
     }
 }

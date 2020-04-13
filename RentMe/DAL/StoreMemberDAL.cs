@@ -197,6 +197,11 @@ namespace RentMe.DAL
             return false;
         }
 
+        /// <summary>
+        /// This helper method returns a store member with the attributes from the database.
+        /// </summary>
+        /// <param name="reader">The SqlDataReader.</param>
+        /// <returns>A store member with the attributes from the database.</returns>
         private StoreMember RetrieveStoreMember(SqlDataReader reader)
         {
             StoreMember storeMember = new StoreMember();
@@ -214,8 +219,5 @@ namespace RentMe.DAL
 
             return storeMember;
         }
-
-
-
     }
 }

@@ -16,8 +16,6 @@ namespace RentMe.DAL
             string connectionString =
                 "Data Source=localhost;Initial Catalog=CS6232-g2;" +
                 "Integrated Security=True";
-
-
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }

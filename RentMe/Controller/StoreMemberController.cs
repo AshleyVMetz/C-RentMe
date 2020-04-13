@@ -4,10 +4,16 @@ using System;
 
 namespace RentMe.Controller
 {
+    /// <summary>
+    /// Controller class to mediate between StoreMemberDAL and View.
+    /// </summary>
     class StoreMemberController
     {
         private readonly StoreMemberDAL storeMemberDAL;
 
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public StoreMemberController()
         {
             this.storeMemberDAL = new StoreMemberDAL();
@@ -70,6 +76,5 @@ namespace RentMe.Controller
         {
             return this.storeMemberDAL.UpdateStoreMember(storeMember);
         }
-
     }
 }

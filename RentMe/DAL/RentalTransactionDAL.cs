@@ -185,7 +185,5 @@ namespace RentMe.DAL
 
             return true;
         }
-
     }
-
 }
