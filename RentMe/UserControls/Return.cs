@@ -18,6 +18,7 @@ namespace RentMe.UserControls
         FurnitureController furnitureController;
         RentalTransactionController rentalTransactionController;
         EmployeeController employeeController;
+        LoginController loginController;
         int memberID;
         List<int> rentalIDList;
         List<ReturnableItem> itemsToReturn;
@@ -47,6 +48,8 @@ namespace RentMe.UserControls
             comboBoxEmployee.DataSource = employeeList;
             comboBoxEmployee.DisplayMember = "FullName";
             comboBoxEmployee.ValueMember = "EmployeeID";
+           
+            
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
