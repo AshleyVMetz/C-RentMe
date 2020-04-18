@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
@@ -89,9 +90,9 @@ namespace RentMe.UserControls
             FirstNameSearchTextBox.Text = "";
             LastNameSearchTextBox.Text = "";
 
-            if (PhoneNumberSearchTextBox.Text.Trim().Length < 10)
+            if (!Regex.IsMatch(PhoneNumberSearchTextBox.Text.Trim(), @"\d\d\d-\d\d\d-\d\d\d\d"))
             {
-                MessageBox.Show("Phone Number at least has to be 10 characters!!!!",
+                MessageBox.Show("Phone Number should be XXX-XXX-XXXX format!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }

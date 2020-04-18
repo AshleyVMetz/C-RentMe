@@ -31,11 +31,9 @@ namespace RentMe.Util
                 return true;
             }
 
-            string phoneNumber = Regex.Replace(storeMember.Phone, @"[^0-9]+", "");
-
-            if (phoneNumber.Length != 10)
+            if (!Regex.IsMatch(storeMember.Phone, @"\d\d\d-\d\d\d-\d\d\d\d"))
             {
-                MessageBox.Show("Phone should contain 10 digits!!!!",
+                MessageBox.Show("Phone should be in XXX-XXX-XXXX format!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }

@@ -41,6 +41,7 @@ namespace RentMe.UserControls
                     returnedItemLVI.SubItems.Add(returnedItem.ReturnDate.ToShortDateString());
                     returnedItemLVI.SubItems.Add(returnedItem.ScheduledReturn.ToShortDateString());
                     returnedItemLVI.SubItems.Add(returnedItem.EmployeeFullName);
+                    returnedItemLVI.SubItems.Add(returnedItem.ItemSerial);
                     returnedItemLVI.SubItems.Add(returnedItem.ItemDescription);
                     returnedItemLVI.SubItems.Add(returnedItem.ItemQuantity.ToString());
                     returnedItemLVI.SubItems.Add(returnedItem.FineDue.ToString());

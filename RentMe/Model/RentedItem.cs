@@ -14,6 +14,7 @@ namespace RentMe.Model
         public DateTime DateOfRental { get; }
         public DateTime ScheduledReturn { get; }
         public string EmployeeFullName { get; }
+        public string ItemSerial { get; }
         public string ItemDescription { get; }
         public decimal ItemPrice { get; }
         public int ItemQuantity { get; }
@@ -25,16 +26,18 @@ namespace RentMe.Model
         /// <param name="dateOfRental">The date of the rental.</param>
         /// <param name="scheduledReturn">The scheduled return date of the rental.</param>
         /// <param name="employeeFullName">The full name of the employee who rented the item(s).</param>
+        /// <param name="itemSerial">The serial # of the item rented.</param>
         /// <param name="itemDescription">The description of the item rented.</param>
         /// <param name="itemPrice">The price of the item rented.</param>
         /// <param name="itemQuantity">The quantity of the item rented.</param>
-        public RentedItem(int rentalID, DateTime dateOfRental, DateTime scheduledReturn, string employeeFullName, string itemDescription,
+        public RentedItem(int rentalID, DateTime dateOfRental, DateTime scheduledReturn, string employeeFullName, string itemSerial, string itemDescription,
                           decimal itemPrice, int itemQuantity)
         {
             this.RentalID = rentalID;
             this.DateOfRental = dateOfRental;
             this.ScheduledReturn = scheduledReturn;
             this.EmployeeFullName = employeeFullName;
+            this.ItemSerial = itemSerial;
             this.ItemDescription = itemDescription;
             this.ItemPrice = itemPrice;
             this.ItemQuantity = itemQuantity;

@@ -21,7 +21,7 @@ namespace RentMe.DAL
             string selectStatement =
                 "SELECT ReturnTransaction.ReturnID AS ReturnID, Returns.RentalID AS RentalID, ReturnTransaction.ReturnDate AS ReturnDate, " +
                        "RentalTransaction.ScheduledReturn AS ScheduledReturn, Employees.FName AS EmployeeFirst, Employees.LName AS EmployeeLast, " +
-                       "FurnitureItem.Description AS ItemDescription, Returns.Quantity AS ItemQuantity, " +
+                       "FurnitureItem.Serial# AS ItemSerial, FurnitureItem.Description AS ItemDescription, Returns.Quantity AS ItemQuantity, " +
                        "Returns.FineDue AS FineDue, Returns.RefundDue AS RefundDue " +
                 "FROM ReturnTransaction " +
                 "LEFT JOIN Employees ON ReturnTransaction.EmployeeID=Employees.EmployeeID " +
@@ -45,11 +45,13 @@ namespace RentMe.DAL
                             DateTime returnDate = (DateTime)reader["ReturnDate"];
                             DateTime scheduledReturn = (DateTime)reader["ScheduledReturn"];
                             string employeeFullName = reader["EmployeeFirst"].ToString() + " " + reader["EmployeeLast"].ToString();
+                            string itemSerial = reader["ItemSerial"].ToString();
                             string itemDescription = reader["ItemDescription"].ToString();
-                            int itemQuantity = reader.GetInt32(7);
-                            decimal fineDue = reader.GetDecimal(8);
-                            decimal refundDue = reader.GetDecimal(9);
-                            ReturnedItem returnedItem = new ReturnedItem(returnID, rentalID, returnDate, scheduledReturn, employeeFullName, itemDescription, itemQuantity, fineDue, refundDue);
+                            int itemQuantity = reader.GetInt32(8);
+                            decimal fineDue = reader.GetDecimal(9);
+                            decimal refundDue = reader.GetDecimal(10);
+                            ReturnedItem returnedItem = new ReturnedItem(returnID, rentalID, returnDate, scheduledReturn, employeeFullName, itemSerial,
+                                                                         itemDescription, itemQuantity, fineDue, refundDue);
                             returnedList.Add(returnedItem);
                         }
                     }

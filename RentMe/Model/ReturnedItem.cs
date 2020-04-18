@@ -15,6 +15,7 @@ namespace RentMe.Model
         public DateTime ReturnDate { get; }
         public DateTime ScheduledReturn { get; }
         public string EmployeeFullName { get; }
+        public string ItemSerial { get; }
         public string ItemDescription { get; }
         public int ItemQuantity { get; }
         public decimal FineDue { get; }
@@ -28,11 +29,12 @@ namespace RentMe.Model
         /// <param name="returnDate">The date of the return.</param>
         /// <param name="scheduledReturn">The scheduled return date of the rental.</param>
         /// <param name="employeeFullName">The full name of the employee who accepted the return of the item(s).</param>
+        /// <param name="itemSerial">The serial # of the item returned.</param>
         /// <param name="itemDescription">The description of the item returned.</param>
         /// <param name="itemQuantity">The quantity of the item returned.</param>
         /// <param name="fineDue">The fine due for the item returned.</param>
         /// <param name="refundDue">The refund due for the item returned.</param>
-        public ReturnedItem(int returnID, int rentalID, DateTime returnDate, DateTime scheduledReturn, string employeeFullName, string itemDescription,
+        public ReturnedItem(int returnID, int rentalID, DateTime returnDate, DateTime scheduledReturn, string employeeFullName, string itemSerial, string itemDescription,
                             int itemQuantity, decimal fineDue, decimal refundDue)
         {
             this.ReturnID = returnID;
@@ -40,6 +42,7 @@ namespace RentMe.Model
             this.ReturnDate = returnDate;
             this.ScheduledReturn = scheduledReturn;
             this.EmployeeFullName = employeeFullName;
+            this.ItemSerial = itemSerial;
             this.ItemDescription = itemDescription;
             this.ItemQuantity = itemQuantity;
             this.FineDue = fineDue;

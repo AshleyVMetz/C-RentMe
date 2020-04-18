@@ -13,6 +13,7 @@ namespace RentMe.UserControls
     public partial class Home : UserControl
     {
         private readonly FurnitureController furnitureController;
+        private List<Furniture> furnitures;
 
         /// <summary>
         /// Constructor method.
@@ -21,6 +22,7 @@ namespace RentMe.UserControls
         {
             InitializeComponent();
             this.furnitureController = new FurnitureController();
+            this.furnitures = new List<Furniture>();
             this.PopulateComponents();
         }
 
@@ -64,43 +66,19 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void SerialNumberSearchButton_Click(object sender, EventArgs e)
         {
-            List<Furniture> furnitures = new List<Furniture>();
-
-            this.StyleComboBox.SelectedIndex = -1;
-            this.CategoryComboBox.SelectedIndex = -1;
-            this.ClearDataGrid();
-
-            if (SerialNumberTextBox.Text.Trim().Length < 1)
-            {
-                MessageBox.Show("Serial Number cannot be empty!!!!",
-                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                furnitures = this.furnitureController.GetFurnituresBySerialNumber(SerialNumberTextBox.Text.Trim());
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error while fetching data from database!!!!",
-                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            RefreshDataGrid(furnitures);
+            this.RefreshSearch();
         }
 
         /// <summary>
         /// This helper method refreshes the returned furniture items.
         /// </summary>
         /// <param name="furnitures"></param>
-        private void RefreshDataGrid(List<Furniture> furnitures)
+        private void RefreshDataGrid()
         {
             this.FurnitureListView.Items.Clear();
             try
             {
-                foreach (var item in furnitures)
+                foreach (var item in this.furnitures)
                 {
                     var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.DailyRentalRate.ToString(), item.FineRate.ToString() });
                     this.FurnitureListView.Items.Add(lvi);
@@ -116,37 +94,100 @@ namespace RentMe.UserControls
         }
 
         /// <summary>
+        /// This method refreshes the search.
+        /// </summary>
+        public void RefreshSearch()
+        {
+            if (!string.IsNullOrEmpty(this.SerialNumberTextBox.Text))
+            {
+                this.StyleComboBox.SelectedIndex = -1;
+                this.CategoryComboBox.SelectedIndex = -1;
+                this.ClearDataGrid();
+
+                if (SerialNumberTextBox.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("Serial Number cannot be empty!!!!",
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    this.furnitures = this.furnitureController.GetFurnituresBySerialNumber(SerialNumberTextBox.Text.Trim());
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error while fetching data from database!!!!",
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                this.RefreshDataGrid();
+            }
+            else if (!string.IsNullOrEmpty(this.StyleComboBox.Text))
+            {
+                this.CategoryComboBox.SelectedIndex = -1;
+                this.SerialNumberTextBox.Text = "";
+                this.ClearDataGrid();
+
+                if (this.StyleComboBox.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Select a style to search!!!!",
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    int styleId = (this.StyleComboBox.SelectedItem as dynamic).Value;
+                    this.furnitures = this.furnitureController.GetFurnituresByStyle(styleId);
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error while fetching data from database!!!!",
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                this.RefreshDataGrid();
+            }
+            else if (!string.IsNullOrEmpty(this.CategoryComboBox.Text))
+            {
+                this.StyleComboBox.SelectedIndex = -1;
+                this.SerialNumberTextBox.Text = "";
+                this.ClearDataGrid();
+
+                if (this.CategoryComboBox.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Select a category to search!!!!",
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    int categoryId = (this.CategoryComboBox.SelectedItem as dynamic).Value;
+                    this.furnitures = this.furnitureController.GetFurnituresByCategory(categoryId);
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error while fetching data from database!!!!",
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                this.RefreshDataGrid();
+            }
+        }
+
+        /// <summary>
         /// This method searches furniture by style when the button is clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void StyleSearchButton_Click(object sender, EventArgs e)
         {
-            this.CategoryComboBox.SelectedIndex = -1;
-            this.SerialNumberTextBox.Text = "";
-            this.ClearDataGrid();
-            List<Furniture> furnitures = new List<Furniture>();
-
-            if (this.StyleComboBox.SelectedIndex < 0)
-            {
-                MessageBox.Show("Select a style to search!!!!",
-                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                int styleId = (this.StyleComboBox.SelectedItem as dynamic).Value;
-                furnitures = this.furnitureController.GetFurnituresByStyle(styleId);
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error while fetching data from database!!!!",
-                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            RefreshDataGrid(furnitures);
+            this.RefreshSearch();
         }
 
         /// <summary>
@@ -156,31 +197,7 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void CategorySearchButton_Click(object sender, EventArgs e)
         {
-            this.StyleComboBox.SelectedIndex = -1;
-            this.SerialNumberTextBox.Text = "";
-            this.ClearDataGrid();
-            List<Furniture> furnitures = new List<Furniture>();
-
-            if (this.CategoryComboBox.SelectedIndex < 0)
-            {
-                MessageBox.Show("Select a category to search!!!!",
-                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                int categoryId = (this.CategoryComboBox.SelectedItem as dynamic).Value;
-                furnitures = this.furnitureController.GetFurnituresByCategory(categoryId);
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error while fetching data from database!!!!",
-                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            RefreshDataGrid(furnitures);
+            this.RefreshSearch();
         }
 
         /// <summary>
