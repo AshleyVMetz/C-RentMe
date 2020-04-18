@@ -205,7 +205,7 @@ namespace RentMe.DAL
             }
             else
             {
-                throw new ArgumentException("There is no employee with that phone in the database.");
+                throw new ArgumentException("There is no employee with that phone in the database. Ensure you have searched using XXX-XXX-XXXX format.");
             }
         }
 

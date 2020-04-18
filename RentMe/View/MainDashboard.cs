@@ -61,5 +61,15 @@ namespace RentMe
         {
             this.CartUserControl.AddCartItems();
         }
+
+        /// <summary>
+        /// This method refreshes the search when the home tab is entered.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Home_Enter(object sender, System.EventArgs e)
+        {
+            this.homeUserControl.RefreshSearch();
+        }
     }
 }

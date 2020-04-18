@@ -30,7 +30,7 @@
         {
             this.EmployeeDashboardTabControl = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
-            this.home1 = new RentMe.UserControls.Home();
+            this.homeUserControl = new RentMe.UserControls.Home();
             this.CartTab = new System.Windows.Forms.TabPage();
             this.CartUserControl = new RentMe.UserControls.Cart();
             this.returnTabPage = new System.Windows.Forms.TabPage();
@@ -66,7 +66,7 @@
             // 
             // Home
             // 
-            this.Home.Controls.Add(this.home1);
+            this.Home.Controls.Add(this.homeUserControl);
             this.Home.Location = new System.Drawing.Point(4, 22);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
@@ -74,14 +74,15 @@
             this.Home.TabIndex = 2;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Enter += new System.EventHandler(this.Home_Enter);
             // 
-            // home1
+            // homeUserControl
             // 
-            this.home1.Location = new System.Drawing.Point(40, 22);
-            this.home1.Margin = new System.Windows.Forms.Padding(4);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(709, 574);
-            this.home1.TabIndex = 0;
+            this.homeUserControl.Location = new System.Drawing.Point(40, 22);
+            this.homeUserControl.Margin = new System.Windows.Forms.Padding(4);
+            this.homeUserControl.Name = "homeUserControl";
+            this.homeUserControl.Size = new System.Drawing.Size(709, 574);
+            this.homeUserControl.TabIndex = 0;
             // 
             // CartTab
             // 
@@ -237,7 +238,7 @@
         private System.Windows.Forms.Label labelUser;
         private UserControls.EditStoreMember editStoreMemberUserControl;
         private System.Windows.Forms.TabPage Home;
-        private UserControls.Home home1;
+        private UserControls.Home homeUserControl;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelWelcomeMain;
         private System.Windows.Forms.Button logoutButton;

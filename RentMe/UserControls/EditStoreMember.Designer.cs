@@ -63,11 +63,12 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.rentalsAndReturnsTabControl = new System.Windows.Forms.TabControl();
             this.rentalsTabPage = new System.Windows.Forms.TabPage();
-            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
             this.returnsTabPage = new System.Windows.Forms.TabPage();
-            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.phoneFormatLabel = new System.Windows.Forms.Label();
+            this.viewRentalsUserControl = new RentMe.UserControls.ViewRentals();
+            this.viewReturnsUserControl = new RentMe.UserControls.ViewReturns();
             this.rentalsAndReturnsTabControl.SuspendLayout();
             this.rentalsTabPage.SuspendLayout();
             this.returnsTabPage.SuspendLayout();
@@ -109,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 37);
+            this.label1.Location = new System.Drawing.Point(107, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 3;
@@ -210,14 +211,14 @@
             this.Address1TextBox.Location = new System.Drawing.Point(479, 127);
             this.Address1TextBox.Name = "Address1TextBox";
             this.Address1TextBox.Size = new System.Drawing.Size(187, 20);
-            this.Address1TextBox.TabIndex = 12;
+            this.Address1TextBox.TabIndex = 13;
             // 
             // Address2TextBox
             // 
             this.Address2TextBox.Location = new System.Drawing.Point(479, 153);
             this.Address2TextBox.Name = "Address2TextBox";
             this.Address2TextBox.Size = new System.Drawing.Size(187, 20);
-            this.Address2TextBox.TabIndex = 13;
+            this.Address2TextBox.TabIndex = 14;
             // 
             // DateOfBirthPicker
             // 
@@ -240,7 +241,7 @@
             this.ZipCodeTextBox.Location = new System.Drawing.Point(479, 232);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
             this.ZipCodeTextBox.Size = new System.Drawing.Size(187, 20);
-            this.ZipCodeTextBox.TabIndex = 16;
+            this.ZipCodeTextBox.TabIndex = 17;
             // 
             // ZipCodeLabel
             // 
@@ -258,7 +259,7 @@
             this.StateComboBox.Location = new System.Drawing.Point(479, 205);
             this.StateComboBox.Name = "StateComboBox";
             this.StateComboBox.Size = new System.Drawing.Size(187, 21);
-            this.StateComboBox.TabIndex = 15;
+            this.StateComboBox.TabIndex = 16;
             // 
             // StateLabel
             // 
@@ -274,7 +275,7 @@
             this.CityTextBox.Location = new System.Drawing.Point(479, 179);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(187, 20);
-            this.CityTextBox.TabIndex = 14;
+            this.CityTextBox.TabIndex = 15;
             // 
             // CityLabel
             // 
@@ -335,7 +336,7 @@
             this.SaveChangesButton.Location = new System.Drawing.Point(479, 285);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(90, 26);
-            this.SaveChangesButton.TabIndex = 17;
+            this.SaveChangesButton.TabIndex = 18;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -345,7 +346,7 @@
             this.ClearButton.Location = new System.Drawing.Point(576, 285);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(90, 26);
-            this.ClearButton.TabIndex = 18;
+            this.ClearButton.TabIndex = 19;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -372,13 +373,6 @@
             this.rentalsTabPage.Text = "Rentals";
             this.rentalsTabPage.UseVisualStyleBackColor = true;
             // 
-            // viewRentalsUserControl
-            // 
-            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, 0);
-            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
-            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
-            this.viewRentalsUserControl.TabIndex = 0;
-            // 
             // returnsTabPage
             // 
             this.returnsTabPage.Controls.Add(this.viewReturnsUserControl);
@@ -390,13 +384,6 @@
             this.returnsTabPage.Text = "Returns";
             this.returnsTabPage.UseVisualStyleBackColor = true;
             // 
-            // viewReturnsUserControl
-            // 
-            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, 0);
-            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
-            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
-            this.viewReturnsUserControl.TabIndex = 0;
-            // 
             // GenderComboBox
             // 
             this.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -404,7 +391,7 @@
             this.GenderComboBox.Location = new System.Drawing.Point(191, 258);
             this.GenderComboBox.Name = "GenderComboBox";
             this.GenderComboBox.Size = new System.Drawing.Size(187, 21);
-            this.GenderComboBox.TabIndex = 61;
+            this.GenderComboBox.TabIndex = 12;
             // 
             // label5
             // 
@@ -415,10 +402,35 @@
             this.label5.TabIndex = 62;
             this.label5.Text = "Gender: *";
             // 
+            // phoneFormatLabel
+            // 
+            this.phoneFormatLabel.AutoSize = true;
+            this.phoneFormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneFormatLabel.Location = new System.Drawing.Point(108, 47);
+            this.phoneFormatLabel.Name = "phoneFormatLabel";
+            this.phoneFormatLabel.Size = new System.Drawing.Size(58, 7);
+            this.phoneFormatLabel.TabIndex = 66;
+            this.phoneFormatLabel.Text = "XXX-XXX-XXXX";
+            // 
+            // viewRentalsUserControl
+            // 
+            this.viewRentalsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewRentalsUserControl.Name = "viewRentalsUserControl";
+            this.viewRentalsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewRentalsUserControl.TabIndex = 0;
+            // 
+            // viewReturnsUserControl
+            // 
+            this.viewReturnsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.viewReturnsUserControl.Name = "viewReturnsUserControl";
+            this.viewReturnsUserControl.Size = new System.Drawing.Size(758, 288);
+            this.viewReturnsUserControl.TabIndex = 0;
+            // 
             // EditStoreMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.phoneFormatLabel);
             this.Controls.Add(this.GenderComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rentalsAndReturnsTabControl);
@@ -507,5 +519,6 @@
         private ViewReturns viewReturnsUserControl;
         private System.Windows.Forms.ComboBox GenderComboBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label phoneFormatLabel;
     }
 }
