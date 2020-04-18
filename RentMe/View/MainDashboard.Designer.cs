@@ -61,7 +61,7 @@
             this.EmployeeDashboardTabControl.Location = new System.Drawing.Point(12, 37);
             this.EmployeeDashboardTabControl.Name = "EmployeeDashboardTabControl";
             this.EmployeeDashboardTabControl.SelectedIndex = 0;
-            this.EmployeeDashboardTabControl.Size = new System.Drawing.Size(780, 660);
+            this.EmployeeDashboardTabControl.Size = new System.Drawing.Size(842, 660);
             this.EmployeeDashboardTabControl.TabIndex = 0;
             // 
             // Home
@@ -70,7 +70,7 @@
             this.Home.Location = new System.Drawing.Point(4, 22);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(772, 634);
+            this.Home.Size = new System.Drawing.Size(834, 634);
             this.Home.TabIndex = 2;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             // 
             // homeUserControl
             // 
-            this.homeUserControl.Location = new System.Drawing.Point(40, 22);
+            this.homeUserControl.Location = new System.Drawing.Point(74, 25);
             this.homeUserControl.Margin = new System.Windows.Forms.Padding(4);
             this.homeUserControl.Name = "homeUserControl";
             this.homeUserControl.Size = new System.Drawing.Size(709, 574);
@@ -90,7 +90,7 @@
             this.CartTab.Location = new System.Drawing.Point(4, 22);
             this.CartTab.Name = "CartTab";
             this.CartTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CartTab.Size = new System.Drawing.Size(772, 634);
+            this.CartTab.Size = new System.Drawing.Size(834, 634);
             this.CartTab.TabIndex = 4;
             this.CartTab.Text = "Cart";
             this.CartTab.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             // 
             // CartUserControl
             // 
-            this.CartUserControl.Location = new System.Drawing.Point(65, 28);
+            this.CartUserControl.Location = new System.Drawing.Point(101, 31);
             this.CartUserControl.Name = "CartUserControl";
             this.CartUserControl.Size = new System.Drawing.Size(679, 465);
             this.CartUserControl.TabIndex = 0;
@@ -109,14 +109,14 @@
             this.returnTabPage.Location = new System.Drawing.Point(4, 22);
             this.returnTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.returnTabPage.Name = "returnTabPage";
-            this.returnTabPage.Size = new System.Drawing.Size(772, 634);
+            this.returnTabPage.Size = new System.Drawing.Size(834, 634);
             this.returnTabPage.TabIndex = 3;
             this.returnTabPage.Text = "Return";
             this.returnTabPage.UseVisualStyleBackColor = true;
             // 
             // return1
             // 
-            this.return1.Location = new System.Drawing.Point(127, 35);
+            this.return1.Location = new System.Drawing.Point(163, 38);
             this.return1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.return1.Name = "return1";
             this.return1.Size = new System.Drawing.Size(552, 372);
@@ -128,7 +128,7 @@
             this.ViewStoreMember.Location = new System.Drawing.Point(4, 22);
             this.ViewStoreMember.Name = "ViewStoreMember";
             this.ViewStoreMember.Padding = new System.Windows.Forms.Padding(3);
-            this.ViewStoreMember.Size = new System.Drawing.Size(772, 634);
+            this.ViewStoreMember.Size = new System.Drawing.Size(834, 634);
             this.ViewStoreMember.TabIndex = 1;
             this.ViewStoreMember.Text = "View Store Member";
             this.ViewStoreMember.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             this.editStoreMemberUserControl.Location = new System.Drawing.Point(0, 0);
             this.editStoreMemberUserControl.Margin = new System.Windows.Forms.Padding(4);
             this.editStoreMemberUserControl.Name = "editStoreMemberUserControl";
-            this.editStoreMemberUserControl.Size = new System.Drawing.Size(772, 634);
+            this.editStoreMemberUserControl.Size = new System.Drawing.Size(834, 634);
             this.editStoreMemberUserControl.TabIndex = 0;
             // 
             // AddStoreMember
@@ -147,14 +147,14 @@
             this.AddStoreMember.Location = new System.Drawing.Point(4, 22);
             this.AddStoreMember.Name = "AddStoreMember";
             this.AddStoreMember.Padding = new System.Windows.Forms.Padding(3);
-            this.AddStoreMember.Size = new System.Drawing.Size(772, 634);
+            this.AddStoreMember.Size = new System.Drawing.Size(834, 634);
             this.AddStoreMember.TabIndex = 0;
             this.AddStoreMember.Text = "Add Store Member";
             this.AddStoreMember.UseVisualStyleBackColor = true;
             // 
             // addCustomer1
             // 
-            this.addCustomer1.Location = new System.Drawing.Point(220, 69);
+            this.addCustomer1.Location = new System.Drawing.Point(258, 69);
             this.addCustomer1.Margin = new System.Windows.Forms.Padding(4);
             this.addCustomer1.Name = "addCustomer1";
             this.addCustomer1.Size = new System.Drawing.Size(351, 398);
@@ -163,7 +163,7 @@
             // labelUser
             // 
             this.labelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelUser.Location = new System.Drawing.Point(419, 9);
+            this.labelUser.Location = new System.Drawing.Point(481, 9);
             this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(289, 23);
@@ -193,7 +193,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(713, 9);
+            this.logoutButton.Location = new System.Drawing.Point(775, 9);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 4;
@@ -205,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 709);
+            this.ClientSize = new System.Drawing.Size(866, 709);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.labelWelcomeMain);
             this.Controls.Add(this.labelName);

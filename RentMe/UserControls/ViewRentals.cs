@@ -40,6 +40,7 @@ namespace RentMe.UserControls
                     rentedItemLVI.SubItems.Add(rentedItem.DateOfRental.ToShortDateString());
                     rentedItemLVI.SubItems.Add(rentedItem.ScheduledReturn.ToShortDateString());
                     rentedItemLVI.SubItems.Add(rentedItem.EmployeeFullName);
+                    rentedItemLVI.SubItems.Add(rentedItem.ItemSerial);
                     rentedItemLVI.SubItems.Add(rentedItem.ItemDescription);
                     rentedItemLVI.SubItems.Add(rentedItem.ItemPrice.ToString());
                     rentedItemLVI.SubItems.Add(rentedItem.ItemQuantity.ToString());
