@@ -215,11 +215,8 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void FurnitureListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Just test");
-            Console.WriteLine(FurnitureListView.SelectedItems);
             if (FurnitureListView.SelectedItems.Count > 0)
             {
-                Console.WriteLine(FurnitureListView.SelectedItems[0]);
                 this.PopulateCartSelection(FurnitureListView.SelectedItems[0]);
             }
         }
