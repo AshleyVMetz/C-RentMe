@@ -1,6 +1,7 @@
 ﻿using RentMe.DAL;
 using RentMe.Model;
 using System;
+using System.Collections.Generic;
 
 namespace RentMe.Controller
 {
@@ -51,8 +52,8 @@ namespace RentMe.Controller
         /// Get Store Member details using Phone Number
         /// </summary>
         /// <param name="phoneNumber"></param>
-        /// <returns>StoreMember Object</returns>
-        public StoreMember GetStoreMemberByPhoneNumber(string phoneNumber)
+        /// <returns>List of StoreMember Objects</returns>
+        public List<StoreMember> GetStoreMemberByPhoneNumber(string phoneNumber)
         {
             return this.storeMemberDAL.GetStoreMemberByPhoneNumber(phoneNumber);
         }
@@ -61,8 +62,8 @@ namespace RentMe.Controller
         /// Get Store Member details using Name
         /// </summary>
         /// <param name="phoneNumber"></param>
-        /// <returns>StoreMember Object</returns>
-        public StoreMember GetStoreMemberByName(string firstName, string lastName)
+        /// <returns>List of StoreMember Objects</returns>
+        public List<StoreMember> GetStoreMemberByName(string firstName, string lastName)
         {
             return this.storeMemberDAL.GetStoreMemberByName(firstName, lastName);
         }

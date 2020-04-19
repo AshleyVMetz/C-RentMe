@@ -5,7 +5,7 @@ namespace RentMe.Model
     /// <summary>
     /// This class models a store member.
     /// </summary>
-    class StoreMember
+    public class StoreMember
     {
         public int MemberID { get; set; }
 
