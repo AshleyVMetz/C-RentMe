@@ -33,6 +33,7 @@
             this.dateOfRental = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.scheduledReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.employeeFullName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.itemSerial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,6 +48,7 @@
             this.dateOfRental,
             this.scheduledReturn,
             this.employeeFullName,
+            this.itemSerial,
             this.itemDescription,
             this.itemPrice,
             this.itemQuantity,
@@ -54,7 +56,7 @@
             this.rentalListView.HideSelection = false;
             this.rentalListView.Location = new System.Drawing.Point(3, 3);
             this.rentalListView.Name = "rentalListView";
-            this.rentalListView.Size = new System.Drawing.Size(752, 282);
+            this.rentalListView.Size = new System.Drawing.Size(814, 282);
             this.rentalListView.TabIndex = 0;
             this.rentalListView.UseCompatibleStateImageBehavior = false;
             this.rentalListView.View = System.Windows.Forms.View.Details;
@@ -78,6 +80,11 @@
             // 
             this.employeeFullName.Text = "Employee";
             this.employeeFullName.Width = 100;
+            // 
+            // itemSerial
+            // 
+            this.itemSerial.Text = "Serial #";
+            this.itemSerial.Width = 65;
             // 
             // itemDescription
             // 
@@ -105,7 +112,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.rentalListView);
             this.Name = "ViewRentals";
-            this.Size = new System.Drawing.Size(758, 288);
+            this.Size = new System.Drawing.Size(820, 288);
             this.ResumeLayout(false);
 
         }
@@ -121,5 +128,6 @@
         private System.Windows.Forms.ColumnHeader itemDescription;
         private System.Windows.Forms.ColumnHeader itemPrice;
         private System.Windows.Forms.ColumnHeader itemQuantity;
+        private System.Windows.Forms.ColumnHeader itemSerial;
     }
 }

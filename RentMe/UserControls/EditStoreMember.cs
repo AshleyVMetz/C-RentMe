@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
 using RentMe.Util;
+using RentMe.View;
 
 namespace RentMe.UserControls
 {
@@ -23,11 +26,9 @@ namespace RentMe.UserControls
         }
 
         /// <summary>
-        /// This method searches for a customer by ID when the button is clicked.
+        /// This helper method searches for a customer by ID.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CustomerIDSearchButton_Click(object sender, EventArgs e)
+        private void SearchCustomerByID()
         {
             PhoneNumberSearchTextBox.Text = "";
             FirstNameSearchTextBox.Text = "";
@@ -75,7 +76,16 @@ namespace RentMe.UserControls
                 MessageBox.Show("No Customer found!!!! - ",
                   "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
+        /// <summary>
+        /// This method searches for a customer by ID when the button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomerIDSearchButton_Click(object sender, EventArgs e)
+        {
+            this.SearchCustomerByID();
         }
 
         /// <summary>
@@ -89,9 +99,9 @@ namespace RentMe.UserControls
             FirstNameSearchTextBox.Text = "";
             LastNameSearchTextBox.Text = "";
 
-            if (PhoneNumberSearchTextBox.Text.Trim().Length < 10)
+            if (!Regex.IsMatch(PhoneNumberSearchTextBox.Text.Trim(), @"\d\d\d-\d\d\d-\d\d\d\d"))
             {
-                MessageBox.Show("Phone Number at least has to be 10 characters!!!!",
+                MessageBox.Show("Phone Number should be XXX-XXX-XXXX format!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -100,7 +110,17 @@ namespace RentMe.UserControls
             StoreMember storeMember = null;
             try
             {
-                storeMember = this.storeMemberController.GetStoreMemberByPhoneNumber(phoneNumber);
+                List<StoreMember> storeMembers = this.storeMemberController.GetStoreMemberByPhoneNumber(phoneNumber);
+                if (storeMembers.Count > 1)
+                {
+                    StoreMemberPicker storeMemberPicker = new StoreMemberPicker(storeMembers, this);
+                    storeMemberPicker.ShowDialog();
+                    return;
+                }
+                else
+                {
+                    storeMember = storeMembers[0];
+                }
             }
             catch (Exception ex)
             {
@@ -145,7 +165,17 @@ namespace RentMe.UserControls
 
             try
             {
-                storeMember = this.storeMemberController.GetStoreMemberByName(firstName, lastName);
+                List<StoreMember> storeMembers = this.storeMemberController.GetStoreMemberByName(firstName, lastName);
+                if (storeMembers.Count > 1)
+                {
+                    StoreMemberPicker storeMemberPicker = new StoreMemberPicker(storeMembers, this);
+                    storeMemberPicker.ShowDialog();
+                    return;
+                }
+                else if (storeMembers.Count == 1)
+                {
+                    storeMember = storeMembers[0];
+                }
             }
             catch (Exception ex)
             {
@@ -241,6 +271,17 @@ namespace RentMe.UserControls
 
             this.ClearAll();
 
+        }
+
+        /// <summary>
+        /// This method searches the ID of the selection from the Store Member Picker.
+        /// </summary>
+        /// <param name="memberID">The ID of the member.</param>
+        public void SearchSelectedStoreMember(string memberID)
+        {
+            this.ClearAll();
+            this.CustomerIDSearchTextBox.Text = memberID.Replace("ListViewItem: {", "").Replace("}", "").Trim();
+            this.SearchCustomerByID();
         }
 
         /// <summary>

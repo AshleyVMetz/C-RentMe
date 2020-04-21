@@ -50,6 +50,7 @@
             this.DateOfBirthLabel = new System.Windows.Forms.Label();
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.phoneFormatLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FirstNameLabel
@@ -94,7 +95,7 @@
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(30, 90);
+            this.PhoneLabel.Location = new System.Drawing.Point(30, 85);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(48, 13);
             this.PhoneLabel.TabIndex = 4;
@@ -105,7 +106,7 @@
             this.Address1TextBox.Location = new System.Drawing.Point(124, 184);
             this.Address1TextBox.Name = "Address1TextBox";
             this.Address1TextBox.Size = new System.Drawing.Size(187, 20);
-            this.Address1TextBox.TabIndex = 4;
+            this.Address1TextBox.TabIndex = 6;
             // 
             // Address1Label
             // 
@@ -121,7 +122,7 @@
             this.Address2TextBox.Location = new System.Drawing.Point(124, 221);
             this.Address2TextBox.Name = "Address2TextBox";
             this.Address2TextBox.Size = new System.Drawing.Size(187, 20);
-            this.Address2TextBox.TabIndex = 5;
+            this.Address2TextBox.TabIndex = 7;
             // 
             // Address2Label
             // 
@@ -137,7 +138,7 @@
             this.CityTextBox.Location = new System.Drawing.Point(124, 257);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(187, 20);
-            this.CityTextBox.TabIndex = 6;
+            this.CityTextBox.TabIndex = 8;
             // 
             // CityLabel
             // 
@@ -164,14 +165,14 @@
             this.StateComboBox.Location = new System.Drawing.Point(124, 291);
             this.StateComboBox.Name = "StateComboBox";
             this.StateComboBox.Size = new System.Drawing.Size(187, 21);
-            this.StateComboBox.TabIndex = 7;
+            this.StateComboBox.TabIndex = 9;
             // 
             // ZipCodeTextBox
             // 
             this.ZipCodeTextBox.Location = new System.Drawing.Point(124, 328);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
             this.ZipCodeTextBox.Size = new System.Drawing.Size(187, 20);
-            this.ZipCodeTextBox.TabIndex = 8;
+            this.ZipCodeTextBox.TabIndex = 10;
             // 
             // ZipCodeLabel
             // 
@@ -187,7 +188,7 @@
             this.AddCustomerButton.Location = new System.Drawing.Point(124, 372);
             this.AddCustomerButton.Name = "AddCustomerButton";
             this.AddCustomerButton.Size = new System.Drawing.Size(115, 23);
-            this.AddCustomerButton.TabIndex = 10;
+            this.AddCustomerButton.TabIndex = 11;
             this.AddCustomerButton.Text = "Add Store Member";
             this.AddCustomerButton.UseVisualStyleBackColor = true;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
@@ -197,7 +198,7 @@
             this.ClearButton.Location = new System.Drawing.Point(245, 372);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(66, 23);
-            this.ClearButton.TabIndex = 11;
+            this.ClearButton.TabIndex = 12;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -207,7 +208,7 @@
             this.DateOfBirthPicker.Location = new System.Drawing.Point(124, 116);
             this.DateOfBirthPicker.Name = "DateOfBirthPicker";
             this.DateOfBirthPicker.Size = new System.Drawing.Size(187, 20);
-            this.DateOfBirthPicker.TabIndex = 57;
+            this.DateOfBirthPicker.TabIndex = 4;
             // 
             // DateOfBirthLabel
             // 
@@ -225,7 +226,7 @@
             this.GenderComboBox.Location = new System.Drawing.Point(124, 149);
             this.GenderComboBox.Name = "GenderComboBox";
             this.GenderComboBox.Size = new System.Drawing.Size(187, 21);
-            this.GenderComboBox.TabIndex = 59;
+            this.GenderComboBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -236,10 +237,21 @@
             this.label1.TabIndex = 60;
             this.label1.Text = "Gender: *";
             // 
+            // phoneFormatLabel
+            // 
+            this.phoneFormatLabel.AutoSize = true;
+            this.phoneFormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneFormatLabel.Location = new System.Drawing.Point(31, 98);
+            this.phoneFormatLabel.Name = "phoneFormatLabel";
+            this.phoneFormatLabel.Size = new System.Drawing.Size(58, 7);
+            this.phoneFormatLabel.TabIndex = 66;
+            this.phoneFormatLabel.Text = "XXX-XXX-XXXX";
+            // 
             // AddStoreMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.phoneFormatLabel);
             this.Controls.Add(this.GenderComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DateOfBirthPicker);
@@ -293,5 +305,6 @@
         private System.Windows.Forms.Label DateOfBirthLabel;
         private System.Windows.Forms.ComboBox GenderComboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label phoneFormatLabel;
     }
 }

@@ -34,6 +34,7 @@
             this.returnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.scheduledReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.employeeFullName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.itemSerial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fineDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,6 +50,7 @@
             this.returnDate,
             this.scheduledReturn,
             this.employeeFullName,
+            this.itemSerial,
             this.itemDescription,
             this.itemQuantity,
             this.fineDue,
@@ -56,7 +58,7 @@
             this.returnListView.HideSelection = false;
             this.returnListView.Location = new System.Drawing.Point(3, 3);
             this.returnListView.Name = "returnListView";
-            this.returnListView.Size = new System.Drawing.Size(752, 282);
+            this.returnListView.Size = new System.Drawing.Size(814, 282);
             this.returnListView.TabIndex = 1;
             this.returnListView.UseCompatibleStateImageBehavior = false;
             this.returnListView.View = System.Windows.Forms.View.Details;
@@ -84,6 +86,11 @@
             this.employeeFullName.Text = "Employee";
             this.employeeFullName.Width = 90;
             // 
+            // itemSerial
+            // 
+            this.itemSerial.Text = "Serial #";
+            this.itemSerial.Width = 65;
+            // 
             // itemDescription
             // 
             this.itemDescription.Text = "Item Description";
@@ -107,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.returnListView);
             this.Name = "ViewReturns";
-            this.Size = new System.Drawing.Size(758, 288);
+            this.Size = new System.Drawing.Size(820, 288);
             this.ResumeLayout(false);
 
         }
@@ -124,5 +131,6 @@
         private System.Windows.Forms.ColumnHeader itemQuantity;
         private System.Windows.Forms.ColumnHeader refundDue;
         private System.Windows.Forms.ColumnHeader returnID;
+        private System.Windows.Forms.ColumnHeader itemSerial;
     }
 }

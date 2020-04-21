@@ -58,6 +58,7 @@
             this.sexComboBox = new System.Windows.Forms.ComboBox();
             this.stateComboBox = new System.Windows.Forms.ComboBox();
             this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.phoneFormatLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -113,7 +114,7 @@
             // phoneLabel
             // 
             this.phoneLabel.AutoSize = true;
-            this.phoneLabel.Location = new System.Drawing.Point(71, 192);
+            this.phoneLabel.Location = new System.Drawing.Point(71, 189);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(48, 13);
             this.phoneLabel.TabIndex = 6;
@@ -375,10 +376,21 @@
             this.passwordMaskedTextBox.Size = new System.Drawing.Size(187, 20);
             this.passwordMaskedTextBox.TabIndex = 12;
             // 
+            // phoneFormatLabel
+            // 
+            this.phoneFormatLabel.AutoSize = true;
+            this.phoneFormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneFormatLabel.Location = new System.Drawing.Point(72, 202);
+            this.phoneFormatLabel.Name = "phoneFormatLabel";
+            this.phoneFormatLabel.Size = new System.Drawing.Size(58, 7);
+            this.phoneFormatLabel.TabIndex = 66;
+            this.phoneFormatLabel.Text = "XXX-XXX-XXXX";
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.phoneFormatLabel);
             this.Controls.Add(this.passwordMaskedTextBox);
             this.Controls.Add(this.stateComboBox);
             this.Controls.Add(this.sexComboBox);
@@ -448,5 +460,6 @@
         private System.Windows.Forms.ComboBox sexComboBox;
         private System.Windows.Forms.ComboBox stateComboBox;
         private System.Windows.Forms.MaskedTextBox passwordMaskedTextBox;
+        private System.Windows.Forms.Label phoneFormatLabel;
     }
 }

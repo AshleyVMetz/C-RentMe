@@ -20,7 +20,7 @@ namespace RentMe.DAL
             List<RentedItem> rentedList = new List<RentedItem>();
             string selectStatement =
                 "SELECT RentalTransaction.RentalID AS RentalID, RentalTransaction.DateOfRental AS DateOfRental, RentalTransaction.ScheduledReturn AS ScheduledReturn, " +
-                       "Employees.FName AS EmployeeFirst, Employees.LName AS EmployeeLast, FurnitureItem.Description AS ItemDescription, " +
+                       "Employees.FName AS EmployeeFirst, Employees.LName AS EmployeeLast, FurnitureItem.Serial# AS ItemSerial, FurnitureItem.Description AS ItemDescription, " +
                        "FurnitureItem.DailyRentalRate AS ItemPrice, RentedItem.Quantity AS ItemQuantity " +
                 "FROM RentalTransaction " +
                 "LEFT JOIN Employees ON RentalTransaction.EmployeeID=Employees.EmployeeID " +
@@ -42,10 +42,11 @@ namespace RentMe.DAL
                             DateTime dateOfRental = (DateTime)reader["DateOfRental"];
                             DateTime scheduledReturn = (DateTime)reader["ScheduledReturn"];
                             string employeeFullName = reader["EmployeeFirst"].ToString() + " " + reader["EmployeeLast"].ToString();
+                            string itemSerial = reader["ItemSerial"].ToString();
                             string itemDescription = reader["ItemDescription"].ToString();
-                            decimal itemPrice = reader.GetDecimal(6);
-                            int itemQuantity = reader.GetInt32(7);
-                            RentedItem rentedItem = new RentedItem(rentalID, dateOfRental, scheduledReturn, employeeFullName, itemDescription, itemPrice, itemQuantity);
+                            decimal itemPrice = reader.GetDecimal(7);
+                            int itemQuantity = reader.GetInt32(8);
+                            RentedItem rentedItem = new RentedItem(rentalID, dateOfRental, scheduledReturn, employeeFullName, itemSerial, itemDescription, itemPrice, itemQuantity);
                             rentedList.Add(rentedItem);
                         }
                     }
