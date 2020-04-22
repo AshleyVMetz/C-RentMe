@@ -16,10 +16,12 @@ namespace RentMe.DAL
         /// </summary>
         /// <param name="StoreMember">Store Member Object</param>
         /// <returns>true if record got inserted, else false</returns>
-        public Boolean AddStoreMember(StoreMember StoreMember)
+        public int AddStoreMember(StoreMember StoreMember)
         {
             string sqlStatement = "INSERT INTO dbo.StoreMembers (fName, lName, dob, phone, address1, address2, city, state, zipcode, sex) " +
-                "VALUES (@FirstName, @LastName, @Dob, @Phone, @Address1, @Address2, @City, @State, @Zip, @Sex)";
+                "VALUES (@FirstName, @LastName, @Dob, @Phone, @Address1, @Address2, @City, @State, @Zip, @Sex); SELECT SCOPE_IDENTITY() ";
+
+            int customerId = 0;
 
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
             {
@@ -37,16 +39,12 @@ namespace RentMe.DAL
                     sqlCommand.Parameters.AddWithValue("@State", StoreMember.State);
                     sqlCommand.Parameters.AddWithValue("@Zip", StoreMember.Zip);
                     sqlCommand.Parameters.AddWithValue("@Sex", StoreMember.Sex);
-                    int execution = sqlCommand.ExecuteNonQuery();
+                    customerId = Convert.ToInt32(sqlCommand.ExecuteScalar());
 
-                    if (execution > 0)
-                    {
-                        return true;
-                    }
                 }
             }
 
-            return false;
+            return customerId;
         }
 
         /// <summary>
