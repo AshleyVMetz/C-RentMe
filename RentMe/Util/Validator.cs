@@ -131,18 +131,14 @@ namespace RentMe.Util
         {
             DateTime today = DateTime.Now;
 
-            if (cart.RentalStartDate.Year < today.Year ||
-                cart.RentalStartDate.Month < today.Month ||
-                cart.RentalStartDate.Day < today.Day)
+            if ( Math.Round(cart.RentalStartDate.Subtract(today).TotalDays) < 0)
             {
                 MessageBox.Show("Rental start date cannot be before today!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
 
-            if (cart.RentalEndDate.Year < cart.RentalStartDate.Year ||
-                cart.RentalEndDate.Month < cart.RentalStartDate.Month ||
-                cart.RentalEndDate.Day < cart.RentalStartDate.Day)
+            if (Math.Round(cart.RentalEndDate.Subtract(cart.RentalStartDate).TotalDays) < 0)
             {
                 MessageBox.Show("Rental end date cannot be before Rental start date!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
