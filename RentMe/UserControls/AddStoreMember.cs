@@ -52,9 +52,9 @@ namespace RentMe.UserControls
                     return;
                 }
 
-                this.storeMemberController.Add(storeMember);
+                int customerId = this.storeMemberController.Add(storeMember);
 
-                MessageBox.Show("Store Member has been created",
+                MessageBox.Show("Store Member has been created with Customer Id - " + customerId,
                     "Store Member Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.ClearAll();
