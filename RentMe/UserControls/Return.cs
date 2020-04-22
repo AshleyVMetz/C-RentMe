@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
-using RentMe.View;
 
 namespace RentMe.UserControls
 {
@@ -38,12 +36,13 @@ namespace RentMe.UserControls
             this.employeeController = new EmployeeController();
             this.employeeID = EmployeeDashboard.employeeID;
             buttonReturn.Enabled = false;
+            buttonAddToReturn.Enabled = false;
             this.itemsToReturn = new List<ReturnableItem>();
-        
+
         }
 
-    
-        
+
+
 
         /// <summary>
         /// This method submits a return when the button is clicked.
@@ -57,8 +56,8 @@ namespace RentMe.UserControls
             transaction.ReturnDate = DateTime.Now;
             int returnID = returnTransactionController.CreateReturnTransaction(transaction);
             transaction.ReturnID = returnID;
-           
             decimal finalBalance = 0;
+
             foreach (var itemToReturn in itemsToReturn)
             {
                 var returnItem = new ReturnItem();
@@ -100,7 +99,7 @@ namespace RentMe.UserControls
                 var result = returnController.CreateReturnItem(returnItem);
                 if (!result)
                 {
-                    MessageBox.Show("Failed to Return Items. Please make sure the quantity is valid");
+                    MessageBox.Show("Failed to Return Items.");
                     return;
                 }
             }
@@ -118,8 +117,8 @@ namespace RentMe.UserControls
             returnTransactionController.UpdateTransaction(transaction);
             MessageBox.Show("Successfully Returned Furniture Items");
             buttonSearch_Click(sender, e);
-            MessageBox.Show( "Fine Due: " + "$ " + transaction.FineDueTotal.ToString() + "\n" + "Refund Due: " + "$ " + transaction.RefundDueTotal.ToString());
-          
+            MessageBox.Show("Fine Due: " + "$ " + transaction.FineDueTotal.ToString() + "\n" + "Refund Due: " + "$ " + transaction.RefundDueTotal.ToString());
+            this.Clear();
         }
 
         /// <summary>
@@ -155,9 +154,13 @@ namespace RentMe.UserControls
 
             textBoxStoreMemberID.Text = "";
             this.listViewReturnableItems.Items.Clear();
+            this.listViewItemsToReturn.Items.Clear();
             buttonReturn.Enabled = false;
-           
-
+            buttonAddToReturn.Enabled = false;
+            SerialNumberLabel.Text = "";
+            QuantityAvailableLabel.Text = "";
+            this.ComboBoxRequiredQuantity.Items.Clear();
+            ComboBoxRequiredQuantity.ResetText();
 
         }
 
@@ -177,12 +180,13 @@ namespace RentMe.UserControls
                 returnableItems.AddRange(list);
             }
             RefreshListViewReturnableItems();
-          
+
         }
 
         private void RefreshListViewReturnableItems()
         {
             this.listViewReturnableItems.Items.Clear();
+
             try
             {
                 foreach (var item in this.returnableItems)
@@ -215,7 +219,7 @@ namespace RentMe.UserControls
                     buttonReturn.Enabled = true;
 
                 }
-           
+
 
             }
             catch (Exception)
@@ -228,9 +232,9 @@ namespace RentMe.UserControls
 
         private void PopulateReturnSelection(ListViewItem item)
         {
-          SerialNumberLabel.Text = item.SubItems[0].Text;
-          QuantityAvailableLabel.Text = item.SubItems[4].Text;
-          PopulateQuantity(Int32.Parse(item.SubItems[4].Text));
+            SerialNumberLabel.Text = item.SubItems[0].Text;
+            QuantityAvailableLabel.Text = item.SubItems[4].Text;
+            PopulateQuantity(Int32.Parse(item.SubItems[4].Text));
             currentItem = new ReturnableItem();
             currentItem.SerialNumber = item.SubItems[0].Text;
             currentItem.Description = item.SubItems[1].Text;
@@ -241,12 +245,12 @@ namespace RentMe.UserControls
 
         private void PopulateQuantity(int quantity)
         {
-            QuantityRequiredComboBox.Items.Clear();
-            QuantityRequiredComboBox.SelectedIndex = -1;
+            ComboBoxRequiredQuantity.Items.Clear();
+            ComboBoxRequiredQuantity.SelectedIndex = -1;
 
             for (int i = 1; i <= quantity; i++)
             {
-                QuantityRequiredComboBox.Items.Add("" + i);
+                ComboBoxRequiredQuantity.Items.Add("" + i);
             }
         }
 
@@ -255,13 +259,17 @@ namespace RentMe.UserControls
             if (listViewReturnableItems.SelectedItems.Count > 0)
             {
                 this.PopulateReturnSelection(listViewReturnableItems.SelectedItems[0]);
+                buttonAddToReturn.Enabled = true;
             }
+
+
+
         }
 
         private void buttonAddToReturn_Click(object sender, EventArgs e)
         {
-            
-            currentItem.Quantity = int.Parse(QuantityRequiredComboBox.Text);
+
+            currentItem.Quantity = int.Parse(ComboBoxRequiredQuantity.Text);
             itemsToReturn.Add(currentItem);
             this.RefreshListViewItemsToReturn();
         }
