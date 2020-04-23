@@ -234,7 +234,7 @@ namespace RentMe.UserControls
         {
             SerialNumberLabel.Text = item.SubItems[0].Text;
             QuantityAvailableLabel.Text = item.SubItems[4].Text;
-            PopulateQuantity(Int32.Parse(item.SubItems[4].Text));
+            PopulateQuantityRequired(Int32.Parse(item.SubItems[4].Text));
             currentItem = new ReturnableItem();
             currentItem.SerialNumber = item.SubItems[0].Text;
             currentItem.Description = item.SubItems[1].Text;
@@ -243,7 +243,7 @@ namespace RentMe.UserControls
             currentItem.RentalID = int.Parse(item.SubItems[5].Text);
         }
 
-        private void PopulateQuantity(int quantity)
+        private void PopulateQuantityRequired(int quantity)
         {
             ComboBoxRequiredQuantity.Items.Clear();
             ComboBoxRequiredQuantity.SelectedIndex = -1;

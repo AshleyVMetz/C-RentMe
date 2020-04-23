@@ -172,6 +172,7 @@
             // 
             // ComboBoxRequiredQuantity
             // 
+            this.ComboBoxRequiredQuantity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxRequiredQuantity.FormattingEnabled = true;
             this.ComboBoxRequiredQuantity.Location = new System.Drawing.Point(528, 306);
             this.ComboBoxRequiredQuantity.Name = "ComboBoxRequiredQuantity";
