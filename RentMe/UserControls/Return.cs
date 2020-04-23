@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using RentMe.Controller;
@@ -18,10 +17,12 @@ namespace RentMe.UserControls
         FurnitureController furnitureController;
         RentalTransactionController rentalTransactionController;
         EmployeeController employeeController;
+        int employeeID;
         int memberID;
         List<int> rentalIDList;
+        List<ReturnableItem> returnableItems;
         List<ReturnableItem> itemsToReturn;
-
+        ReturnableItem currentItem;
         /// <summary>
         /// Constructor method.
         /// </summary>
@@ -33,26 +34,15 @@ namespace RentMe.UserControls
             this.furnitureController = new FurnitureController();
             rentalTransactionController = new RentalTransactionController();
             this.employeeController = new EmployeeController();
-            this.LoadEmployees();
+            this.employeeID = EmployeeDashboard.employeeID;
             buttonReturn.Enabled = false;
-            comboBoxEmployee.Enabled = false;
+            buttonAddToReturn.Enabled = false;
+            this.itemsToReturn = new List<ReturnableItem>();
+
         }
 
-        /// <summary>
-        /// This method loads the list of employees.
-        /// </summary>
-        private void LoadEmployees()
-        {
-            var employeeList = new List<Employee>();
-            var emptyEmployee = new Employee();
-            emptyEmployee.FullName = "--select--";
-            employeeList.Add(emptyEmployee);
-            var employeeListFromDB = employeeController.GetEmployeeList();
-            employeeList.AddRange(employeeListFromDB);
-            comboBoxEmployee.DataSource = employeeList;
-            comboBoxEmployee.DisplayMember = "FullName";
-            comboBoxEmployee.ValueMember = "EmployeeID";
-        }
+
+
 
         /// <summary>
         /// This method submits a return when the button is clicked.
@@ -62,17 +52,12 @@ namespace RentMe.UserControls
         private void buttonReturn_Click(object sender, EventArgs e)
         {
             ReturnTransaction transaction = new ReturnTransaction();
-            transaction.EmployeeID = int.Parse(comboBoxEmployee.SelectedValue.ToString());
-            if (transaction.EmployeeID < 1)
-            {
-                MessageBox.Show("Please Select An Employee");
-                return;
-            }
+            transaction.EmployeeID = employeeID;
             transaction.ReturnDate = DateTime.Now;
             int returnID = returnTransactionController.CreateReturnTransaction(transaction);
             transaction.ReturnID = returnID;
-            itemsToReturn = itemsToReturn.Where(i => i.Quantity > 0).ToList();
             decimal finalBalance = 0;
+
             foreach (var itemToReturn in itemsToReturn)
             {
                 var returnItem = new ReturnItem();
@@ -114,7 +99,7 @@ namespace RentMe.UserControls
                 var result = returnController.CreateReturnItem(returnItem);
                 if (!result)
                 {
-                    MessageBox.Show("Failed to Return Items. Please make sure the quantity is valid");
+                    MessageBox.Show("Failed to Return Items.");
                     return;
                 }
             }
@@ -132,8 +117,8 @@ namespace RentMe.UserControls
             returnTransactionController.UpdateTransaction(transaction);
             MessageBox.Show("Successfully Returned Furniture Items");
             buttonSearch_Click(sender, e);
-            labelAmountFineDue.Text = transaction.FineDueTotal.ToString();
-            label4AmountRefundDue.Text = transaction.RefundDueTotal.ToString();
+            MessageBox.Show("Fine Due: " + "$ " + transaction.FineDueTotal.ToString() + "\n" + "Refund Due: " + "$ " + transaction.RefundDueTotal.ToString());
+            this.Clear();
         }
 
         /// <summary>
@@ -168,11 +153,14 @@ namespace RentMe.UserControls
         {
 
             textBoxStoreMemberID.Text = "";
-            dataGridViewReturnableItems.DataSource = null;
-            dataGridViewReturnableItems.Refresh();
+            this.listViewReturnableItems.Items.Clear();
+            this.listViewItemsToReturn.Items.Clear();
             buttonReturn.Enabled = false;
-            comboBoxEmployee.Enabled = false;
-
+            buttonAddToReturn.Enabled = false;
+            SerialNumberLabel.Text = "";
+            QuantityAvailableLabel.Text = "";
+            this.ComboBoxRequiredQuantity.Items.Clear();
+            ComboBoxRequiredQuantity.ResetText();
 
         }
 
@@ -185,25 +173,105 @@ namespace RentMe.UserControls
         {
             memberID = int.Parse(textBoxStoreMemberID.Text);
             rentalIDList = rentalTransactionController.GetRentalIDListByMemberID(memberID);
-            itemsToReturn = new List<ReturnableItem>();
+            returnableItems = new List<ReturnableItem>();
             foreach (var rentalID in rentalIDList)
             {
                 var list = returnController.GetReturnableItemsByRentalID(rentalID);
-                itemsToReturn.AddRange(list);
+                returnableItems.AddRange(list);
             }
-            dataGridViewReturnableItems.DataSource = itemsToReturn;
-            dataGridViewReturnableItems.Columns[0].ReadOnly = true;
-            dataGridViewReturnableItems.Columns[2].ReadOnly = true;
-            dataGridViewReturnableItems.Refresh();
-            if (itemsToReturn.Count > 0)
+            RefreshListViewReturnableItems();
+
+        }
+
+        private void RefreshListViewReturnableItems()
+        {
+            this.listViewReturnableItems.Items.Clear();
+
+            try
             {
-                buttonReturn.Enabled = true;
-                comboBoxEmployee.Enabled = true;
+                foreach (var item in this.returnableItems)
+                {
+                    var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
+                    this.listViewReturnableItems.Items.Add(lvi);
+                }
+
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("No returnable Items");
+                MessageBox.Show("Error while fetching data from database!!!!",
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void RefreshListViewItemsToReturn()
+        {
+            this.listViewItemsToReturn.Items.Clear();
+            try
+            {
+                foreach (var item in this.itemsToReturn)
+                {
+                    var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
+                    this.listViewItemsToReturn.Items.Add(lvi);
+                }
+                if (returnableItems.Count > 0)
+                {
+                    buttonReturn.Enabled = true;
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error while fetching data from database!!!!",
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void PopulateReturnSelection(ListViewItem item)
+        {
+            SerialNumberLabel.Text = item.SubItems[0].Text;
+            QuantityAvailableLabel.Text = item.SubItems[4].Text;
+            PopulateQuantity(Int32.Parse(item.SubItems[4].Text));
+            currentItem = new ReturnableItem();
+            currentItem.SerialNumber = item.SubItems[0].Text;
+            currentItem.Description = item.SubItems[1].Text;
+            currentItem.Style = item.SubItems[2].Text;
+            currentItem.Category = item.SubItems[3].Text;
+            currentItem.RentalID = int.Parse(item.SubItems[5].Text);
+        }
+
+        private void PopulateQuantity(int quantity)
+        {
+            ComboBoxRequiredQuantity.Items.Clear();
+            ComboBoxRequiredQuantity.SelectedIndex = -1;
+
+            for (int i = 1; i <= quantity; i++)
+            {
+                ComboBoxRequiredQuantity.Items.Add("" + i);
+            }
+        }
+
+        private void listViewReturnableItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewReturnableItems.SelectedItems.Count > 0)
+            {
+                this.PopulateReturnSelection(listViewReturnableItems.SelectedItems[0]);
+                buttonAddToReturn.Enabled = true;
+            }
+
+
+
+        }
+
+        private void buttonAddToReturn_Click(object sender, EventArgs e)
+        {
+
+            currentItem.Quantity = int.Parse(ComboBoxRequiredQuantity.Text);
+            itemsToReturn.Add(currentItem);
+            this.RefreshListViewItemsToReturn();
         }
     }
 }

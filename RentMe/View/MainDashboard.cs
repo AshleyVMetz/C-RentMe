@@ -11,6 +11,7 @@ namespace RentMe
     {
         Form previousForm = null;
         public static Cart cart = null;
+        public static int employeeID;
 
         /// <summary>
         /// Constructor method.
@@ -21,14 +22,15 @@ namespace RentMe
         /// <param name="form">The login form.</param>
         public EmployeeDashboard(string username, string fname, string lname, int employeeId, Form form)
         {
+            employeeID = employeeId;
             InitializeComponent();
             labelUser.Text = username;
             labelName.Text = fname + " " + lname;
-
-            this.previousForm = form;
             cart = new Cart();
             cart.Items = new List<CartItem>();
             cart.EmployeeID = employeeId;
+            this.previousForm = form;
+            
         }
 
         /// <summary>

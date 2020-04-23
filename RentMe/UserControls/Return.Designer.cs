@@ -34,16 +34,30 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelReturns = new System.Windows.Forms.Label();
             this.labelStoreMember = new System.Windows.Forms.Label();
-            this.labelReturnEmployee = new System.Windows.Forms.Label();
-            this.dataGridViewReturnableItems = new System.Windows.Forms.DataGridView();
-            this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.labelDirections = new System.Windows.Forms.Label();
-            this.labelDirections2 = new System.Windows.Forms.Label();
-            this.labelFineDue = new System.Windows.Forms.Label();
-            this.labelAmountFineDue = new System.Windows.Forms.Label();
-            this.labelRefundDue = new System.Windows.Forms.Label();
-            this.label4AmountRefundDue = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReturnableItems)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SerialNumberLabel = new System.Windows.Forms.Label();
+            this.serialNumber = new System.Windows.Forms.Label();
+            this.QuantityAvailableLabel = new System.Windows.Forms.Label();
+            this.QuantityLabel = new System.Windows.Forms.Label();
+            this.ComboBoxRequiredQuantity = new System.Windows.Forms.ComboBox();
+            this.amountLabel = new System.Windows.Forms.Label();
+            this.listViewReturnableItems = new System.Windows.Forms.ListView();
+            this.serial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.style = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonAddToReturn = new System.Windows.Forms.Button();
+            this.listViewItemsToReturn = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rentalID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rental = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelReturnInstructions = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxStoreMemberID
@@ -55,11 +69,11 @@
             // 
             // buttonReturn
             // 
-            this.buttonReturn.Location = new System.Drawing.Point(223, 380);
+            this.buttonReturn.Location = new System.Drawing.Point(303, 532);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(115, 23);
+            this.buttonReturn.Size = new System.Drawing.Size(163, 23);
             this.buttonReturn.TabIndex = 5;
-            this.buttonReturn.Text = "Return";
+            this.buttonReturn.Text = "Return Listed Items";
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
@@ -75,7 +89,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(395, 380);
+            this.buttonCancel.Location = new System.Drawing.Point(514, 532);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 7;
@@ -102,103 +116,196 @@
             this.labelStoreMember.TabIndex = 9;
             this.labelStoreMember.Text = "Store Member ID:";
             // 
-            // labelReturnEmployee
-            // 
-            this.labelReturnEmployee.AutoSize = true;
-            this.labelReturnEmployee.Location = new System.Drawing.Point(50, 353);
-            this.labelReturnEmployee.Name = "labelReturnEmployee";
-            this.labelReturnEmployee.Size = new System.Drawing.Size(117, 17);
-            this.labelReturnEmployee.TabIndex = 13;
-            this.labelReturnEmployee.Text = "Return Employee";
-            // 
-            // dataGridViewReturnableItems
-            // 
-            this.dataGridViewReturnableItems.AllowUserToAddRows = false;
-            this.dataGridViewReturnableItems.AllowUserToDeleteRows = false;
-            this.dataGridViewReturnableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReturnableItems.Location = new System.Drawing.Point(52, 141);
-            this.dataGridViewReturnableItems.Name = "dataGridViewReturnableItems";
-            this.dataGridViewReturnableItems.RowHeadersWidth = 51;
-            this.dataGridViewReturnableItems.RowTemplate.Height = 24;
-            this.dataGridViewReturnableItems.Size = new System.Drawing.Size(587, 196);
-            this.dataGridViewReturnableItems.TabIndex = 14;
-            // 
-            // comboBoxEmployee
-            // 
-            this.comboBoxEmployee.FormattingEnabled = true;
-            this.comboBoxEmployee.Location = new System.Drawing.Point(200, 350);
-            this.comboBoxEmployee.Name = "comboBoxEmployee";
-            this.comboBoxEmployee.Size = new System.Drawing.Size(334, 24);
-            this.comboBoxEmployee.TabIndex = 15;
-            // 
             // labelDirections
             // 
             this.labelDirections.AutoSize = true;
-            this.labelDirections.Location = new System.Drawing.Point(59, 104);
+            this.labelDirections.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDirections.Location = new System.Drawing.Point(18, 107);
             this.labelDirections.Name = "labelDirections";
-            this.labelDirections.Size = new System.Drawing.Size(558, 17);
+            this.labelDirections.Size = new System.Drawing.Size(212, 20);
             this.labelDirections.TabIndex = 16;
-            this.labelDirections.Text = "Quantity Available To Return. Please enter the amount of each item you wish to re" +
-    "turn. ";
+            this.labelDirections.Text = "Click on a row to return.";
             // 
-            // labelDirections2
+            // label1
             // 
-            this.labelDirections2.AutoSize = true;
-            this.labelDirections2.Location = new System.Drawing.Point(59, 121);
-            this.labelDirections2.Name = "labelDirections2";
-            this.labelDirections2.Size = new System.Drawing.Size(352, 17);
-            this.labelDirections2.TabIndex = 17;
-            this.labelDirections2.Text = "If you do not wish to return an item put a 0 for quantity.";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(564, 383);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 22;
             // 
-            // labelFineDue
+            // SerialNumberLabel
             // 
-            this.labelFineDue.AutoSize = true;
-            this.labelFineDue.Location = new System.Drawing.Point(197, 417);
-            this.labelFineDue.Name = "labelFineDue";
-            this.labelFineDue.Size = new System.Drawing.Size(69, 17);
-            this.labelFineDue.TabIndex = 18;
-            this.labelFineDue.Text = "Fine Due:";
+            this.SerialNumberLabel.AutoSize = true;
+            this.SerialNumberLabel.Location = new System.Drawing.Point(127, 313);
+            this.SerialNumberLabel.Name = "SerialNumberLabel";
+            this.SerialNumberLabel.Size = new System.Drawing.Size(16, 17);
+            this.SerialNumberLabel.TabIndex = 23;
+            this.SerialNumberLabel.Text = "0";
             // 
-            // labelAmountFineDue
+            // serialNumber
             // 
-            this.labelAmountFineDue.AutoSize = true;
-            this.labelAmountFineDue.Location = new System.Drawing.Point(272, 417);
-            this.labelAmountFineDue.Name = "labelAmountFineDue";
-            this.labelAmountFineDue.Size = new System.Drawing.Size(16, 17);
-            this.labelAmountFineDue.TabIndex = 19;
-            this.labelAmountFineDue.Text = "0";
+            this.serialNumber.AutoSize = true;
+            this.serialNumber.Location = new System.Drawing.Point(19, 313);
+            this.serialNumber.Name = "serialNumber";
+            this.serialNumber.Size = new System.Drawing.Size(102, 17);
+            this.serialNumber.TabIndex = 24;
+            this.serialNumber.Text = "Serial Number:";
             // 
-            // labelRefundDue
+            // QuantityAvailableLabel
             // 
-            this.labelRefundDue.AutoSize = true;
-            this.labelRefundDue.Location = new System.Drawing.Point(338, 417);
-            this.labelRefundDue.Name = "labelRefundDue";
-            this.labelRefundDue.Size = new System.Drawing.Size(88, 17);
-            this.labelRefundDue.TabIndex = 20;
-            this.labelRefundDue.Text = "Refund Due:";
+            this.QuantityAvailableLabel.AutoSize = true;
+            this.QuantityAvailableLabel.Location = new System.Drawing.Point(348, 313);
+            this.QuantityAvailableLabel.Name = "QuantityAvailableLabel";
+            this.QuantityAvailableLabel.Size = new System.Drawing.Size(16, 17);
+            this.QuantityAvailableLabel.TabIndex = 25;
+            this.QuantityAvailableLabel.Text = "0";
             // 
-            // label4AmountRefundDue
+            // QuantityLabel
             // 
-            this.label4AmountRefundDue.AutoSize = true;
-            this.label4AmountRefundDue.Location = new System.Drawing.Point(432, 417);
-            this.label4AmountRefundDue.Name = "label4AmountRefundDue";
-            this.label4AmountRefundDue.Size = new System.Drawing.Size(16, 17);
-            this.label4AmountRefundDue.TabIndex = 21;
-            this.label4AmountRefundDue.Text = "0";
+            this.QuantityLabel.AutoSize = true;
+            this.QuantityLabel.Location = new System.Drawing.Point(216, 313);
+            this.QuantityLabel.Name = "QuantityLabel";
+            this.QuantityLabel.Size = new System.Drawing.Size(126, 17);
+            this.QuantityLabel.TabIndex = 26;
+            this.QuantityLabel.Text = "Quantity Available:";
+            // 
+            // ComboBoxRequiredQuantity
+            // 
+            this.ComboBoxRequiredQuantity.FormattingEnabled = true;
+            this.ComboBoxRequiredQuantity.Location = new System.Drawing.Point(528, 306);
+            this.ComboBoxRequiredQuantity.Name = "ComboBoxRequiredQuantity";
+            this.ComboBoxRequiredQuantity.Size = new System.Drawing.Size(121, 24);
+            this.ComboBoxRequiredQuantity.TabIndex = 27;
+            // 
+            // amountLabel
+            // 
+            this.amountLabel.AutoSize = true;
+            this.amountLabel.Location = new System.Drawing.Point(394, 313);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(128, 17);
+            this.amountLabel.TabIndex = 28;
+            this.amountLabel.Text = "Amount To Return:";
+            // 
+            // listViewReturnableItems
+            // 
+            this.listViewReturnableItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.serial,
+            this.description,
+            this.style,
+            this.category,
+            this.quantity,
+            this.rentalID});
+            this.listViewReturnableItems.HideSelection = false;
+            this.listViewReturnableItems.Location = new System.Drawing.Point(22, 130);
+            this.listViewReturnableItems.Name = "listViewReturnableItems";
+            this.listViewReturnableItems.Size = new System.Drawing.Size(870, 154);
+            this.listViewReturnableItems.TabIndex = 29;
+            this.listViewReturnableItems.UseCompatibleStateImageBehavior = false;
+            this.listViewReturnableItems.View = System.Windows.Forms.View.Details;
+            this.listViewReturnableItems.SelectedIndexChanged += new System.EventHandler(this.listViewReturnableItems_SelectedIndexChanged);
+            // 
+            // serial
+            // 
+            this.serial.Text = "Serial Number";
+            // 
+            // description
+            // 
+            this.description.Text = "Description";
+            // 
+            // style
+            // 
+            this.style.Text = "Style";
+            // 
+            // category
+            // 
+            this.category.Text = "Category";
+            // 
+            // quantity
+            // 
+            this.quantity.Text = "Quantity";
+            // 
+            // buttonAddToReturn
+            // 
+            this.buttonAddToReturn.Location = new System.Drawing.Point(680, 306);
+            this.buttonAddToReturn.Name = "buttonAddToReturn";
+            this.buttonAddToReturn.Size = new System.Drawing.Size(133, 23);
+            this.buttonAddToReturn.TabIndex = 30;
+            this.buttonAddToReturn.Text = "Add to Return";
+            this.buttonAddToReturn.UseVisualStyleBackColor = true;
+            this.buttonAddToReturn.Click += new System.EventHandler(this.buttonAddToReturn_Click);
+            // 
+            // listViewItemsToReturn
+            // 
+            this.listViewItemsToReturn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.rental});
+            this.listViewItemsToReturn.HideSelection = false;
+            this.listViewItemsToReturn.Location = new System.Drawing.Point(22, 364);
+            this.listViewItemsToReturn.Name = "listViewItemsToReturn";
+            this.listViewItemsToReturn.Size = new System.Drawing.Size(870, 162);
+            this.listViewItemsToReturn.TabIndex = 31;
+            this.listViewItemsToReturn.UseCompatibleStateImageBehavior = false;
+            this.listViewItemsToReturn.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Serial Number";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Description";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Style";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Category";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Quantity";
+            // 
+            // rentalID
+            // 
+            this.rentalID.Text = "Rental ID";
+            // 
+            // rental
+            // 
+            this.rental.Text = "RentalID";
+            // 
+            // labelReturnInstructions
+            // 
+            this.labelReturnInstructions.AutoSize = true;
+            this.labelReturnInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReturnInstructions.Location = new System.Drawing.Point(19, 344);
+            this.labelReturnInstructions.Name = "labelReturnInstructions";
+            this.labelReturnInstructions.Size = new System.Drawing.Size(331, 18);
+            this.labelReturnInstructions.TabIndex = 32;
+            this.labelReturnInstructions.Text = "These are the items you selected to return:";
             // 
             // Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label4AmountRefundDue);
-            this.Controls.Add(this.labelRefundDue);
-            this.Controls.Add(this.labelAmountFineDue);
-            this.Controls.Add(this.labelFineDue);
-            this.Controls.Add(this.labelDirections2);
+            this.Controls.Add(this.labelReturnInstructions);
+            this.Controls.Add(this.listViewItemsToReturn);
+            this.Controls.Add(this.buttonAddToReturn);
+            this.Controls.Add(this.listViewReturnableItems);
+            this.Controls.Add(this.amountLabel);
+            this.Controls.Add(this.ComboBoxRequiredQuantity);
+            this.Controls.Add(this.QuantityLabel);
+            this.Controls.Add(this.QuantityAvailableLabel);
+            this.Controls.Add(this.serialNumber);
+            this.Controls.Add(this.SerialNumberLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelDirections);
-            this.Controls.Add(this.comboBoxEmployee);
-            this.Controls.Add(this.dataGridViewReturnableItems);
-            this.Controls.Add(this.labelReturnEmployee);
             this.Controls.Add(this.labelStoreMember);
             this.Controls.Add(this.labelReturns);
             this.Controls.Add(this.buttonCancel);
@@ -206,8 +313,7 @@
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.textBoxStoreMemberID);
             this.Name = "Return";
-            this.Size = new System.Drawing.Size(761, 495);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReturnableItems)).EndInit();
+            this.Size = new System.Drawing.Size(975, 587);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,14 +327,29 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelReturns;
         private System.Windows.Forms.Label labelStoreMember;
-        private System.Windows.Forms.Label labelReturnEmployee;
-        private System.Windows.Forms.DataGridView dataGridViewReturnableItems;
-        private System.Windows.Forms.ComboBox comboBoxEmployee;
         private System.Windows.Forms.Label labelDirections;
-        private System.Windows.Forms.Label labelDirections2;
-        private System.Windows.Forms.Label labelFineDue;
-        private System.Windows.Forms.Label labelAmountFineDue;
-        private System.Windows.Forms.Label labelRefundDue;
-        private System.Windows.Forms.Label label4AmountRefundDue;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label SerialNumberLabel;
+        private System.Windows.Forms.Label serialNumber;
+        private System.Windows.Forms.Label QuantityAvailableLabel;
+        private System.Windows.Forms.Label QuantityLabel;
+        private System.Windows.Forms.ComboBox ComboBoxRequiredQuantity;
+        private System.Windows.Forms.Label amountLabel;
+        private System.Windows.Forms.ListView listViewReturnableItems;
+        private System.Windows.Forms.ColumnHeader serial;
+        private System.Windows.Forms.ColumnHeader description;
+        private System.Windows.Forms.ColumnHeader style;
+        private System.Windows.Forms.ColumnHeader category;
+        private System.Windows.Forms.ColumnHeader quantity;
+        private System.Windows.Forms.Button buttonAddToReturn;
+        private System.Windows.Forms.ListView listViewItemsToReturn;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader rentalID;
+        private System.Windows.Forms.ColumnHeader rental;
+        private System.Windows.Forms.Label labelReturnInstructions;
     }
 }
