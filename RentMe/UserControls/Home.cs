@@ -66,6 +66,15 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void SerialNumberSearchButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.SerialNumberTextBox.Text))
+            {
+                MessageBox.Show("You must enter a serial number to search!!!!",
+                                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            this.ClearDataGrid();
+            this.StyleComboBox.SelectedIndex = -1;
+            this.CategoryComboBox.SelectedIndex = -1;
             this.RefreshSearch();
         }
 
@@ -187,6 +196,15 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void StyleSearchButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.StyleComboBox.Text))
+            {
+                MessageBox.Show("You must select a style to search!!!!",
+                                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            this.ClearDataGrid();
+            this.SerialNumberTextBox.Clear();
+            this.CategoryComboBox.SelectedIndex = -1;
             this.RefreshSearch();
         }
 
@@ -197,6 +215,15 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void CategorySearchButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.CategoryComboBox.Text))
+            {
+                MessageBox.Show("You must select a category to search!!!!",
+                                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            this.ClearDataGrid();
+            this.SerialNumberTextBox.Clear();
+            this.StyleComboBox.SelectedIndex = -1;
             this.RefreshSearch();
         }
 
@@ -259,6 +286,10 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            this.SerialNumberTextBox.Clear();
+            this.StyleComboBox.SelectedIndex = -1;
+            this.CategoryComboBox.SelectedIndex = -1;
+            this.ClearDataGrid();
             SerialNumberLabel.Text = "";
             DescriptionLabel.Text = "";
             StyleLabel.Text = "";
