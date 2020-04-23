@@ -117,7 +117,7 @@ namespace RentMe.UserControls
                     storeMemberPicker.ShowDialog();
                     return;
                 }
-                else
+                else if (storeMembers.Count == 1)
                 {
                     storeMember = storeMembers[0];
                 }
