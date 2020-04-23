@@ -171,6 +171,12 @@ namespace RentMe.UserControls
         /// <param name="e"></param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.textBoxStoreMemberID.Text))
+            {
+                MessageBox.Show("You must enter a store member ID to search!!!!",
+                                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             memberID = int.Parse(textBoxStoreMemberID.Text);
             rentalIDList = rentalTransactionController.GetRentalIDListByMemberID(memberID);
             returnableItems = new List<ReturnableItem>();
