@@ -16,7 +16,7 @@ namespace RentMe.UserControls
         ReturnTransactionController returnTransactionController;
         FurnitureController furnitureController;
         RentalTransactionController rentalTransactionController;
-        EmployeeController employeeController;
+       
         int employeeID;
         int memberID;
         List<int> rentalIDList;
@@ -33,11 +33,12 @@ namespace RentMe.UserControls
             this.returnTransactionController = new ReturnTransactionController();
             this.furnitureController = new FurnitureController();
             rentalTransactionController = new RentalTransactionController();
-            this.employeeController = new EmployeeController();
+           
             this.employeeID = EmployeeDashboard.employeeID;
             buttonReturn.Enabled = false;
             buttonAddToReturn.Enabled = false;
             this.itemsToReturn = new List<ReturnableItem>();
+
 
         }
 
@@ -129,6 +130,8 @@ namespace RentMe.UserControls
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Clear();
+          
+           
         }
 
         /// <summary>
@@ -151,16 +154,18 @@ namespace RentMe.UserControls
 
         public void Clear()
         {
-
-            textBoxStoreMemberID.Text = "";
             this.listViewReturnableItems.Items.Clear();
+
             this.listViewItemsToReturn.Items.Clear();
+            this.itemsToReturn = new List<ReturnableItem>();
+            textBoxStoreMemberID.Text = "";
             buttonReturn.Enabled = false;
             buttonAddToReturn.Enabled = false;
             SerialNumberLabel.Text = "";
             QuantityAvailableLabel.Text = "";
             this.ComboBoxRequiredQuantity.Items.Clear();
             ComboBoxRequiredQuantity.ResetText();
+            textBoxStoreMemberID.Enabled = true;
 
         }
 
@@ -199,6 +204,7 @@ namespace RentMe.UserControls
                 {
                     var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
                     this.listViewReturnableItems.Items.Add(lvi);
+                  
                 }
 
             }
@@ -213,12 +219,13 @@ namespace RentMe.UserControls
         private void RefreshListViewItemsToReturn()
         {
             this.listViewItemsToReturn.Items.Clear();
+            
             try
             {
                 foreach (var item in this.itemsToReturn)
                 {
-                    var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
-                    this.listViewItemsToReturn.Items.Add(lvi);
+                    var listViewReturn = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
+                    this.listViewItemsToReturn.Items.Add(listViewReturn);
                 }
                 if (returnableItems.Count > 0)
                 {
@@ -274,10 +281,18 @@ namespace RentMe.UserControls
 
         private void buttonAddToReturn_Click(object sender, EventArgs e)
         {
-
-            currentItem.Quantity = int.Parse(ComboBoxRequiredQuantity.Text);
-            itemsToReturn.Add(currentItem);
+            var existingItem = itemsToReturn.Where(i => i.SerialNumber == currentItem.SerialNumber).FirstOrDefault();
+            if (existingItem == null)
+            {
+                currentItem.Quantity = int.Parse(ComboBoxRequiredQuantity.Text);
+                itemsToReturn.Add(currentItem);
+            }
+            else
+            {
+                existingItem.Quantity = int.Parse(ComboBoxRequiredQuantity.Text);
+            }
             this.RefreshListViewItemsToReturn();
+            textBoxStoreMemberID.Enabled = false;
         }
     }
 }
