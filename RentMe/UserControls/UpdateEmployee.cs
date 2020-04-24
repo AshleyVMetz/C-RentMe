@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using RentMe.Controller;
 using RentMe.Model;
+using RentMe.Util;
 
 namespace RentMe.UserControls
 {
@@ -126,7 +127,7 @@ namespace RentMe.UserControls
                 MessageBox.Show("Something is wrong with the input or database connection. " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
         /// <summary>
         /// This helper method returns the employee from the database, if any.
@@ -169,7 +170,7 @@ namespace RentMe.UserControls
                 this.stateComboBox.Text = this.employee.State;
                 this.zipCodeTextBox.Text = this.employee.ZipCode;
                 this.usernameTextBox.Text = this.employee.Username;
-                this.passwordMaskedTextBox.Text = this.employee.Password;
+                this.passwordMaskedTextBox.Text = Security.Decrypt(this.employee.Password);
                 this.activeCheckBox.Checked = this.employee.IsActive;
                 this.adminCheckBox.Checked = this.employee.IsAdmin;
             }

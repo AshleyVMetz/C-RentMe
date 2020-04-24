@@ -81,6 +81,10 @@ namespace RentMe.DAL
                     }
                 }
             }
+            if (list.Count == 0)
+            {
+                throw new ArgumentException("There is no store member with that ID. Please try again.");
+            }
             return list;
         }
 

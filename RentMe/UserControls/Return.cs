@@ -182,16 +182,23 @@ namespace RentMe.UserControls
                                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            memberID = int.Parse(textBoxStoreMemberID.Text);
-            rentalIDList = rentalTransactionController.GetRentalIDListByMemberID(memberID);
-            returnableItems = new List<ReturnableItem>();
-            foreach (var rentalID in rentalIDList)
+            try
             {
-                var list = returnController.GetReturnableItemsByRentalID(rentalID);
-                returnableItems.AddRange(list);
+                memberID = int.Parse(textBoxStoreMemberID.Text);
+                rentalIDList = rentalTransactionController.GetRentalIDListByMemberID(memberID);
+                returnableItems = new List<ReturnableItem>();
+                foreach (var rentalID in rentalIDList)
+                {
+                    var list = returnController.GetReturnableItemsByRentalID(rentalID);
+                    returnableItems.AddRange(list);
+                }
+                RefreshListViewReturnableItems();
             }
-            RefreshListViewReturnableItems();
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while fetching data from database!!!!" + Environment.NewLine + ex.Message,
+                                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RefreshListViewReturnableItems()
@@ -281,6 +288,12 @@ namespace RentMe.UserControls
 
         private void buttonAddToReturn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.ComboBoxRequiredQuantity.Text))
+            {
+                MessageBox.Show("You must select a quantity to return.",
+                                "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var existingItem = itemsToReturn.Where(i => i.SerialNumber == currentItem.SerialNumber).FirstOrDefault();
             if (existingItem == null)
             {
