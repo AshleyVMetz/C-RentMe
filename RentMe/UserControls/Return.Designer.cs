@@ -50,13 +50,13 @@
             this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonAddToReturn = new System.Windows.Forms.Button();
             this.listViewItemsToReturn = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSerial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStyle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rentalID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rental = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderRental = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelReturnInstructions = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -172,6 +172,7 @@
             // 
             // ComboBoxRequiredQuantity
             // 
+            this.ComboBoxRequiredQuantity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxRequiredQuantity.FormattingEnabled = true;
             this.ComboBoxRequiredQuantity.Location = new System.Drawing.Point(528, 306);
             this.ComboBoxRequiredQuantity.Name = "ComboBoxRequiredQuantity";
@@ -208,18 +209,22 @@
             // serial
             // 
             this.serial.Text = "Serial Number";
+            this.serial.Width = 90;
             // 
             // description
             // 
             this.description.Text = "Description";
+            this.description.Width = 170;
             // 
             // style
             // 
             this.style.Text = "Style";
+            this.style.Width = 130;
             // 
             // category
             // 
             this.category.Text = "Category";
+            this.category.Width = 135;
             // 
             // quantity
             // 
@@ -238,12 +243,12 @@
             // listViewItemsToReturn
             // 
             this.listViewItemsToReturn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.rental});
+            this.columnHeaderSerial,
+            this.columnHeaderDescription,
+            this.columnHeaderStyle,
+            this.columnHeaderCategory,
+            this.columnHeaderQuantity,
+            this.columnHeaderRental});
             this.listViewItemsToReturn.HideSelection = false;
             this.listViewItemsToReturn.Location = new System.Drawing.Point(22, 364);
             this.listViewItemsToReturn.Name = "listViewItemsToReturn";
@@ -252,33 +257,39 @@
             this.listViewItemsToReturn.UseCompatibleStateImageBehavior = false;
             this.listViewItemsToReturn.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // columnHeaderSerial
             // 
-            this.columnHeader1.Text = "Serial Number";
+            this.columnHeaderSerial.Text = "Serial Number";
+            this.columnHeaderSerial.Width = 90;
             // 
-            // columnHeader2
+            // columnHeaderDescription
             // 
-            this.columnHeader2.Text = "Description";
+            this.columnHeaderDescription.Text = "Description";
+            this.columnHeaderDescription.Width = 170;
             // 
-            // columnHeader3
+            // columnHeaderStyle
             // 
-            this.columnHeader3.Text = "Style";
+            this.columnHeaderStyle.Text = "Style";
+            this.columnHeaderStyle.Width = 130;
             // 
-            // columnHeader4
+            // columnHeaderCategory
             // 
-            this.columnHeader4.Text = "Category";
+            this.columnHeaderCategory.Text = "Category";
+            this.columnHeaderCategory.Width = 135;
             // 
-            // columnHeader5
+            // columnHeaderQuantity
             // 
-            this.columnHeader5.Text = "Quantity";
+            this.columnHeaderQuantity.Text = "Quantity";
             // 
             // rentalID
             // 
             this.rentalID.Text = "Rental ID";
+            this.rentalID.Width = 80;
             // 
-            // rental
+            // columnHeaderRental
             // 
-            this.rental.Text = "RentalID";
+            this.columnHeaderRental.Text = "RentalID";
+            this.columnHeaderRental.Width = 80;
             // 
             // labelReturnInstructions
             // 
@@ -343,13 +354,13 @@
         private System.Windows.Forms.ColumnHeader quantity;
         private System.Windows.Forms.Button buttonAddToReturn;
         private System.Windows.Forms.ListView listViewItemsToReturn;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeaderSerial;
+        private System.Windows.Forms.ColumnHeader columnHeaderDescription;
+        private System.Windows.Forms.ColumnHeader columnHeaderStyle;
+        private System.Windows.Forms.ColumnHeader columnHeaderCategory;
+        private System.Windows.Forms.ColumnHeader columnHeaderQuantity;
         private System.Windows.Forms.ColumnHeader rentalID;
-        private System.Windows.Forms.ColumnHeader rental;
+        private System.Windows.Forms.ColumnHeader columnHeaderRental;
         private System.Windows.Forms.Label labelReturnInstructions;
     }
 }
