@@ -165,6 +165,7 @@ namespace RentMe.UserControls
             QuantityAvailableLabel.Text = "";
             this.ComboBoxRequiredQuantity.Items.Clear();
             ComboBoxRequiredQuantity.ResetText();
+            textBoxStoreMemberID.Enabled = true;
 
         }
 
@@ -203,6 +204,7 @@ namespace RentMe.UserControls
                 {
                     var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
                     this.listViewReturnableItems.Items.Add(lvi);
+                  
                 }
 
             }
@@ -290,6 +292,7 @@ namespace RentMe.UserControls
                 existingItem.Quantity = int.Parse(ComboBoxRequiredQuantity.Text);
             }
             this.RefreshListViewItemsToReturn();
+            textBoxStoreMemberID.Enabled = false;
         }
     }
 }
