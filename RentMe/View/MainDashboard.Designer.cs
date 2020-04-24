@@ -243,7 +243,7 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelWelcomeMain;
         private System.Windows.Forms.Button logoutButton;
-        private UserControls.Return return1;
+       /// private UserControls.Return return1;
         private System.Windows.Forms.TabPage CartTab;
         private UserControls.Cart CartUserControl;
         private System.Windows.Forms.TabPage Return;
