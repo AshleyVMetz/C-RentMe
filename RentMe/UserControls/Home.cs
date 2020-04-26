@@ -273,9 +273,9 @@ namespace RentMe.UserControls
             QuantityRequiredComboBox.Items.Clear();
             QuantityRequiredComboBox.SelectedIndex = -1;
 
-            for (int i=1; i <= quantity; i++)
+            for (int i = 1; i <= quantity; i++)
             {
-                QuantityRequiredComboBox.Items.Add(""+i);
+                QuantityRequiredComboBox.Items.Add("" + i);
             }
         }
 
@@ -314,11 +314,12 @@ namespace RentMe.UserControls
             {
                 item.DailyRentalRate = Int32.Parse(DailyRateLabel.Text);
             }
-            
+
             if (QuantityRequiredComboBox.Text.Length > 0)
             {
                 item.Quantity = Int32.Parse(QuantityRequiredComboBox.Text);
-            } else
+            }
+            else
             {
                 item.Quantity = 0;
             }
@@ -330,9 +331,9 @@ namespace RentMe.UserControls
 
             CartItem matchedCartItem = null;
 
-            foreach ( CartItem cartItem in EmployeeDashboard.cart.Items)
+            foreach (CartItem cartItem in EmployeeDashboard.cart.Items)
             {
-                if(cartItem.SerialNumber == item.SerialNumber)
+                if (cartItem.SerialNumber == item.SerialNumber)
                 {
                     matchedCartItem = cartItem;
                     break;
@@ -342,7 +343,8 @@ namespace RentMe.UserControls
             if (matchedCartItem == null)
             {
                 EmployeeDashboard.cart.Items.Add(item);
-            } else
+            }
+            else
             {
                 matchedCartItem.Quantity = item.Quantity;
             }

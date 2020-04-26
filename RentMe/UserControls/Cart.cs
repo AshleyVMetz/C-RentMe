@@ -35,7 +35,7 @@ namespace RentMe.UserControls
         {
             CartItemPanel.Controls.Clear();
 
-            for(int i=0; i < EmployeeDashboard.cart.Items.Count; i++)
+            for (int i = 0; i < EmployeeDashboard.cart.Items.Count; i++)
             {
                 CartItem item = EmployeeDashboard.cart.Items[i];
                 Label serialNumberLabel = new Label();
@@ -57,7 +57,7 @@ namespace RentMe.UserControls
                 quantityTextBox.Location = new Point(314, 15 + (40 * i));
                 quantityTextBox.Width = 40;
                 CartItemPanel.Controls.Add(quantityTextBox);
-                
+
                 Label rentalRateLabel = new Label();
                 rentalRateLabel.Name = "RentalRateLabel" + i;
                 rentalRateLabel.Text = item.DailyRentalRate.ToString();
@@ -96,14 +96,15 @@ namespace RentMe.UserControls
             try
             {
                 availableQuantity = furnitureController.GetCurrentFurnitureCount(item.SerialNumber);
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 ex.ToString();
                 MessageBox.Show("Error while fetching available quantity!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
 
             if (quantity > availableQuantity)
             {
@@ -116,11 +117,12 @@ namespace RentMe.UserControls
             if (quantity == 0)
             {
                 EmployeeDashboard.cart.Items.Remove(item);
-            } else
+            }
+            else
             {
                 item.Quantity = quantity;
             }
-            
+
             AddCartItems();
         }
 
@@ -181,9 +183,9 @@ namespace RentMe.UserControls
             {
                 // Find Total amount due
                 double totalAmount = 0;
-                int rentalDays = (int) Math.Round(RentalEndTimePicker.Value.Subtract(RentalStartTimePicker.Value).TotalDays);
+                int rentalDays = (int)Math.Round(RentalEndTimePicker.Value.Subtract(RentalStartTimePicker.Value).TotalDays);
 
-                for (int i=0; i < EmployeeDashboard.cart.Items.Count; i++ )
+                for (int i = 0; i < EmployeeDashboard.cart.Items.Count; i++)
                 {
                     CartItem item = EmployeeDashboard.cart.Items[i];
                     totalAmount += (item.Quantity * item.DailyRentalRate * rentalDays);
@@ -218,7 +220,7 @@ namespace RentMe.UserControls
                 MessageBox.Show("No Customer found!!!! - ",
                   "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-     
+
         }
 
         /// <summary>

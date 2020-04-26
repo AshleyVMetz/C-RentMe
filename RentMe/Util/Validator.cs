@@ -78,7 +78,7 @@ namespace RentMe.Util
 
             return false;
         }
-        
+
         /// <summary>
         /// This method returns the difference between dates in years.
         /// </summary>
@@ -131,7 +131,7 @@ namespace RentMe.Util
         {
             DateTime today = DateTime.Now;
 
-            if ( Math.Round(cart.RentalStartDate.Subtract(today).TotalDays) < 0)
+            if (Math.Round(cart.RentalStartDate.Subtract(today).TotalDays) < 0)
             {
                 MessageBox.Show("Rental start date cannot be before today!!!!",
                 "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -145,7 +145,7 @@ namespace RentMe.Util
                 return true;
             }
 
-            int rentalDays = (int) Math.Round(cart.RentalEndDate.Subtract(cart.RentalStartDate).TotalDays);
+            int rentalDays = (int)Math.Round(cart.RentalEndDate.Subtract(cart.RentalStartDate).TotalDays);
 
             if (rentalDays == 0)
             {

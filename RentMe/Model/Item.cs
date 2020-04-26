@@ -8,7 +8,7 @@ namespace RentMe.Model
     public class Item
     {
         public int RentalID { get; }
-     
+
         public DateTime ScheduledReturn { get; set; }
     }
 }

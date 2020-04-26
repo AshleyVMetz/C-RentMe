@@ -16,13 +16,13 @@ namespace RentMe.UserControls
         ReturnTransactionController returnTransactionController;
         FurnitureController furnitureController;
         RentalTransactionController rentalTransactionController;
-       
         int employeeID;
         int memberID;
         List<int> rentalIDList;
         List<ReturnableItem> returnableItems;
         List<ReturnableItem> itemsToReturn;
         ReturnableItem currentItem;
+
         /// <summary>
         /// Constructor method.
         /// </summary>
@@ -33,7 +33,7 @@ namespace RentMe.UserControls
             this.returnTransactionController = new ReturnTransactionController();
             this.furnitureController = new FurnitureController();
             rentalTransactionController = new RentalTransactionController();
-           
+
             this.employeeID = EmployeeDashboard.employeeID;
             buttonReturn.Enabled = false;
             buttonAddToReturn.Enabled = false;
@@ -130,8 +130,8 @@ namespace RentMe.UserControls
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Clear();
-          
-           
+
+
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace RentMe.UserControls
                 {
                     var lvi = new ListViewItem(new[] { item.SerialNumber, item.Description, item.Style, item.Category, item.Quantity.ToString(), item.RentalID.ToString() });
                     this.listViewReturnableItems.Items.Add(lvi);
-                  
+
                 }
 
             }
@@ -226,7 +226,7 @@ namespace RentMe.UserControls
         private void RefreshListViewItemsToReturn()
         {
             this.listViewItemsToReturn.Items.Clear();
-            
+
             try
             {
                 foreach (var item in this.itemsToReturn)

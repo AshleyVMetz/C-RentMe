@@ -30,7 +30,7 @@ namespace RentMe
             cart.Items = new List<CartItem>();
             cart.EmployeeID = employeeId;
             this.previousForm = form;
-            
+
         }
 
         /// <summary>

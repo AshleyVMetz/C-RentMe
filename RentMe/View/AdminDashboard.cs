@@ -8,7 +8,7 @@ namespace RentMe.View
     public partial class AdminDashboard : Form
     {
         Form previousForm = null;
-        
+
         /// <summary>
         /// Constructor method.
         /// </summary>

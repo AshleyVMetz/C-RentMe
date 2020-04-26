@@ -43,7 +43,7 @@ namespace RentMe.DAL
            SELECT SUM(Quantity) From Returns WHERE Serial# = i.Serial# AND RentalID = i.RentalID
            ),0) > 0) AND Serial# = @serial#);";
 
-           
+
             using (SqlConnection connection = RentMeDBConnection.GetConnection())
 
             {
@@ -72,6 +72,11 @@ namespace RentMe.DAL
 
         }
 
+        /// <summary>
+        /// This method updates furniture quantity
+        /// </summary>
+        /// <param name="returnItem"></param>
+        /// <returns>boolean if update was posted</returns>
         public bool UpdateFurnitureQuantity(ReturnItem returnItem)
 
         {
@@ -89,9 +94,9 @@ namespace RentMe.DAL
 
                 {
                     cmd.Parameters.AddWithValue("@serial#", returnItem.SerialNumber);
-                   
+
                     cmd.Parameters.AddWithValue("@quantity", returnItem.Quantity);
-                    
+
 
                     var result = cmd.ExecuteNonQuery();
                     connection.Close();

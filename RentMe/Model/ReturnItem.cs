@@ -3,7 +3,7 @@
     /// <summary>
     /// This class models an item that is returned.
     /// </summary>
-   public class ReturnItem
+    public class ReturnItem
     {
         public string SerialNumber { get; set; }
         public int ReturnID { get; set; }

@@ -127,7 +127,7 @@ namespace RentMe.UserControls
                 MessageBox.Show("Something is wrong with the input or database connection. " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
 
         /// <summary>
         /// This helper method returns the employee from the database, if any.
